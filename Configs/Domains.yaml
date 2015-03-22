@@ -1,0 +1,4 @@
+Domains:
+    Default: platform.app
+    platform.app:
+        all: Local
