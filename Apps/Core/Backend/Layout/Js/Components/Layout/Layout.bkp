@@ -4,13 +4,13 @@
     &nbsp;
     <Link class="btn btn-primary" href="/box">Right</Link>
     <hr/>
-    <W:Placeholder name="MainContent"/>
+    <placeholder name="MainContent"/>
     <div class="col-sm-6">
         <hr/>
-        <W:Placeholder name="LeftContent"/>
+        <placeholder name="LeftContent"/>
     </div>
     <div class="col-sm-6">
         <hr/>
-        <W:Placeholder name="RightContent"/>
+        <placeholder name="RightContent"/>
     </div>
 </div>

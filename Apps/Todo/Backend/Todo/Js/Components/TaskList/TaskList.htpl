@@ -1,14 +1,14 @@
 <div class="col-sm-12">
-    <Form name="form">
-        <FormGroup>
-            <Label>Create new item</Label>
+    <form name="form">
+        <form-group>
+            <label>Create new item</label>
             <Input grid="2" placeholder="New task" ref="newTask"/>
             <button class="btn btn-primary col-sm-2" type="submit" onClick={this.addTask}>Add</button>
-            <Label>Filter items</Label>
+            <label>Filter items</label>
             <Input grid="4" bind="filter" placeholder="Filter..."/>
-        </FormGroup>
-    </Form>
-    <W:If cond="this.state.todos.length == 0">No items available yet...</W:If>
+        </form-group>
+    </form>
+    <if cond="this.state.todos.length == 0">No items available yet...</if>
     <Table class={{'table-hover': this.state.filter != ''}}>
         <Thead>
         <Tr>
@@ -20,25 +20,25 @@
         </Tr>
         </Thead>
         <Tbody>
-            <W:Loop items="this.state.todos" as="item" index="i">
+            <loop items="this.state.todos" as="item" index="i">
                 <Tr class={{danger: item.important, success: item.completed}}>
                     <Td>{i+1}</Td>
                     <Td>
-                        <W:If cond="item.id">{item.id}</W:If>
+                        <if cond="item.id">{item.id}</if>
                     </Td>
                     <Td>{item.task}</Td>
                     <Td>{item.createdOn}</Td>
                     <Td>
-                        <W:If cond="item.id">
+                        <if cond="item.id">
                             <Link class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</Link>
                             &nbsp;
                             <button class="btn btn-danger" onClick={this.removeTask.bind(this, item)}>Delete</button>
-                        <W:Else/>
+                        <else/>
                             Saving...
-                        </W:If>
+                        </if>
                     </Td>
                 </Tr>
-            </W:Loop>
+            </loop>
         </Tbody>
     </Table>
 </div>

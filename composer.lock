@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a1458ede8aef0d2878a7a0303375dda8",
+    "hash": "b41e2cdc2b78e14b6f98a525036b1699",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -441,12 +441,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "1af1529b49a6e065ae6802e70192aba35d79b7d8"
+                "reference": "bf2c13de4300e227d7b2fd08027673a79c519987"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/1af1529b49a6e065ae6802e70192aba35d79b7d8",
-                "reference": "1af1529b49a6e065ae6802e70192aba35d79b7d8",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/bf2c13de4300e227d7b2fd08027673a79c519987",
+                "reference": "bf2c13de4300e227d7b2fd08027673a79c519987",
                 "shasum": ""
             },
             "type": "library",
@@ -456,8 +456,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -476,7 +476,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2015-02-05 09:32:11"
+            "time": "2015-03-26 14:39:45"
         },
         {
             "name": "sendgrid/sendgrid",
@@ -525,16 +525,16 @@
         },
         {
             "name": "sendgrid/smtpapi",
-            "version": "0.2.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/smtpapi-php.git",
-                "reference": "125b6071fb1f339feff13459cbe7bf07466fd54a"
+                "reference": "81cac4dc99439cd057adae65c4c79698dc8b62ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/smtpapi-php/zipball/125b6071fb1f339feff13459cbe7bf07466fd54a",
-                "reference": "125b6071fb1f339feff13459cbe7bf07466fd54a",
+                "url": "https://api.github.com/repos/sendgrid/smtpapi-php/zipball/81cac4dc99439cd057adae65c4c79698dc8b62ee",
+                "reference": "81cac4dc99439cd057adae65c4c79698dc8b62ee",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +569,7 @@
                 "smtpapi",
                 "xsmtp"
             ],
-            "time": "2015-01-24 04:19:15"
+            "time": "2015-03-27 18:45:51"
         },
         {
             "name": "smarty/smarty",
@@ -577,12 +577,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "2a005ac6d6064a76129e411bd9ade0274a481513"
+                "reference": "ea2a566b1f802b63f1439940dfa8ecc910a54188"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/2a005ac6d6064a76129e411bd9ade0274a481513",
-                "reference": "2a005ac6d6064a76129e411bd9ade0274a481513",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/ea2a566b1f802b63f1439940dfa8ecc910a54188",
+                "reference": "ea2a566b1f802b63f1439940dfa8ecc910a54188",
                 "shasum": ""
             },
             "require": {
@@ -624,7 +624,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-03-20 17:25:59"
+            "time": "2015-03-28 02:58:08"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -829,12 +829,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Webiny/Framework.git",
-                "reference": "ca080d0f548144958c5985e64727e03fb94cba7f"
+                "reference": "4f3d77a97dd8a6245e20a7344e8742d1c4e631e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Webiny/Framework/zipball/ca080d0f548144958c5985e64727e03fb94cba7f",
-                "reference": "ca080d0f548144958c5985e64727e03fb94cba7f",
+                "url": "https://api.github.com/repos/Webiny/Framework/zipball/4f3d77a97dd8a6245e20a7344e8742d1c4e631e7",
+                "reference": "4f3d77a97dd8a6245e20a7344e8742d1c4e631e7",
                 "shasum": ""
             },
             "require": {
@@ -910,7 +910,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2015-03-21 20:43:01"
+            "time": "2015-03-28 16:48:37"
         },
         {
             "name": "webiny/platform-core",
@@ -959,13 +959,64 @@
                 "issues": "https://github.com/Webiny/PlatformCore/issues"
             },
             "time": "2015-03-22 09:33:50"
+        },
+        {
+            "name": "wp-cli/php-cli-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-cli/php-cli-tools.git",
+                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/228e8c1300675313e519b4195783aaa1a1a020bf",
+                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "cli": "lib/"
+                },
+                "files": [
+                    "lib/cli/cli.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Logsdon",
+                    "email": "jlogsdon@php.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Daniel Bachhuber",
+                    "email": "daniel@handbuilt.co",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Console utilities for PHP",
+            "homepage": "http://github.com/wp-cli/php-cli-tools",
+            "keywords": [
+                "cli",
+                "console"
+            ],
+            "time": "2015-02-27 22:11:29"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "webiny/platform-core": 20
+        "webiny/platform-core": 20,
+        "wp-cli/php-cli-tools": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -1,33 +1,33 @@
 <div class="col-sm-12">
-    <Form name="form">
-        <FormGroup>
-            <Label>ID</Label>
-            <Input grid="4" bind="id" placeholder="ID" disabled/>
-            <Label>Created</Label>
-            <Input grid="4" bind="createdOn" placeholder="Created" disabled/>
-        </FormGroup>
+    <form name="form">
+        <form-group>
+            <label>ID</label>
+            <input grid="4" bind="id" placeholder="ID" disabled/>
+            <label>Created</label>
+            <input grid="4" bind="createdOn" placeholder="Created" disabled/>
+        </form-group>
 
-        <FormGroup>
-            <Label>Task</Label>
-            <Input name="task" grid="10" bind="task" placeholder="Task"/>
-        </FormGroup>
+        <form-group>
+            <label>Task</label>
+            <input name="task" grid="10" bind="task" placeholder="Task"/>
+        </form-group>
 
-        <FormGroup>
-            <Checkbox label="Important" bind="important" />
-        </FormGroup>
+        <form-group>
+            <checkbox label="Important" bind="important" />
+        </form-group>
 
-        <FormGroup>
-            <Checkbox label="Settings dev" bind="settings.dev" bind-change="onChangeDev"/>
-        </FormGroup>
+        <form-group>
+            <checkbox label="Settings dev" bind="settings.dev" bind-change="onChangeDev"/>
+        </form-group>
 
-        <FormGroup>
-            <Checkbox label="Completed" bind="completed" />
-        </FormGroup>
+        <form-group>
+            <checkbox label="Completed" bind="completed" />
+        </form-group>
 
-        <FormGroup>
+        <form-group>
             <div class="col-sm-offset-2 col-sm-10">
                 <button class="btn btn-success" type="submit" onClick={this.saveTodo}>Save</button>
             </div>
-        </FormGroup>
-    </Form>
+        </form-group>
+    </form>
 </div>

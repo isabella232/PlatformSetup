@@ -1,15 +1,12 @@
 Platform:
     WebPath: http://platform.app:8000
-    ApiPath: http://platform.app:8000/api
-    AbsPath: __DIR__/../
-    UploadsAbsPath: __DIR__/../Public/Uploads
-    UploadsWebPath: http://platform.app/Uploads
-    AppsPath: __DIR__/../Apps
-    AppsWebPath: http://platform.app:8000/Apps
+    ApiPath: /api
+    AbsPath: __DIR__/../..
+    AppsPath: __DIR__/../../Apps
+    AppsPath: /Apps
     Backend:
         Prefix: admin
-    Error:
-        Reporting: true
+    ErrorReporting: true
     Bootstrap:
         App: Core
         Module: Layout
@@ -33,7 +30,7 @@ Entity:
 
 Rest:
     Api:
-        CompilePath: __DIR__/../Cache/Rest
+        CompilePath: __DIR__/../../Cache/Rest
         Environment: development
         Router:
             Class: \Apps\{app}\{area}\{module}\Php\Services\{service}
@@ -51,13 +48,13 @@ Storage:
             Class: \Webiny\Component\Storage\Storage
             Arguments:
                 Driver:
-                    Object: \Webiny\Component\Storage\Driver\Local\Local
+                    Object: \Webiny\Component\Storage\Driver\Local\LocalStorageDriver
                     ObjectArguments:
-                        - __DIR__/../
+                        - __DIR__/../..
         Apps:
             Class: \Webiny\Component\Storage\Storage
             Arguments:
                 Driver:
-                    Object: \Webiny\Component\Storage\Driver\Local\Local
+                    Object: \Webiny\Component\Storage\Driver\Local\LocalStorageDriver
                     ObjectArguments:
-                        - __DIR__/../Apps
+                        - __DIR__/../../Apps

@@ -10,12 +10,12 @@
         </FormGroup>
 
         <ul>
-            <W:Loop items="this.state.messages" as="msg" index="i">
+            <loop items="this.state.messages" as="msg" index="i">
                 <li>
                     <span class="grey">{msg.time.getTime()} - </span>
                     <span>{msg.message}</span>
                 </li>
-            </W:Loop>
+            </loop>
         </ul>
     </FormInline>
 </div>

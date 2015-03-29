@@ -3,3 +3,10 @@ Events:
        - {Handler: \Apps\Core\Backend\Layout\Php\Handlers\HtmlCleanup, Priority: 101}
     Platform.HandleRequest:
        - {Handler: \Apps\Core\Backend\Layout\Php\Handlers\RenderApp}
+
+
+Parsers:
+    Tags:
+        form: Form
+        form-group: FormGroup
+        label: Label

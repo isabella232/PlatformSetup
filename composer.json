@@ -21,7 +21,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "webiny/platform-core": "dev-master"
+        "webiny/platform-core": "dev-master",
+        "wp-cli/php-cli-tools": "dev-master"
     },
     "repositories": [
         {

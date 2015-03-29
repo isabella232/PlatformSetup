@@ -5,7 +5,10 @@ Apps/*/Build
 Apps/*/BuildTmp
 vendor/
 
-#PHPStorm
+# Composer
+composer.lock
+
+# PHPStorm
 .idea/
 
 # Mac crap

@@ -1,21 +1,23 @@
 <?php
 use Webiny\Component\ClassLoader\ClassLoader;
 use Webiny\Component\Http\Request;
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+use Webiny\Component\StdLib\StdObject\UrlObject\UrlObject;
+use Webiny\Platform\Bootstrap\Platform;
 
 require_once realpath(__DIR__ . '/../vendor/autoload.php');
 
-// Check if it's an API request
-$api = Request::getInstance()->getCurrentUrl(true)->getPath(true)->startsWith('/api');
+$currentUrl = Request::getInstance()->getCurrentUrl(true);
 
 // Load only platform config and setup Storage, Mongo, Entity and initialize Router component with empty config
-$platform = \Webiny\Platform\Bootstrap\Platform::getInstance()->prepare($api);
+$platform = Platform::getInstance();
+$platform->setRootDir(__DIR__ . '/..')->setRequest($currentUrl)->prepare();
 
 if(!$platform->isBackend()){
     /**
      * TODO: Frontend caching layer could be plugged in here
+     *
+     * NOTE: APPS ARE NOT LOADED AT THIS POINT!
+     * Call `$platform->loadApps();` to load platform apps.
      *
      * Platform config is accessed using $platform->getConfig($key = null)
      * See $platform autocomplete for a list of all available methods
@@ -30,6 +32,9 @@ if(!$platform->isBackend()){
 
 // Load platform apps and register their services
 $platform->loadApps();
+
+// Check if it's an API request
+$api = $currentUrl->getPath(true)->startsWith('/api');
 
 if ($api) {
     $platform->runApi();

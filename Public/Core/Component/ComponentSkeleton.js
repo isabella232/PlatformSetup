@@ -176,6 +176,8 @@ export default function ComponentSkeleton(self) {
 			if (typeof rules == 'string') {
 				return rules;
 			}
+			// TODO: replace with custom method for class sets
+			// https://github.com/JedWatson/classnames/blob/master/index.js
 			return React.addons.classSet(rules);
 		},
 

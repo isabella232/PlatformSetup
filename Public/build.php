@@ -1,69 +1,69 @@
 <?php
-use Webiny\Component\ClassLoader\ClassLoader;
-use Webiny\Component\Config\Config;
+use cli\Arguments;
 use Webiny\Component\ServiceManager\ServiceManager;
-use Webiny\Component\StdLib\StdObject\ArrayObject\ArrayObject;
+use Webiny\Component\StdLib\StdLibTrait;
+use Webiny\Component\StdLib\StdObject\UrlObject\UrlObject;
 use Webiny\Component\Storage\Storage;
-use Webiny\Platform\Bootstrap\AppLoader;
+use Webiny\Platform\Bootstrap\Platform;
 use Webiny\Platform\Builders\Backend\DevelopmentBuilder;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require_once realpath(__DIR__ . '/../vendor/autoload.php');
-$classLoaderMap = [
-    'Webiny\Platform' => realpath(__DIR__.'/../').'/Vendors/Platform',
-    'Apps' => realpath(__DIR__ . '/../').'/Apps'
-];
-ClassLoader::getInstance()->registerMap($classLoaderMap);
 
 class Build
 {
-    private $_config;
-    private $_storage;
-    private $_developmentBuild = false;
+    use StdLibTrait;
 
     function __construct($argv)
     {
         /**
          * Parse command-line parameters
          */
-        $args = new ArrayObject($argv);
-        $this->_developmentBuild = $args->inArray('--dev');
-        $this->_buildApp = $args->key(1);
+        $strict = in_array('--strict', $argv);
+        $arguments = new Arguments(compact('strict'));
+        $arguments->addOption(array('domain', 'd'), 'Domain to load');
+        $arguments->addOption(array('app', 'a'), 'App to build');
+        $arguments->addFlag(array('dev'), 'Development build');
+        $arguments->addFlag(array('help', 'h'), 'Show this help screen');
 
-        /**
-         * Setup autoloader and load build config.
-         * Register Services and Storage from config.
-         */
-        $this->_config = Config::getInstance()->yaml(__DIR__ . '/../Configs/Build.yaml');
-        foreach ($this->_config->get('Services') as $sName => $sConfig) {
-            ServiceManager::getInstance()->registerService($sName, $sConfig);
+        $arguments->parse();
+        if ($arguments['help']) {
+            \cli\out("\nWebiny Backend Builder\n\n");
+            \cli\out($arguments->getHelpScreen());
+            \cli\out("\n\n");
         }
-        Storage::setConfig($this->_config->get('Storage', []));
 
-        $this->_storage = ServiceManager::getInstance()->getService('Storage.Apps');
-
-        $this->_build();
+        $this->_build($arguments);
     }
 
-    private function _build()
+    private function _build($args)
     {
         /**
          * Load platform apps
          */
-        $appLoader = new AppLoader();
-        $apps = $appLoader->loadApps(true);
-
-        $app = isset($apps[$this->_buildApp]) ? $apps[$this->_buildApp] : false;
-
+        $platform = Platform::getInstance();
+        $domain = $args['domain'];
+        if (!$this->str($domain)->startsWith('http://')) {
+            $domain = 'http://' . $domain;
+        }
+        $currentUrl = new UrlObject($domain);
+        $platform->setRootDir(__DIR__ . '/..')->setRequest($currentUrl)->setArea(Platform::BACKEND)->prepare();
+        $platform->loadApps();
+        
+        $app = $platform->getApps($args['app']);
         if (!$app) {
-            die("App with name `" . $this->_buildApp . "` was not found!\n");
+            \cli\err("App with name `" . $args['app'] . "` was not found!\n");
+            die();
         }
 
-        if ($this->_developmentBuild) {
-            $builder = new DevelopmentBuilder($this->_config);
-            $builder->setAppsStorage($this->_storage)->buildApp($app);
+        /* @var Storage $appsStorage */
+        $appsStorage = ServiceManager::getInstance()->getService('Storage.Apps');
+
+        if ($args['dev']) {
+            $builder = new DevelopmentBuilder();
+            $builder->setAppsStorage($appsStorage)->buildApp($app);
         } else {
             //$builder = new ProductionBuilder($this->_config);
             //$builder->setAppsStorage($this->_storage)->buildApp($app);

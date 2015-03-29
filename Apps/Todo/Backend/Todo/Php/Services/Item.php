@@ -10,6 +10,7 @@ use Webiny\Component\Mongo\MongoException;
 use Webiny\Component\Rest\Interfaces\CrudInterface;
 use Webiny\Component\Rest\RestErrorException;
 use Webiny\Component\Rest\RestTrait;
+use Webiny\Component\StdLib\StdObject\ArrayObject\ArrayObject;
 use Webiny\Platform\Responses\JsonErrorResponse;
 use Webiny\Platform\Responses\JsonResponse;
 
@@ -24,8 +25,10 @@ class Item implements CrudInterface
      *
      * @return array|mixed Array containing the restored record.
      */
-    public function restore($id){
+    public function restore($id)
+    {
         $task = TodoTask::restore($id);
+
         return $task->toArray();
     }
 
@@ -84,7 +87,7 @@ class Item implements CrudInterface
             return true;
         }
 
-        throw new RestErrorException('Not found', 'Task with id `' . $id . '` was not found!', 404);
+        throw new RestErrorException('Not found', 'Task with id `' . $id . '` was not found!');
     }
 
     /**
@@ -108,7 +111,7 @@ class Item implements CrudInterface
         } catch (\MongoException $e) {
 
         }
-        throw new RestErrorException('Not found', 'Task with id `' . $id . '` was not found!', 404);
+        throw new RestErrorException('Not found', 'Task with id `' . $id . '` was not found!');
     }
 
     /**
@@ -118,10 +121,8 @@ class Item implements CrudInterface
      * should be removed and the new attributes should be added, while in crudUpdate the records would only be added
      * or deleted. In crudUpdate, if the record doesn't exist, it can be created.
      *
-     * @link http://tools.ietf.org/html/rfc5789
-     *
-     * @rest .default
-     * @rest .method put
+     * @rest.default
+     * @rest.method put
      *
      * @param string $id Id of the record that should be replaced.
      *
@@ -138,8 +139,6 @@ class Item implements CrudInterface
      * Note that the difference between crudUpdate and crudReplace is that in crudReplace, all current record attributes
      * should be removed and the new attributes should be added, while in crudUpdate the records would only be added
      * or deleted. In crudUpdate, if the record doesn't exist, it can be created.
-     *
-     * @link http://tools.ietf.org/html/rfc5789
      *
      * @rest.default
      * @rest.method patch
@@ -160,12 +159,12 @@ class Item implements CrudInterface
 
                 return $task->toArray();
             } catch (EntityException $e) {
-                $error = new RestErrorException('Entity error', 'Entity attribute validation failed', 422);
+                $error = new RestErrorException('Entity error', 'Entity attribute validation failed', '', 422);
                 $error->addError($e->getInvalidAttributes());
                 throw $error;
             }
         }
 
-        throw new RestErrorException('Not found', 'Task with id `' . $id . '` was not found!', 404);
+        throw new RestErrorException('Not found', 'Task with id `' . $id . '` was not found!');
     }
 }

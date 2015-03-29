@@ -1,0 +1,4 @@
+Platform:
+    WebPath: http://platform.app:8000
+    ErrorReporting: true
+    Environment: Local
