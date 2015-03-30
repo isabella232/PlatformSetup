@@ -13,25 +13,7 @@
             <div class="package">
                 <p>Package:<a href="#">Starter</a><a href="#" class="upgrade">Upgrade</a></p>
             </div>
-            <div class="domain-picker">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                            data-toggle="dropdown">
-                        <span class="domain-name">www.badabing.com.hr</span>
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation" class="spec"><a role="menuitem" href="#"> + Add new
-                            website</a></li>
-                        <li role="presentation"><a role="menuitem" href="#">www.booking.com</a></li>
-                        <li role="presentation"><a role="menuitem" href="#">www.amazon.com</a></li>
-                        <li role="presentation"><a role="menuitem" href="#">www.apple.com</a></li>
-                    </ul>
-                </div>
-                <a href="#" class="open">
-                    <span class="icon-external-link icon"></span>
-                </a>
-            </div>
+            <DomainPicker add-new-site="Add new website"/>
             <div class="dropdown profile-holder">
                 <a href="#" class="profile" id="dropdownMenu4" data-toggle="dropdown">
                     <span class="icon-user icon"></span>

@@ -33,7 +33,7 @@
                         <link class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</link>
                         &nbsp;
                         <button class="btn btn-danger" onClick={this.removeTask.bind(this, item)}>Delete</button>
-                        <else/>
+                    <else/>
                         Saving...
                     </if>
                 </td>

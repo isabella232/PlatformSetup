@@ -40,6 +40,21 @@ export default function ComponentSkeleton(self) {
 		 * @see http://facebook.github.io/react/docs/component-specs.html#mounting-componentwillmount
 		 */
 		componentWillMount: function () {
+			// Convert dashed attribute names to camelCase
+			var pKeys = {};
+			Object.keys(this.props).forEach(item => {
+				var keyParts = [];
+				item.split('-').forEach((part, pi) => {
+					var key = part.charAt(0).toUpperCase() + part.substr(1);
+					if (pi == 0) {
+						key = part.charAt(0).toLowerCase() + part.substr(1);
+					}
+					keyParts.push(key);
+				});
+
+				pKeys[keyParts.join('')] = this.props[item];
+			});
+
 			var saveState = this.props.saveState || false;
 			if (saveState) {
 				var state = StateStore.getState(self.getInstanceId());
@@ -201,7 +216,7 @@ export default function ComponentSkeleton(self) {
 		//console.log("RENDERING " + self.getClassName(), self.__instanceId);
 		this.dynamic = this.getDynamicProperties();
 		return this.getTemplate();
-	}
+	};
 
 	/**
 	 * Almost done...

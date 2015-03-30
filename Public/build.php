@@ -33,6 +33,7 @@ class Build
             \cli\out("\nWebiny Backend Builder\n\n");
             \cli\out($arguments->getHelpScreen());
             \cli\out("\n\n");
+            die();
         }
 
         $this->_build($arguments);

@@ -10,3 +10,5 @@ Parsers:
         form: Form
         form-group: FormGroup
         label: Label
+        #input: Input
+        #checkbox: Checkbox
