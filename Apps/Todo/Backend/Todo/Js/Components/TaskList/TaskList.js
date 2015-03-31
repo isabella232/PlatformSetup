@@ -1,9 +1,18 @@
 import BaseComponent from '/Core/Base/BaseComponent';
+import MyDomainPicker from '/Apps/Core/Layout/Js/Components/MyDomainPicker/MyDomainPicker';
 
 class TaskList extends BaseComponent {
 
 	getFqn() {
 		return 'Todo.Todo.ListComponent';
+	}
+
+	getTemplate() {
+		var DomainPicker = MyDomainPicker.createComponent();
+		if(this.state.filter == 'Pavel'){
+			DomainPicker = window.DomainPicker;
+		}
+		return this.getReactTemplate();
 	}
 
 	componentDidMount() {

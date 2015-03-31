@@ -26,6 +26,10 @@ class BaseComponent extends BaseClass {
 		return React.createElement(cmp, props);
 	}
 
+	getReactTemplate() {
+		// Dummy method
+	}
+
 	getInstanceId() {
 		return this.__instanceId;
 	}

@@ -1,4 +1,5 @@
 <div class="col-sm-12">
+    <DomainPicker add-new-site="Dodaj sajt!"/>
     <form name="form">
         <form-group>
             <label>Create new item</label>
