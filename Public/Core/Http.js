@@ -1,9 +1,5 @@
 function responseHandler(response) {
-	if ([200, 201].indexOf(response.status) > -1) {
-		return response;
-	} else {
-		throw new Error(response.statusText);
-	}
+	return response;
 }
 
 class Http {
@@ -45,7 +41,7 @@ class Http {
 		};
 		var config = {};
 		Object.assign(config, defaultOptions, options);
-		return axios.patch(url, data, config).then(responseHandler);
+		return axios.patch(url, data, config).then(responseHandler).catch(responseHandler);
 	}
 }
 

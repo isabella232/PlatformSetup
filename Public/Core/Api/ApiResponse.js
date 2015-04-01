@@ -1,24 +1,23 @@
 class ApiResponse {
 
 	constructor(httpResponse) {
-		this.originalResponse = httpResponse;
-		this.responseBody = httpResponse;
+		this.response = httpResponse;
 	}
 
 	isError(){
-		return 'errorReport' in this.responseBody;
+		return 'errorReport' in this.response.data;
 	}
 
 	getErrorReport(){
 		if(this.isError()){
-			return this.responseBody.errorReport;
+			return this.response.data.errorReport;
 		}
 		return null;
 	}
 
 	getData(){
-		if('data' in this.responseBody && 'data' in this.responseBody.data){
-			return this.responseBody.data.data;
+		if('data' in this.response && 'data' in this.response.data){
+			return this.response.data.data;
 		}
 		return null;
 	}

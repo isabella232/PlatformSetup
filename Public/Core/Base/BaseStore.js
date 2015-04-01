@@ -230,7 +230,7 @@ class BaseStore extends BaseClass {
 	}
 
 	crudReplace() {
-
+		// Not yet implemented
 	}
 
 	crudUpdate(id, data) {
@@ -249,8 +249,8 @@ class BaseStore extends BaseClass {
 						}
 					});
 				});
-				return response;
 			}
+			return response;
 		});
 	}
 }

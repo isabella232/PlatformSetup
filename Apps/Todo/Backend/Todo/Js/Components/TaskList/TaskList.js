@@ -10,7 +10,7 @@ class TaskList extends BaseComponent {
 	getTemplate() {
 		var DomainPicker = MyDomainPicker.createComponent();
 		if(this.state.filter == 'Pavel'){
-			DomainPicker = window.DomainPicker;
+			DomainPicker = this.getComponent('DomainPicker');
 		}
 		return this.getReactTemplate();
 	}

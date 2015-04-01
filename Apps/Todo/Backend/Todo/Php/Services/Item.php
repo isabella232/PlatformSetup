@@ -150,6 +150,8 @@ class Item implements CrudInterface
      */
     public function crudUpdate($id)
     {
+        throw new RestErrorException('Entity error', 'Entity attribute validation failed', '100456', 422);
+
         $data = $this->httpRequest()->payload();
         $task = TodoTask::findById($id);
         if ($task) {

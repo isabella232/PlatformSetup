@@ -1,6 +1,7 @@
 import StateStore from '/Core/Tools/StateStore';
 import LinkState from '/Core/Tools/LinkState';
 import EventManager from '/Core/EventManager';
+import ActionResult from '/Core/Action/ActionResult';
 
 export default function ComponentSkeleton(self) {
 	/**
@@ -112,7 +113,9 @@ export default function ComponentSkeleton(self) {
 		},
 
 		trigger: function (action, data) {
-			return EventManager.emit(action, data || {}, true);
+			return EventManager.emit(action, data || {}, true).then(results => {
+				return new ActionResult(results);
+			});
 		},
 
 		/**
@@ -177,6 +180,10 @@ export default function ComponentSkeleton(self) {
 
 		getStore(name) {
 			return self.getRegistry().getStore(name);
+		},
+
+		getComponent(name) {
+			return window[name];
 		},
 
 		getParam(name) {

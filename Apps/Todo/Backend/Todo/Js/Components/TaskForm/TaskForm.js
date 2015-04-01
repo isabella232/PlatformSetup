@@ -14,12 +14,15 @@ class TaskForm extends BaseComponent {
 	}
 
 	saveTodo(){
-		this.trigger('Todo.Todo.saveTaskAction', this.state);
-		Router.goTo('TodoItemList');
-
-		/*this.trigger('Todo.Todo.saveTaskAction', this.state).then(responses => {
-			Router.goTo('TodoItemList');
-		}, errors => {});*/
+		this.trigger('Todo.Todo.saveTaskAction', this.state).then(actionResult => {
+			if(!actionResult.hasErrors()){
+				Router.goTo('TodoItemList');
+			} else {
+				actionResult.getErrors().forEach(error => {
+					console.log(error.getCode()+': '+error.getMessage())
+				});
+			}
+		});
 	}
 }
 
