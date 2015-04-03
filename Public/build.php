@@ -26,6 +26,7 @@ class Build
         $arguments->addOption(array('domain', 'd'), 'Domain to load');
         $arguments->addOption(array('app', 'a'), 'App to build');
         $arguments->addFlag(array('dev'), 'Development build');
+        $arguments->addFlag(array('force'), 'Force build of all components');
         $arguments->addFlag(array('help', 'h'), 'Show this help screen');
 
         $arguments->parse();
@@ -63,8 +64,9 @@ class Build
         $appsStorage = ServiceManager::getInstance()->getService('Storage.Apps');
 
         if ($args['dev']) {
+            $force = isset($args['force']);
             $builder = new DevelopmentBuilder();
-            $builder->setAppsStorage($appsStorage)->buildApp($app);
+            $builder->setAppsStorage($appsStorage)->setForceBuild($force)->buildApp($app);
         } else {
             //$builder = new ProductionBuilder($this->_config);
             //$builder->setAppsStorage($this->_storage)->buildApp($app);
