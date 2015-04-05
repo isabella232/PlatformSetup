@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Thead extends BaseComponent {
 
-	getFqn(){
-		return 'Core.Table.Thead';
+	getTemplate(){
+		return '<thead className={this.props.className}>{this.props.children}</thead>';
 	}
 }
 

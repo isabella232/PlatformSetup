@@ -54,8 +54,8 @@ class LinkState {
 				return key.charAt(0).toUpperCase() + key.slice(1);
 			}).join('');
 
-			if (callback && component.hasOwnProperty(callback)) {
-				component[callback](value, oldValue);
+			if (callback) {
+				callback(value, oldValue);
 			} else if (component.hasOwnProperty('onChange' + keyFnName)) {
 				component['onChange' + keyFnName].call(component, value, oldValue);
 			}

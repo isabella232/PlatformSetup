@@ -95,7 +95,7 @@
         <a href="#" class="tablet-navigation"><span></span><span></span><span></span></a>
 
         <div class="search">
-            <input name="" type="text" value="Find content, options or function">
+            <input name="" type="text" value="Find content, options or function" />
             <a href="#" class="btn">
                 <span class="icon-search icon"></span>
             </a>
@@ -204,19 +204,19 @@
                     <span class="top-arr"></span>
                     <li role="presentation">
                         <div class="show-rec">
-                            <input name="" type="checkbox" id="th">
+                            <input name="" type="checkbox" id="th" />
                             <label>Add new post</label>
                         </div>
                     </li>
                     <li role="presentation">
                         <div class="show-rec">
-                            <input name="" type="checkbox" id="fo">
+                            <input name="" type="checkbox" id="fo" />
                             <label>Add new tag</label>
                         </div>
                     </li>
                     <li role="presentation">
                         <div class="show-rec">
-                            <input name="" type="checkbox" id="fi">
+                            <input name="" type="checkbox" id="fi" />
                             <label>Mange users</label>
                         </div>
                     </li>
@@ -243,7 +243,7 @@
             </div>
         </div>
         <div class="search-holder visible-xs">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." />
         </div>
         <div class="left-menu">
             <ul class="nav navbar-nav navbar-right">

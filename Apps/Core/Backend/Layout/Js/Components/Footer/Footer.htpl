@@ -1,38 +1,31 @@
 <footer>
     <div class="developer-mode">
         <span>Developer mode</span>
-        <input type="checkbox" name="my-checkbox" class="switcher">
+        <switch-button bind={this.state.developerMode}/>
     </div>
     <ul class="links">
         <li>
-            <Link href="#">
-            Webiny 2.2</Link>
+            <a href="#">Webiny 2.2</a>
         </li>
         <li>
-            <Link href="#">
-            Legal</Link>
+            <a href="#">Legal</a>
         </li>
         <li>
-            <Link href="#">
-            Copyright</Link>
+            <a href="#">Copyright</a>
         </li>
         <li>
-            <Link href="#">
-            Support</Link>
+            <a href="#">Support</a>
         </li>
     </ul>
     <ul class="links secondary">
         <li>
-            <Link href="#">
-            Help</Link>
+            <a href="#">Help</a>
         </li>
         <li>
-            <Link href="#">
-            Documentation</Link>
+            <a href="#">Documentation</a>
         </li>
         <li>
-            <Link href="#">
-            GitHub</Link>
+            <a href="#">GitHub</a>
         </li>
     </ul>
     <div class="dropdown sort feedback-wrap">

@@ -1,0 +1,12 @@
+<wdiv>
+    <label grid="2">{this.props.label}</label>
+
+    <if cond="this.props.inline">
+        <div class="clear"></div>
+        <switch-button buttons={this.props.buttons || null} valueLink={this.props.valueLink}/>
+    <else/>
+        <div class="col-md-10">
+            <switch-button buttons={this.props.buttons || null} valueLink={this.props.valueLink}/>
+        </div>
+    </if>
+</wdiv>

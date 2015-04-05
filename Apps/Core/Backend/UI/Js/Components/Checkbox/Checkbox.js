@@ -19,16 +19,15 @@ class Checkbox extends BaseComponent {
 		}
 	}
 
-	getDynamicProperties() {
-		return {
-			checked: this.props.valueLink.value === true
-		}
+	getTemplate() {
+		var checked = this.props.valueLink.value === true;
+		return this.getReactTemplate();
 	}
 
 	onChange() {
 		var el = this.getNode(this.state.ref);
 		var checked = $(el).is(':checked');
-		this.props.valueLink.requestChange(checked, this.props['bind-change'] || null);
+		this.props.valueLink.requestChange(checked, this.props.bindChange || null);
 	}
 }
 

@@ -28,11 +28,13 @@ function fooHideWizard(wName){
 
 
         // input
-        $('.checkbox, .radio').iCheck({
+		// Checkbox disabled due to React component
+        /*$('.checkbox, .radio').iCheck({
+        /*$('.checkbox, .radio').iCheck({
             checkboxClass: 'icheckbox_minimal',
             radioClass: 'iradio_minimal',
             increaseArea: '20%' // optional
-        });
+        });*/
         
         // .tablet_nav
         $("a.tablet-navigation").bind('click', function(){
@@ -113,8 +115,8 @@ function fooHideWizard(wName){
         });
         $(".picker-holder img").remove();
 
-        // checkbox
-        $(".switcher").bootstrapSwitch();
+        // checkbox - Disabled due to React
+        //$(".switcher").bootstrapSwitch();
 
         // perfectScrollbar
         $('.left-menu').perfectScrollbar();

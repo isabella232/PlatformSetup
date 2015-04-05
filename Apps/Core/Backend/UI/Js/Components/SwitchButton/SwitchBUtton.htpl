@@ -1,0 +1,8 @@
+<div class={classes}>
+    <div class="bootstrap-switch-container">
+        <span class="bootstrap-switch-handle-on bootstrap-switch-primary">{buttons.on}</span>
+        <label class="bootstrap-switch-label" onClick={this.switch}>&nbsp;</label>
+        <span class="bootstrap-switch-handle-off bootstrap-switch-default">{buttons.off}</span>
+    </div>
+    <input id={this.state.ref} ref={this.state.ref} checked={checked} type="checkbox"/>
+</div>

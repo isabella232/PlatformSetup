@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Table extends BaseComponent {
 
-	getFqn() {
-		return 'Core.Table.Table';
+	getTemplate() {
+		return '<table className={this.classSet(this.dynamic.css)}>{this.props.children}</table>';
 	}
 
 	/**

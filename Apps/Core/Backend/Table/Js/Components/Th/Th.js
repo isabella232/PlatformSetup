@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Th extends BaseComponent {
 
-	getFqn(){
-		return 'Core.Table.Th';
+	getTemplate(){
+		return '<th className={this.props.className}>{this.props.children}</th>';
 	}
 }
 

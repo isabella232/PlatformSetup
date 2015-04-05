@@ -1,44 +1,46 @@
 <div class="col-sm-12">
-    <form name="form">
+    <form-inline name="form">
         <form-group>
-            <label>Create new item</label>
-            <Input grid="2" placeholder="New task" ref="newTask"/>
-            <button class="btn btn-primary col-sm-2" type="submit" onClick={this.addTask}>Add</button>
-            <label>Filter items</label>
-            <Input grid="4" bind="filter" placeholder="Filter..."/>
+            <input grid="12" placeholder="New task" ref="newTask"/>
         </form-group>
-    </form>
+        <form-group>
+            <button class="btn btn-primary col-sm-12" type="submit" onClick={this.addTask}>Add</button>
+        </form-group>
+        <form-group>
+            <input grid="12" bind={this.state.filter} placeholder="Filter..."/>
+        </form-group>
+    </form-inline>
     <if cond="this.state.todos.length == 0">No items available yet...</if>
-    <Table class={{'table-hover': this.state.filter != ''}}>
-        <Thead>
-        <Tr>
-            <Th>#</Th>
-            <Th>ID</Th>
-            <Th>Task</Th>
-            <Th>Created On</Th>
-            <Th>Actions</Th>
-        </Tr>
-        </Thead>
-        <Tbody>
-            <loop items="this.state.todos" as="item" index="i">
-                <Tr class={{danger: item.important, success: item.completed}}>
-                    <Td>{i+1}</Td>
-                    <Td>
-                        <if cond="item.id">{item.id}</if>
-                    </Td>
-                    <Td>{item.task}</Td>
-                    <Td>{item.createdOn}</Td>
-                    <Td>
-                        <if cond="item.id">
-                            <Link class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</Link>
-                            &nbsp;
-                            <button class="btn btn-danger" onClick={this.removeTask.bind(this, item)}>Delete</button>
+    <table class={{'table-hover': this.state.filter !='' }}>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Task</th>
+            <th>Created On</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <loop items="this.state.todos" as="item" index="i">
+            <tr class={{danger: item.important, success: item.completed}}>
+                <td>{i+1}</td>
+                <td>
+                    <if cond="item.id">{item.id}</if>
+                </td>
+                <td>{item.task}</td>
+                <td>{item.createdOn}</td>
+                <td>
+                    <if cond="item.id">
+                        <a class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</a>
+                        &nbsp;
+                        <button class="btn btn-danger" onClick={this.removeTask.bind(this, item)}>Delete</button>
                         <else/>
-                            Saving...
-                        </if>
-                    </Td>
-                </Tr>
-            </loop>
-        </Tbody>
-    </Table>
+                        Saving...
+                    </if>
+                </td>
+            </tr>
+        </loop>
+        </tbody>
+    </table>
 </div>
