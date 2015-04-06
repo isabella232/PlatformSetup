@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class FormInline extends BaseComponent {
 
-	getFqn(){
-		return 'Core.View.FormInline';
+	getTemplate(){
+		return '<form name={this.props.name} ref={this.props.name} class="form-inline">{this.props.children}</form>';
 	}
 }
 

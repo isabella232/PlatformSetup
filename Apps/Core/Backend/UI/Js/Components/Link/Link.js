@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Link extends BaseComponent {
 
-	getFqn(){
-		return 'Core.View.Link';
+	getTemplate(){
+		return '<a href={this.dynamic.link} class={this.dynamic.classes}>{this.props.children}</a>';
 	}
 	
 	getDynamicProperties(){

@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class GridContainer extends BaseComponent {
 
-	getFqn(){
-		return 'Core.View.GridContainer';
+	getTemplate(){
+		return '<div class="container">{this.props.children}</div>';
 	}
 }
 

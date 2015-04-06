@@ -1,4 +1,4 @@
-import DomainPicker from '/Apps/Core/Layout/Js/Components/DomainPicker/DomainPicker';
+import DomainPicker from '/Apps/Core/Layout/Js/Components/DomainPicker';
 
 class MyDomainPicker extends DomainPicker {
 
@@ -8,9 +8,6 @@ class MyDomainPicker extends DomainPicker {
 		return state;
 	}
 
-	getFqn() {
-		return 'Core.Layout.MyDomainPickerComponent';
-	}
 }
 
 export default MyDomainPicker;

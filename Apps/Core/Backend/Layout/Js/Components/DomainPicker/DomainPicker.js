@@ -2,7 +2,7 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class DomainPicker extends BaseComponent {
 
-	getInitialState(){
+	getInitialState() {
 		return {
 			domains: [
 				{name: "www.booking.com"},
@@ -10,10 +10,6 @@ class DomainPicker extends BaseComponent {
 				{name: "www.google.com"}
 			]
 		}
-	}
-
-	getFqn() {
-		return 'Core.Layout.DomainPickerComponent';
 	}
 }
 

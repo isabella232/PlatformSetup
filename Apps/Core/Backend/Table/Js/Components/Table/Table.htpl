@@ -1,0 +1,1 @@
+<table class={css}>{this.props.children}</table>

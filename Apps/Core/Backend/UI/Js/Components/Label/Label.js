@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Label extends BaseComponent {
 
-	getFqn() {
-		return 'Core.View.Label';
+	getTemplate() {
+		return '<label class={this.state.css}>{this.props.children}</label>';
 	}
 
 	getInitialState() {
@@ -13,10 +13,7 @@ class Label extends BaseComponent {
 			}
 		};
 		
-		if(this.props.grid !== false){
-			var css = "col-sm-" + this.props.grid;
-			state.css[css] = true;
-		}
+		state.css["col-sm-" + this.props.grid] = true;
 
 		return state;
 	}

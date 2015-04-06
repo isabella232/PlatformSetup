@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class FormGroup extends BaseComponent {
 
-	getFqn(){
-		return 'Core.View.FormGroup';
+	getTemplate(){
+		return '<div class="form-group">{this.props.children}</div>';
 	}
 }
 

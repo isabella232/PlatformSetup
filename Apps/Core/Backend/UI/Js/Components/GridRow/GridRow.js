@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class GridRow extends BaseComponent {
 
-	getFqn(){
-		return 'Core.View.GridRow';
+	getTemplate(){
+		return '<div class="row">{this.props.children}</div>';
 	}
 }
 

@@ -2,10 +2,6 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class SwitchButton extends BaseComponent {
 
-	getFqn() {
-		return 'Core.View.SwitchButton';
-	}
-
 	getInitialState(){
 		return {
 			ref: Tools.createUID()

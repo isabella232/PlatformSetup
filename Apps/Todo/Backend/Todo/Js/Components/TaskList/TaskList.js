@@ -1,11 +1,7 @@
 import BaseComponent from '/Core/Base/BaseComponent';
-import MyDomainPicker from '/Apps/Core/Layout/Js/Components/MyDomainPicker/MyDomainPicker';
+import MyDomainPicker from '/Apps/Core/Layout/Js/Components/MyDomainPicker';
 
 class TaskList extends BaseComponent {
-
-	getFqn() {
-		return 'Todo.Todo.ListComponent';
-	}
 
 	getTemplate() {
 		var DomainPicker = MyDomainPicker.createComponent();

@@ -2,10 +2,6 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Checkbox extends BaseComponent {
 
-	getFqn() {
-		return 'Core.View.Checkbox';
-	}
-
 	getInitialState() {
 		return {
 			ref: Tools.createUID()

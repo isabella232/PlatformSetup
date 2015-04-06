@@ -2,8 +2,8 @@ import BaseComponent from '/Core/Base/BaseComponent';
 
 class Grid12 extends BaseComponent {
 
-	getFqn(){
-		return 'Core.View.Grid12';
+	getTemplate(){
+		return '<div class="col-xs-12 col-sm-12">{this.props.children}</div>';
 	}
 }
 

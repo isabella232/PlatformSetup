@@ -5,7 +5,7 @@ var traceurSystem = System;
 class SystemLoader extends TraceurLoader {
 	constructor() {
 		super(webLoader, window.location.href);
-		this.componentsRegex = /Apps\/([\w+]*)\/([\w+]*)\/Js\/Components\/([\w+]*)\/([\w+]*)/;
+		this.componentsRegex = /Apps\/([\w+]*)\/([\w+]*)\/Js\/Components\/([\w+\/]*)/;
 		this.storesRegex = /Apps\/([\w+]*)\/([\w+]*)\/Js\/Stores\/([\w+]*)/;
 	}
 

@@ -7,10 +7,6 @@ import EventManager from '/Core/EventManager';
  */
 class Layout extends BaseComponent {
 
-	getFqn() {
-		return 'Core.Layout.LayoutComponent';
-	}
-
 	componentDidMount() {
 		EventManager.addListener('renderRoute', () => {
 			this.setState({
