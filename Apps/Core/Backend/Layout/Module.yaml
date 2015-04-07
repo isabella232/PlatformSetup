@@ -10,6 +10,7 @@ Assets:
         - Css/perfect-scrollbar.css
         - Css/jquery-ui.css
         - Css/animation.css
+        - Css/jgrowl.css
         - Css/webiny_style.css
         - Css/webiny_general.css
         - Css/webiny_modal.css

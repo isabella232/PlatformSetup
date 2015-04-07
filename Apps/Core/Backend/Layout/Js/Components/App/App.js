@@ -2,10 +2,10 @@ import BaseComponent from '/Core/Base/BaseComponent';
 import EventManager from '/Core/EventManager';
 
 /**
- * Class Layout is the main container that will hold all other components.
+ * App is the main container that will hold all other components.
  * This component is the first one to render in the <body> element.
  */
-class Layout extends BaseComponent {
+class App extends BaseComponent {
 
 	componentDidMount() {
 		EventManager.addListener('renderRoute', () => {
@@ -13,7 +13,8 @@ class Layout extends BaseComponent {
 				time: new Date().getTime()
 			});
 		});
+		window['App']  = this;
 	}
 }
 
-export default Layout;
+export default App;

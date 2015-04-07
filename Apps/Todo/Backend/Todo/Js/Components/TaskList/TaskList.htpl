@@ -1,4 +1,16 @@
 <div class="col-sm-12">
+    <GridContainer>
+        <GridRow>
+            <Grid4>Col-1</Grid4>
+            <Grid4>Col-2</Grid4>
+            <Grid4>Col-3</Grid4>
+        </GridRow>
+
+        <GridRow>
+            <Grid6>Col-Half</Grid6>
+            <Grid6>Col-Half</Grid6>
+        </GridRow>
+    </GridContainer>
     <form-inline name="form">
         <form-group>
             <input grid="12" placeholder="New task" ref="newTask"/>

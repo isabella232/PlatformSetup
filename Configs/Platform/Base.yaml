@@ -10,7 +10,7 @@ Platform:
     Bootstrap:
         App: Core
         Module: Layout
-        Component: Layout
+        Component: App
 
 Database:
     Host: 127.0.0.1:27017

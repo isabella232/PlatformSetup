@@ -19,7 +19,7 @@ window.Http = Http;
 
 import CoreApp from '/Apps/Core/Build/Development/Backend/App.js';
 import TodoApp from '/Apps/Todo/Build/Development/Backend/App.js';
-import MainComponent from '/Apps/Core/Layout/Js/Components/Layout';
+import MainComponent from '/Apps/Core/Layout/Js/Components/App';
 var coreApp = new CoreApp();
 var todoApp = new TodoApp();
 

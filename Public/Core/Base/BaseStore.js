@@ -19,6 +19,10 @@ class BaseStore extends BaseClass {
 	constructor() {
 		this.data = {};
 		var service = this.getService();
+		if(!service){
+			this.initialized = true;
+			return;
+		}
 		if (service instanceof ApiService) {
 			this.api = service;
 		} else {

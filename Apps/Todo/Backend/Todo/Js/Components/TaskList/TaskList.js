@@ -1,5 +1,6 @@
 import BaseComponent from '/Core/Base/BaseComponent';
 import MyDomainPicker from '/Apps/Core/Layout/Js/Components/MyDomainPicker';
+import Growl from '/Apps/Core/Backend/UI/Js/Classes/Growl';
 
 class TaskList extends BaseComponent {
 
@@ -36,6 +37,8 @@ class TaskList extends BaseComponent {
 
 	addTask() {
 		var input = this.getNode('newTask');
+		this.trigger('Core.UI.AddGrowl', new Growl(input.value));
+		return;
 		this.trigger('Todo.Todo.addTodoAction', {task: input.value});
 		input.value = '';
 	}

@@ -1,5 +1,7 @@
+<!-- Main App Layout -->
 <div class="master minimized">
     <Navigation/>
+    <Growler/>
     <div class="master-content container-fluid">
         <placeholder name="MasterContent"/>
     </div>
