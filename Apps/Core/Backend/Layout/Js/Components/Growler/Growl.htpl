@@ -1,9 +1,7 @@
-<wdiv>
-    <div class="jGrowl-notification ui-state-highlight ui-corner-all default" style={{display:'block'}}>
+<div ref={growl.id} class="jGrowl-notification ui-state-highlight ui-corner-all default" style={{display:'block'}}>
     <div class="jGrowl-close">x</div>
     <if cond="growl.title">
         <div class="jGrowl-header">{growl.title}</div>
     </if>
     <div class="jGrowl-message">{growl.message}</div>
-    </div>
-</wdiv>
+</div>

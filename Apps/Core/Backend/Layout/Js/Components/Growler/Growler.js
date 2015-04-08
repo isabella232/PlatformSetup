@@ -11,7 +11,11 @@ class Growler extends BaseComponent {
 		});
 	}
 
-	removeGrowl(ref){
+	removeGrowl(id){
+		$(this.getNode(id)).fadeOut();
+		setTimeout(() => {
+			this.trigger('Core.UI.RemoveGrowl', id);
+		}, 500);
 
 	}
 

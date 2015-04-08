@@ -17,10 +17,11 @@ class GrowlsStore extends BaseStore {
 		this.emitChange();
 	}
 
-	_onRemoveGrowl(growl) {
+	_onRemoveGrowl(id) {
 		this.data.forEach((item, index) => {
-			if (growl == item) {
-				this.data.splice(index, 1);
+			if (id == item.id) {
+				delete this.data[index];
+				this.emitChange();
 			}
 		});
 	}
