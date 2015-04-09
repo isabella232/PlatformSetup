@@ -25,6 +25,7 @@
     <script src="/Assets/React/react-with-addons.js"></script>
     <script src="/Assets/Lib/q/q.js"></script>
     <script src="/Assets/Lib/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.6.0/lodash.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet'
           type='text/css'>
     <!-- Bootstrap CSS -->

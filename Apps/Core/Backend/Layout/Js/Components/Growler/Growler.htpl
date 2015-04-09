@@ -3,4 +3,7 @@
     <loop items="this.state.growls" as="growl">
         <Growl growl={growl} on-remove={this.removeGrowl} ref={growl.id} />
     </loop>
+    <if cond="Object.keys(this.state.growls).length > 1">
+        <div class="jGrowl-closer highlight ui-corner-all default" onClick={this.removeAll}>[ close all ]</div>
+    </if>
 </div>

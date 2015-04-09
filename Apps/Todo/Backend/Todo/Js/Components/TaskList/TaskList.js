@@ -37,15 +37,21 @@ class TaskList extends BaseComponent {
 
 	addTask() {
 		var input = this.getNode('newTask');
-		this.trigger('Core.UI.AddGrowl', new Growl(input.value));
-		return;
-		this.trigger('Todo.Todo.addTodoAction', {task: input.value});
+		var taskName = input.value;
+		this.trigger('Todo.Todo.addTodoAction', {task: taskName}).then(actionResult => {
+			if(!actionResult.hasErrors()){
+				this.trigger('Core.UI.AddGrowl', new Growl(taskName, 'New task created!', true));
+			}
+		});
 		input.value = '';
 	}
 
 	removeTask(id) {
-		//var id = $(e.target).attr('data-id');
-		this.trigger('Todo.Todo.removeTodoAction', id);
+		this.trigger('Todo.Todo.removeTodoAction', id).then(actionResult => {
+			if(!actionResult.hasErrors()){
+				this.trigger('Core.UI.AddGrowl', new Growl('Task deleted successfully!'));
+			}
+		});
 	}
 
 	onChangeFilter(newValue, oldValue) {

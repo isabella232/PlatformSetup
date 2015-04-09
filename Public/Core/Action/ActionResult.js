@@ -1,4 +1,5 @@
 import ActionError from '/Core/Action/ActionError';
+import ApiResponse from '/Core/Api/ApiResponse';
 
 class ActionResult {
 	constructor(results) {
@@ -8,7 +9,7 @@ class ActionResult {
 	hasErrors(){
 		var errors = 0;
 		this.results.forEach(result => {
-			if(result.isError()){
+			if(result instanceof ApiResponse && result.isError()){
 				errors++;
 			}
 		});

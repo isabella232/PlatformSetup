@@ -7,23 +7,25 @@ class GrowlsStore extends BaseStore {
 	}
 
 	init() {
-		this.data = [];
+		this.data = {};
 		this.onAction('Core.UI.AddGrowl', this._onAddGrowl);
 		this.onAction('Core.UI.RemoveGrowl', this._onRemoveGrowl);
+		this.onAction('Core.UI.RemoveGrowls', this._onRemoveGrowls);
 	}
 
 	_onAddGrowl(growl) {
-		this.data.push(growl);
+		this.data[growl.id] = growl;
 		this.emitChange();
 	}
 
 	_onRemoveGrowl(id) {
-		this.data.forEach((item, index) => {
-			if (id == item.id) {
-				delete this.data[index];
-				this.emitChange();
-			}
-		});
+		delete this.data[id];
+		this.emitChange();
+	}
+
+	_onRemoveGrowls() {
+		this.data = {};
+		this.emitChange();
 	}
 }
 

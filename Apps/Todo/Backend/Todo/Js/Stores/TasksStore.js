@@ -24,7 +24,8 @@ class TasksStore extends BaseStore {
 	}
 
 	_onAddTask(task) {
-		this.crudCreate(task);
+		return true;
+		return this.crudCreate(task);
 	}
 
 	_onSaveTask(task) {
@@ -32,7 +33,7 @@ class TasksStore extends BaseStore {
 	}
 
 	_onRemoveTask(item) {
-		this.crudDelete(item);
+		return this.crudDelete(item);
 	}
 }
 

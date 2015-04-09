@@ -1,11 +1,19 @@
 import BaseComponent from '/Core/Base/BaseComponent';
 
 class Growl extends BaseComponent {
-
+	
 	componentDidMount() {
-		setTimeout(() => {
+		if(!this.props.growl.sticky){
+			setTimeout(() => {
+				this.close();
+			}, this.props.growl.ttl || 3000);
+		}
+	}
+
+	close(){
+		if(this.isMounted()){
 			this.props.onRemove(this.props.growl.id);
-		}, 3000);
+		}
 	}
 
 	getTemplate(){

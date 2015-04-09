@@ -8,15 +8,19 @@ class Growler extends BaseComponent {
 		// Listen to store changes
 		this.onStore(this.store, (data) => {
 			this.setState({growls: data});
+
 		});
 	}
 
 	removeGrowl(id){
-		$(this.getNode(id)).fadeOut();
+		$(this.getNode(id)).fadeOut(400);
 		setTimeout(() => {
 			this.trigger('Core.UI.RemoveGrowl', id);
-		}, 500);
+		}, 400);
+	}
 
+	removeAll(){
+		this.trigger('Core.UI.RemoveGrowls');
 	}
 
 	getInitialState() {
