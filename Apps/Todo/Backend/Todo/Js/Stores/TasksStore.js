@@ -24,8 +24,7 @@ class TasksStore extends BaseStore {
 	}
 
 	_onAddTask(task) {
-		return true;
-		return this.crudCreate(task);
+		return this.crudCreate(task, {postPush: true});
 	}
 
 	_onSaveTask(task) {

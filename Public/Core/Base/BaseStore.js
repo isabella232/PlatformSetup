@@ -169,20 +169,28 @@ class BaseStore extends BaseClass {
 		// Merge default options with options from arguments
 		Object.assign(config, defaultOptions, options);
 
+		// Disable prePush if postPush is set in the options
+		if(options.postPush){
+			config.prePush = false;
+		}
+
 		if (config.prePush) {
 			config.postPush = false;
 			this.data.push(data);
 			this.emitChange();
 		}
 
-		return this.api.crudCreate(data).then((response) => {
+		return this.api.crudCreate(data).then(apiResponse => {
+			if(apiResponse.isError()){
+				return apiResponse;
+			}
 			// Unset all object properties but keep an object reference
 			Object.keys(data).map((key) => {
 				delete data[key];
 			});
 
 			// Assign response data to the original object reference
-			Object.assign(data, response.getData());
+			Object.assign(data, apiResponse.getData());
 
 			if (config.postPush) {
 				this.data.push(data);
@@ -191,7 +199,7 @@ class BaseStore extends BaseClass {
 			if (config.emit) {
 				this.emitChange();
 			}
-			return response;
+			return apiResponse;
 		});
 	}
 

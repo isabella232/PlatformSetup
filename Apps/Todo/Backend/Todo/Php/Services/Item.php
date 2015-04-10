@@ -10,13 +10,14 @@ use Webiny\Component\Mongo\MongoException;
 use Webiny\Component\Rest\Interfaces\CrudInterface;
 use Webiny\Component\Rest\RestErrorException;
 use Webiny\Component\Rest\RestTrait;
+use Webiny\Component\StdLib\StdLibTrait;
 use Webiny\Component\StdLib\StdObject\ArrayObject\ArrayObject;
 use Webiny\Platform\Responses\JsonErrorResponse;
 use Webiny\Platform\Responses\JsonResponse;
 
 class Item implements CrudInterface
 {
-    use HttpTrait, RestTrait;
+    use HttpTrait, RestTrait, StdLibTrait;
 
     /**
      * Restore a record by given ID
@@ -53,13 +54,16 @@ class Item implements CrudInterface
      *
      * @rest.default
      * @rest.method post
-     *
      * @return array|mixed Array containing the newly created record.
+     * @throws RestErrorException
      */
     public function crudCreate()
     {
         $task = new TodoTask();
         $task->task = $this->httpRequest()->payload('task');
+        if($this->str($task->task)->contains('error')){
+            throw new RestErrorException('Entity error', 'Entity attribute validation failed', '100456', 422);
+        }
         $task->save();
 
         return $task->toArray();
@@ -150,8 +154,6 @@ class Item implements CrudInterface
      */
     public function crudUpdate($id)
     {
-        //throw new RestErrorException('Entity error', 'Entity attribute validation failed', '100456', 422);
-
         $data = $this->httpRequest()->payload();
         $task = TodoTask::findById($id);
         if ($task) {

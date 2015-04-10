@@ -5,5 +5,5 @@
     <div class="master-content container-fluid">
         <placeholder name="MasterContent"/>
     </div>
-    <Footer/>
+    <Footer app={this}/>
 </div>

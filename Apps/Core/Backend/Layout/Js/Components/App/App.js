@@ -15,6 +15,12 @@ class App extends BaseComponent {
 		});
 		window['App']  = this;
 	}
+
+	getInitialState(){
+		return {
+			developerMode: false
+		};
+	}
 }
 
 export default App;

@@ -1,12 +1,14 @@
 import BaseComponent from '/Core/Base/BaseComponent';
 import MyDomainPicker from '/Apps/Core/Layout/Js/Components/MyDomainPicker';
-import Growl from '/Apps/Core/Backend/UI/Js/Classes/Growl';
+import InfoGrowl from '/Apps/Core/Backend/UI/Js/Classes/InfoGrowl';
+import SuccessGrowl from '/Apps/Core/Backend/UI/Js/Classes/SuccessGrowl';
+import DangerGrowl from '/Apps/Core/Backend/UI/Js/Classes/DangerGrowl';
 
 class TaskList extends BaseComponent {
 
 	getTemplate() {
 		var DomainPicker = MyDomainPicker.createComponent();
-		if(this.state.filter == 'Pavel'){
+		if (this.state.filter == 'Pavel') {
 			DomainPicker = this.getComponent('DomainPicker');
 		}
 		return this.getReactTemplate();
@@ -39,17 +41,25 @@ class TaskList extends BaseComponent {
 		var input = this.getNode('newTask');
 		var taskName = input.value;
 		this.trigger('Todo.Todo.addTodoAction', {task: taskName}).then(actionResult => {
-			if(!actionResult.hasErrors()){
-				this.trigger('Core.UI.AddGrowl', new Growl(taskName, 'New task created!', true));
+			if (!actionResult.hasErrors()) {
+				this.trigger('Core.UI.AddGrowl', new SuccessGrowl(taskName, 'New task created!'));
+			} else {
+				var message = 'Click to view details';
+				var growl = new DangerGrowl([message, () => {this.errorDetails('YEAH!!')}], 'Failed to create new task', true);
+				this.trigger('Core.UI.AddGrowl', growl);
 			}
 		});
 		input.value = '';
 	}
 
+	errorDetails(growl) {
+		alert(growl);
+	}
+
 	removeTask(id) {
 		this.trigger('Todo.Todo.removeTodoAction', id).then(actionResult => {
-			if(!actionResult.hasErrors()){
-				this.trigger('Core.UI.AddGrowl', new Growl('Task deleted successfully!'));
+			if (!actionResult.hasErrors()) {
+				this.trigger('Core.UI.AddGrowl', new InfoGrowl('Task deleted successfully!'));
 			}
 		});
 	}

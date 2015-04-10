@@ -3,7 +3,7 @@ import BaseComponent from '/Core/Base/BaseComponent';
 class Link extends BaseComponent {
 
 	getTemplate(){
-		return '<a href={this.dynamic.link} class={this.dynamic.classes}>{this.props.children}</a>';
+		return '<a href={this.dynamic.link} class={this.dynamic.classes} onClick={this.props.onClick}>{this.props.children}</a>';
 	}
 	
 	getDynamicProperties(){
