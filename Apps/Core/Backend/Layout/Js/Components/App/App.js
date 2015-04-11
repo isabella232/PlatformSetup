@@ -8,12 +8,24 @@ import EventManager from '/Core/EventManager';
 class App extends BaseComponent {
 
 	componentDidMount() {
+
 		EventManager.addListener('renderRoute', () => {
 			this.setState({
 				time: new Date().getTime()
 			});
 		});
-		window['App']  = this;
+
+		this.appStore = this.getStore('Core.Layout.AppStore');
+
+		// Get initial data
+		this.appStore.getData().then(data => {
+			this.setState(data);
+		});
+
+		// Listen to store changes
+		this.onStore(this.appStore, (data) => {
+			this.setState(data);
+		});
 	}
 
 	getInitialState(){

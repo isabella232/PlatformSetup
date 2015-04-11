@@ -51,47 +51,74 @@
 <script>
 
     // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
-    var links = [{
-        "source": "WebMongo.Database.DatabaseStore",
-        "target": "WebMongo.Database.addDatabaseAction",
-        "sourceType": "store",
-        "targetType": "action"
-    }, {
-        "source": "WebMongo.Database.CollectionStore",
-        "target": "WebMongo.Database.addDatabaseAction",
-        "sourceType": "store",
-        "targetType": "action"
-    }, {
-        "source": "WebMongo.Database.DatabaseStore",
-        "target": "WebMongo.Database.removeDatabaseAction",
-        "sourceType": "store",
-        "targetType": "action"
-    }, {
-        "source": "WebMongo.Database.CollectionStore",
-        "target": "WebMongo.Database.removeDatabaseAction",
-        "sourceType": "store",
-        "targetType": "action"
-    }, {
-        "source": "WebMongo.Database.ListComponent",
-        "target": "WebMongo.Database.DatabaseStore",
-        "sourceType": "component",
-        "targetType": "store"
-    }, {
-        "source": "WebMongo.Database.ChatboxComponent",
-        "target": "WebMongo.Database.DatabaseStore",
-        "sourceType": "component",
-        "targetType": "store"
-    }, {
-        "source": "WebMongo.Database.UserProfileComponent",
-        "target": "WebMongo.Database.CollectionStore",
-        "sourceType": "component",
-        "targetType": "store"
-    }, {
-        "source": "WebMongo.Database.DatabasesListComponent",
-        "target": "WebMongo.Database.DatabaseStore",
-        "sourceType": "component",
-        "targetType": "store"
-    }];
+    var links = [
+        {
+            "source": "Core.UI.GrowlsStore",
+            "target": "Core.UI.AddGrowl",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Core.UI.GrowlsStore",
+            "target": "Core.UI.RemoveGrowl",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Core.UI.GrowlsStore",
+            "target": "Core.UI.RemoveGrowls",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Core.Layout.Growler",
+            "target": "Core.UI.GrowlsStore",
+            "sourceType": "component",
+            "targetType": "store"
+        },
+        {
+            "source": "Todo.Todo.TasksStore",
+            "target": "Todo.Todo.addTodoAction",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Todo.Todo.TasksStore",
+            "target": "Todo.Todo.saveTaskAction",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Todo.Todo.TasksStore",
+            "target": "Todo.Todo.removeTodoAction",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Todo.Todo.TaskList",
+            "target": "Todo.Todo.TasksStore",
+            "sourceType": "component",
+            "targetType": "store"
+        },
+        {
+            "source": "Core.Layout.AppStore",
+            "target": "App.ToggleDeveloperMode",
+            "sourceType": "store",
+            "targetType": "action"
+        },
+        {
+            "source": "Core.Layout.Footer",
+            "target": "Core.Layout.AppStore",
+            "sourceType": "component",
+            "targetType": "store"
+        },
+        {
+            "source": "Core.Layout.App",
+            "target": "Core.Layout.AppStore",
+            "sourceType": "component",
+            "targetType": "store"
+        }
+    ];
 
     var nodes = {};
 

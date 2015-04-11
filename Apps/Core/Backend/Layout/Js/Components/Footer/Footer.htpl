@@ -1,32 +1,21 @@
 <footer>
     <div class="developer-mode">
         <span>Developer mode</span>
-        <switch-button bind={this.state.developerMode}/>
+        <switch-button bind={this.state.developerMode} bind-change={this.toggleDeveloperMode}/>
     </div>
     <ul class="links">
-        <li>
-            <a href="#">Webiny 2.2</a>
-        </li>
-        <li>
-            <a href="#">Legal</a>
-        </li>
-        <li>
-            <a href="#">Copyright</a>
-        </li>
-        <li>
-            <a href="#">Support</a>
-        </li>
+        <loop items="this.state.links">
+            <li>
+                <a href={item.url}>{item.name}</a>
+            </li>
+        </loop>
     </ul>
     <ul class="links secondary">
-        <li>
-            <a href="#">Help</a>
-        </li>
-        <li>
-            <a href="#">Documentation</a>
-        </li>
-        <li>
-            <a href="#">GitHub</a>
-        </li>
+        <!--<loop items="this.state.linksSecondary">
+            <li>
+                <a href={item.url}>{item.name}</a>
+            </li>
+        </loop>-->
     </ul>
     <div class="dropdown sort feedback-wrap">
         <button class="btn btn-default dropdown-toggle feedback" type="button">

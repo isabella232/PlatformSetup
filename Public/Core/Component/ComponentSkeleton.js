@@ -113,7 +113,7 @@ export default function ComponentSkeleton(self) {
 		},
 
 		trigger: function (action, data) {
-			return EventManager.emit(action, data || {}, true).then(results => {
+			return EventManager.emit(action, data, true).then(results => {
 				return new ActionResult(results);
 			});
 		},

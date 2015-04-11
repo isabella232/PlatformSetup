@@ -1,0 +1,24 @@
+import BaseStore from '/Core/Base/BaseStore';
+
+class AppStore extends BaseStore {
+
+	getFqn() {
+		return 'Core.Layout.AppStore';
+	}
+
+	getInitialData(){
+		return Q.when({
+			developerMode: true
+		});
+	}
+
+	init() {
+		this.data = {};
+		this.onAction('App.ToggleDeveloperMode', (mode) => {
+			this.data.developerMode = mode;
+			this.emitChange();
+		});
+	}
+}
+
+export default AppStore;

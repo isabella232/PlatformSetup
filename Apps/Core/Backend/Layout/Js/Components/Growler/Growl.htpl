@@ -3,5 +3,13 @@
     <if cond="growl.title">
         <div class="growl-header">{growl.title}</div>
     </if>
-    <div class="growl-message">{message}</div>
+    <loop items="messages">
+        <div class="growl-message">
+            <if cond="item[1]">
+                <a onClick={() => {item[1].apply(null, item[2])}}>{item[0]}</a>
+            <else/>
+                {item[0]}
+            </if>
+        </div>
+    </loop>
 </div>

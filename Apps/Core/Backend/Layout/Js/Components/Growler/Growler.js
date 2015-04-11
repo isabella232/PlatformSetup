@@ -8,7 +8,6 @@ class Growler extends BaseComponent {
 		// Listen to store changes
 		this.onStore(this.store, (data) => {
 			this.setState({growls: data});
-
 		});
 	}
 
