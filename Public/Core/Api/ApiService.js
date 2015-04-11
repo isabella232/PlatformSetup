@@ -29,6 +29,10 @@ class ApiService {
 		return Http.delete(_apiUrl + this.url + '/' + id).then(handleResponse).catch(handleResponse);
 	}
 
+	crudRestore(id) {
+		return Http.post(_apiUrl + this.url + '/restore/'+id).then(handleResponse).catch(handleResponse);
+	}
+
 	crudReplace() {
 
 	}

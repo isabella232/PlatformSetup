@@ -127,8 +127,8 @@ class BaseStore extends BaseClass {
 		// Merge default options with options from arguments
 		Object.assign(config, defaultOptions, options);
 
-		return this.api.crudList(config).then((response) => {
-			if (!response.isError()) {
+		return this.api.crudList(config).then(apiResponse => {
+			if (!apiResponse.isError()) {
 				if (config.push) {
 					// Unset all object properties but keep an object reference
 					Object.keys(this.data).map((key) => {
@@ -136,14 +136,14 @@ class BaseStore extends BaseClass {
 					});
 
 					// Assign response data to the original object reference
-					Object.assign(this.data, response.getData());
+					Object.assign(this.data, apiResponse.getData());
 				}
 
 				if (config.emit) {
 					this.emitChange();
 				}
 			}
-			return response;
+			return apiResponse;
 		});
 	}
 
@@ -241,6 +241,16 @@ class BaseStore extends BaseClass {
 		return this.api.crudGet(id);
 	}
 
+	crudRestore(id){
+		return this.api.crudRestore(id).then(apiResponse => {
+			if (!apiResponse.isError()) {
+				this.data.push(apiResponse.getData());
+				this.emitChange();
+			}
+			return apiResponse;
+		});
+	}
+
 	crudReplace() {
 		// Not yet implemented
 	}
@@ -251,8 +261,8 @@ class BaseStore extends BaseClass {
 			id = id.id;
 		}
 
-		return this.api.crudUpdate(id, data).then(response => {
-			if (!response.isError()) {
+		return this.api.crudUpdate(id, data).then(apiResponse => {
+			if (!apiResponse.isError()) {
 				this.getData().then(storeData => {
 					storeData.forEach((item, index) => {
 						if (item.id == id) {
@@ -262,7 +272,7 @@ class BaseStore extends BaseClass {
 					});
 				});
 			}
-			return response;
+			return apiResponse;
 		});
 	}
 }

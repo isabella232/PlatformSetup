@@ -19,7 +19,6 @@ class Growl extends BaseComponent {
 	getTemplate() {
 		var growl = this.props.growl;
 		var classes = 'growl-notification ' + growl.class;
-		var messages = growl.message.messages;
 		return this.getReactTemplate();
 	}
 }

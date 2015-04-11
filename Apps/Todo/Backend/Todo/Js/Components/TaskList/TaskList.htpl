@@ -34,7 +34,7 @@
                     <if cond="item.id">
                         <a class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</a>
                         &nbsp;
-                        <button class="btn btn-danger" onClick={this.removeTask.bind(this, item)}>Delete</button>
+                        <button class="btn btn-danger" onClick={() => {this.removeTask(item)}}>Delete</button>
                         <else/>
                         Saving...
                     </if>

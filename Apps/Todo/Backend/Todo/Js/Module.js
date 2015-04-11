@@ -2,8 +2,15 @@ import BaseModule from '/Core/Base/BaseModule'
 import ListComponent from '/Apps/Todo/Todo/Js/Components/TaskList'
 import FormComponent from '/Apps/Todo/Todo/Js/Components/TaskForm'
 import TasksStore from '/Apps/Todo/Todo/Js/Stores/TasksStore'
+import ChatBox from '/Apps/Todo/Todo/Js/Components/ChatBox'
 
 class Todo extends BaseModule {
+
+	registerComponents(){
+		return {
+			ChatBox: ChatBox
+		};
+	}
 
 	registerRoutes() {
 		return {

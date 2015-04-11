@@ -15,6 +15,14 @@ class Tools {
 			return data;
 		});
 	}
+
+
+	keys(obj){
+		if(obj instanceof Array) {
+			return [...obj.keys()];
+		}
+		return Object.keys(obj);
+	}
 }
 
 export default new Tools;

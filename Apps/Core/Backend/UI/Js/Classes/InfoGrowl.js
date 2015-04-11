@@ -1,19 +1,38 @@
-import GrowlMessage from '/Apps/Core/Backend/UI/Js/Classes/GrowlMessage';
+import GrowlText from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlText';
 
 class InfoGrowl {
 
 	constructor(message, title = false, sticky = false, ttl = 3000) {
+		this.messages = [];
 		this.id = Tools.createUID();
-		if (message instanceof GrowlMessage) {
-			this.message = message;
-		} else {
-			this.message = new GrowlMessage();
-			this.message.addMessage(message);
-		}
 		this.title = title;
 		this.sticky = sticky;
 		this.ttl = ttl;
 		this.class = 'info';
+
+		this.addMessage(message);
+	}
+
+	setTitle(title) {
+		this.title = title;
+		return this;
+	}
+
+	setSticky(sticky = true) {
+		this.sticky = sticky;
+		return this;
+	}
+
+	addMessage(message){
+		if(!message){
+			return this;
+		}
+
+		if (typeof message == 'string') {
+			message = new GrowlText(message);
+		}
+		this.messages.push(message);
+		return this;
 	}
 }
 

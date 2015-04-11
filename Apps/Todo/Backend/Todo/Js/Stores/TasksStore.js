@@ -15,6 +15,7 @@ class TasksStore extends BaseStore {
 		this.onAction('Todo.Todo.addTodoAction', this._onAddTask);
 		this.onAction('Todo.Todo.saveTaskAction', this._onSaveTask);
 		this.onAction('Todo.Todo.removeTodoAction', this._onRemoveTask);
+		this.onAction('Todo.Todo.restoreTodoAction', this._onRestoreTask);
 	}
 
 	getInitialData(){
@@ -33,6 +34,10 @@ class TasksStore extends BaseStore {
 
 	_onRemoveTask(item) {
 		return this.crudDelete(item);
+	}
+
+	_onRestoreTask(item) {
+		return this.crudRestore(item.id);
 	}
 }
 
