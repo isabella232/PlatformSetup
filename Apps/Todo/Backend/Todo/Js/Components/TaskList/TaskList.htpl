@@ -43,4 +43,16 @@
         </loop>
         </tbody>
     </table>
+
+    <modal ref="deleteConfirmationModal" title="Delete confirmation"
+           on-hide={this.taskModalHide} on-hidden={this.taskModalHidden}>
+        <modal-body>
+            <p>Neki bedasti content!</p>
+        </modal-body>
+        <modal-footer>
+            <button modal-dismiss={this.refs.deleteConfirmationModal} class="btn btn-primary">Close</button>
+        </modal-footer>
+    </modal>
+
+    <button modal-trigger={this.refs.deleteConfirmationModal} class="btn btn-info">Trigger demo modal</button>
 </div>

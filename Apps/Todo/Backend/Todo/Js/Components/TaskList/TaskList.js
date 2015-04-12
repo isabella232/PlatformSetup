@@ -30,7 +30,7 @@ class TaskList extends BaseComponent {
 		// Listen to store changes
 		this.onStore(this.tasksStore, (data) => this.setState({todos: data}));
 	}
-
+	
 	getInitialState() {
 		return {
 			todos: [],
@@ -87,6 +87,14 @@ class TaskList extends BaseComponent {
 			}
 		});
 		this.setState({todos: results});
+	}
+
+	taskModalHidden(){
+		console.log("TaskList", "Modal closed callback")
+	}
+
+	taskModalHide(){
+		console.log("TaskList", "Modal closing callback")
 	}
 }
 

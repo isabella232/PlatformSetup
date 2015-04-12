@@ -33,11 +33,6 @@ export default function ComponentSkeleton(self) {
 		getDefaultProps: self.getDefaultProperties,
 
 		/**
-		 * Get dynamic properties object
-		 */
-		getDynamicProperties: self.getDynamicProperties,
-
-		/**
 		 * @see http://facebook.github.io/react/docs/component-specs.html#mounting-componentwillmount
 		 */
 		componentWillMount: function () {
@@ -206,7 +201,6 @@ export default function ComponentSkeleton(self) {
 	 */
 	classObject.render = function () {
 		//console.log("RENDERING " + self.getClassName(), self.__instanceId);
-		this.dynamic = this.getDynamicProperties();
 		return this.getTemplate();
 	};
 

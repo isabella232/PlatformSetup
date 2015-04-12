@@ -24,6 +24,10 @@ Parsers:
         td: Td
         tfoot: Tfoot
         grid-12: Grid12
+        modal: Modal
+        modal-header: ModalHeader
+        modal-body: ModalBody
+        modal-footer: ModalFooter
 
     Skip:
         - Checkbox

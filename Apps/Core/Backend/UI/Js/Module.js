@@ -15,6 +15,10 @@ import Grid from '/Apps/Core/UI/Js/Components/Grid';
 import Grid12 from '/Apps/Core/UI/Js/Components/Grid12';
 import Grid6 from '/Apps/Core/UI/Js/Components/Grid6';
 import Grid4 from '/Apps/Core/UI/Js/Components/Grid4';
+import Modal from '/Apps/Core/UI/Js/Components/Modal';
+import ModalHeader from '/Apps/Core/UI/Js/Components/ModalHeader';
+import ModalBody from '/Apps/Core/UI/Js/Components/ModalBody';
+import ModalFooter from '/Apps/Core/UI/Js/Components/ModalFooter';
 // Stores
 import GrowlsStore from '/Apps/Core/UI/Js/Stores/GrowlsStore'
 
@@ -36,7 +40,11 @@ class UI extends BaseModule {
 			Grid: Grid,
 			Grid12: Grid12,
 			Grid6: Grid6,
-			Grid4: Grid4
+			Grid4: Grid4,
+			Modal: Modal,
+			ModalBody: ModalBody,
+			ModalHeader: ModalHeader,
+			ModalFooter: ModalFooter
 		};
 	}
 

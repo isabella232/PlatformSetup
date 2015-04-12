@@ -3,10 +3,6 @@ import BaseComponent from '/Core/Base/BaseComponent';
 class Link extends BaseComponent {
 
 	getTemplate(){
-		return '<a href={this.dynamic.link} class={this.dynamic.classes} onClick={this.props.onClick}>{this.props.children}</a>';
-	}
-	
-	getDynamicProperties(){
 		var link = this.props.href;
 		var route = this.props.route;
 		var classes = this.props.className;
@@ -19,7 +15,7 @@ class Link extends BaseComponent {
 			classes['w-link'] = true;
 			classes = this.classSet(classes);
 		}
-		
+
 		// Build URL
 		if(route){
 			link = Router.getRoutePath(route);
@@ -30,10 +26,7 @@ class Link extends BaseComponent {
 			});
 		}
 
-		return {
-			link: link,
-			classes: classes
-		}
+		return '<a href={link} class={classes} onClick={this.props.onClick}>{this.props.children}</a>';
 	}
 }
 

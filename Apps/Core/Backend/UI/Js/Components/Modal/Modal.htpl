@@ -1,0 +1,10 @@
+<div class="modal" id={this.props.ref} tabindex="-1" role="dialog" style={{display: display}}>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <if cond="this.props.title">
+                <modal-header on-close={this.hide}>{this.props.title}</modal-header>
+            </if>
+            {this.props.children}
+        </div>
+    </div>
+</div>

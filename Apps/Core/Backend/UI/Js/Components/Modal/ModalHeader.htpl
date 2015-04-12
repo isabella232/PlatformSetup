@@ -1,0 +1,4 @@
+<div class="modal-header">
+    <h4>{this.props.children}</h4>
+    <button onClick={this.props.onClose} type="button" class="close md-close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>

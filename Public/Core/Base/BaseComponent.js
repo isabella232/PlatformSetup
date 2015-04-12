@@ -68,10 +68,6 @@ class BaseComponent extends BaseClass {
 		return {};
 	}
 
-	getDynamicProperties() {
-		return {};
-	}
-
 	componentDidMount() {
 
 	}
