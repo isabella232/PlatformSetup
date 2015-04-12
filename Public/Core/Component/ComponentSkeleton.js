@@ -105,9 +105,7 @@ export default function ComponentSkeleton(self) {
 				StateStore.saveState(self.getInstanceId(), this.state);
 			}
 
-			this.__listeners.forEach((unsubscribe) => {
-				unsubscribe();
-			});
+			this.__listeners.forEach(unsubscribe => {unsubscribe()});
 			this.__listeners = [];
 			self.componentWillUnmount();
 		},
@@ -188,19 +186,6 @@ export default function ComponentSkeleton(self) {
 
 		getParam(name) {
 			return Router.getParam(name);
-		},
-
-		classSet(rules) {
-			if (!rules) {
-				return '';
-			}
-
-			if (typeof rules == 'string') {
-				return rules;
-			}
-			// TODO: replace with custom method for class sets
-			// https://github.com/JedWatson/classnames/blob/master/index.js
-			return React.addons.classSet(rules);
 		},
 
 		/**

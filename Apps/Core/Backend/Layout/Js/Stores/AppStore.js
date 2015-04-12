@@ -8,7 +8,7 @@ class AppStore extends BaseStore {
 
 	getInitialData(){
 		return Q.when({
-			developerMode: true
+			developerMode: false
 		});
 	}
 

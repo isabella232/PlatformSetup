@@ -1,19 +1,28 @@
 class GrowlLink {
 
-	constructor(text, action, params = []) {
+	constructor(text, action, params = [], classes = null) {
 		this.text = text;
 		this.action = action;
-		if(params instanceof Array){
+		this.classes = classes;
+		if (params instanceof Array) {
 			this.params = params;
 		} else {
 			this.params = [params];
 		}
 	}
 
-	render(growlComponent){
+	render(growlComponent) {
 		// Append growl component that is triggering onClick callback to be available in the callback
 		this.params.push(growlComponent);
-		var attributes = {onClick: () => {this.action.apply(null, this.params)}};
+
+		// Build link attributes
+		var attributes = {
+			className: Tools.classSet(this.classes),
+			href: '#',
+			onClick: () => {
+				this.action.apply(null, this.params)
+			}
+		};
 		return React.createElement(Link, attributes, this.text);
 	}
 }

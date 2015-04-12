@@ -41,6 +41,11 @@ class BaseModule extends BaseClass {
 		});
 	}
 
+	/**
+	 * Get React component from the provided Webiny component class
+	 * @param component
+	 * @returns {*}
+	 */
 	getComponent(component) {
 		return (new component).getComponent();
 	}

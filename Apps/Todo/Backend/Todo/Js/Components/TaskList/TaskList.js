@@ -66,7 +66,7 @@ class TaskList extends BaseComponent {
 	removeTask(item) {
 		this.trigger('Todo.Todo.removeTodoAction', item).then(actionResult => {
 			if (!actionResult.hasErrors()) {
-				var undo = new GrowlLink('Undo', this.restoreTask, item);
+				var undo = new GrowlLink('Undo', this.restoreTask, item, 'btn btn-info');
 				var growl = new InfoGrowl(undo, 'Task deleted successfully!', true);
 				this.trigger('Core.UI.AddGrowl', growl);
 			} else {

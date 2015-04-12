@@ -4,8 +4,8 @@ import Router from '/Core/Router/Router';
 import Registry from '/Core/Registry';
 
 /**
- * BaseComponent class is the main class all React components should inherit from.
- * It handles construction of a valid React class
+ * BaseComponent class is the main class all Webiny components should inherit from.
+ * It handles construction of a valid React class, React element, etc.
  */
 class BaseComponent extends BaseClass {
 
@@ -14,10 +14,22 @@ class BaseComponent extends BaseClass {
 		this.__instanceId = Tools.createUID();
 	}
 
+	/**
+	 * Create React component (will instantiate current Webiny component class and call 'getComponent()')
+	 * NOTE: this is just a helper method
+	 *
+	 * @returns {*}
+	 */
 	static createComponent() {
 		return (new this).getComponent();
 	}
 
+	/**
+	 * Creates a React element ready for use in render() method
+	 *
+	 * @param props
+	 * @returns {*}
+	 */
 	static createElement(props = {}) {
 		if (!props.hasOwnProperty('key')) {
 			props.key = Tools.createUID();
@@ -26,6 +38,11 @@ class BaseComponent extends BaseClass {
 		return React.createElement(cmp, props);
 	}
 
+	/**
+	 * Get React template
+	 * WARNING: DO NOT override this method!
+	 * It is only used as a placeholder for Webiny HTPL parser.
+	 */
 	getReactTemplate() {
 		// Dummy method
 	}
@@ -34,6 +51,11 @@ class BaseComponent extends BaseClass {
 		return this.__instanceId;
 	}
 
+	/**
+	 * Get fully qualified component name
+	 * Ex: 'Core.UI.Form'
+	 * @returns {*}
+	 */
 	getFqn() {
 		return this.getClassName();
 	}
@@ -78,6 +100,10 @@ class BaseComponent extends BaseClass {
 
 	}
 
+	/**
+	 * Creates a React component
+	 * @returns {*}
+	 */
 	getComponent() {
 		return ComponentFactory.createComponent(this);
 	}
