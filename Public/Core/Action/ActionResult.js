@@ -16,6 +16,10 @@ class ActionResult {
 		return errors > 0;
 	}
 
+	/**
+	 * Get action errors (ActionError)
+	 * @returns {Array}
+	 */
 	getErrors(){
 		var errors = [];
 		this.results.forEach(result => {

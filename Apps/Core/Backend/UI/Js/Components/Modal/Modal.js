@@ -13,7 +13,6 @@ class Modal extends BaseComponent {
 	}
 
 	show() {
-		console.log(this.props)
 		this.props.onShow();
 		this.setState({
 			isShown: true

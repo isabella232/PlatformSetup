@@ -1,5 +1,6 @@
 .modal {
 	z-index: 2001;
+	overflow-y: hidden;
 }
 
 .modal-backdrop {
