@@ -10,7 +10,7 @@
         </form-group>
 
         <ul>
-            <loop items="this.state.messages" as="msg">
+            <loop items={this.state.messages} as="msg">
                 <li>
                     <span class="grey">{msg.time.getTime()} - </span>
                     <span>{msg.message}</span>

@@ -3,7 +3,7 @@
     <if cond="growl.title">
         <div class="growl-header">{growl.title}</div>
     </if>
-    <loop items="growl.messages">
+    <loop items={growl.messages}>
         <div class="growl-message">
             {item.render(this)}
         </div>

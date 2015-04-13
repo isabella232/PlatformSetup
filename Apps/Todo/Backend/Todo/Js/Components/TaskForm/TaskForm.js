@@ -1,6 +1,13 @@
 import BaseComponent from '/Core/Base/BaseComponent';
+import ListComponent from '/Apps/Todo/Todo/Js/Components/TaskList';
+
+var TaskList = ListComponent.createComponent();
 
 class TaskForm extends BaseComponent {
+
+	getTemplate(){
+		return this.getReactTemplate();
+	}
 
 	componentDidMount() {
 		this.tasksStore = this.getStore('Todo.Todo.TasksStore');

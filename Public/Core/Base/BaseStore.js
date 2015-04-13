@@ -10,14 +10,12 @@ import ApiResponse from '/Core/Api/ApiResponse';
  */
 class BaseStore extends BaseClass {
 
-	static createInstance() {
-		var instance = new this;
-		instance.init();
-		return instance;
-	}
-
 	constructor() {
 		this.data = {};
+
+		this.listViewComponent = null;
+		this.formViewComponent = null;
+
 		var service = this.getService();
 		if(!service){
 			this.initialized = true;
@@ -274,6 +272,24 @@ class BaseStore extends BaseClass {
 			}
 			return apiResponse;
 		});
+	}
+
+	setListView(component){
+		this.listViewComponent = component;
+		return this;
+	}
+
+	setFormView(component){
+		this.formViewComponent = component;
+		return this;
+	}
+
+	getListView(){
+		return this.listViewComponent;
+	}
+
+	getFormView(){
+		return this.formViewComponent;
 	}
 }
 

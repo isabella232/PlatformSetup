@@ -4,7 +4,7 @@
         <switch-button bind={this.state.developerMode} bind-change={this.toggleDeveloperMode}/>
     </div>
     <ul class="links">
-        <loop items="this.state.links">
+        <loop items={this.state.links}>
             <li>
                 <a href={item.url}>{item.name}</a>
             </li>

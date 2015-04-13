@@ -4,6 +4,9 @@ import FormComponent from '/Apps/Todo/Todo/Js/Components/TaskForm'
 import TasksStore from '/Apps/Todo/Todo/Js/Stores/TasksStore'
 import ChatBox from '/Apps/Todo/Todo/Js/Components/ChatBox'
 
+TasksStore.setListView(ListComponent.createComponent());
+TasksStore.setFormView(FormComponent.createComponent());
+
 class Todo extends BaseModule {
 
 	registerComponents(){
@@ -18,7 +21,7 @@ class Todo extends BaseModule {
 				Path: '/',
 				Content: {
 					MasterContent: {
-						Component: ListComponent.createComponent(),
+						Component: TasksStore.getListView(),
 						Props: {
 							saveState: true
 						}
@@ -29,7 +32,7 @@ class Todo extends BaseModule {
 				Path: '/todo/item/:id',
 				Content: {
 					MasterContent: {
-						Component: FormComponent.createComponent()
+						Component: TasksStore.getFormView()
 					}
 				}
 			}

@@ -2,25 +2,25 @@
     <form name="form">
         <form-group>
             <label>ID</label>
-            <input grid="4" bind={this.state.id} placeholder="ID" disabled/>
+            <input grid="4" bind={this.state.id} placeholder="ID" disabled />
             <label>Created</label>
-            <input grid="4" bind={this.state.createdOn} placeholder="Created" disabled/>
+            <input grid="4" bind={this.state.createdOn} placeholder="Created" disabled />
         </form-group>
 
         <form-group>
             <label>Task</label>
-            <input name="task" grid="10" bind={this.state.task} placeholder="Task"/>
+            <input name="task" grid="10" bind={this.state.task} placeholder="Task" />
         </form-group>
 
         <form-group>
-            <switch label="Important" bind={this.state.important} buttons="Yes|No"/>
+            <switch label="Important" bind={this.state.important} buttons="Yes|No" />
             <!--
             <switch inline="true" label="Important" bind={this.state.important} buttons="Da|Ne"/>
             -->
         </form-group>
 
         <form-group>
-            <checkbox label="Settings dev" bind={this.state.settings.dev} bind-change={this.onChangeDev}/>
+            <checkbox label="Settings dev" bind={this.state.settings.dev} bind-change={this.onChangeDev} />
         </form-group>
 
         <form-group>

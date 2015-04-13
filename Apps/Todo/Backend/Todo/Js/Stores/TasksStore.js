@@ -41,4 +41,4 @@ class TasksStore extends BaseStore {
 	}
 }
 
-export default TasksStore;
+export default new TasksStore;

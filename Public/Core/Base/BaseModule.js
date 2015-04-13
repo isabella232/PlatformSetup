@@ -1,10 +1,20 @@
 import EventManager from '/Core/EventManager'
 import BaseClass from '/Core/Base/BaseClass'
+import BaseStore from '/Core/Base/BaseStore'
 import Route from '/Core/Router/Route'
 
 class BaseModule extends BaseClass {
 
 	constructor() {
+		this.registerStores().forEach((store) => {
+			if(store instanceof BaseStore){
+				this.getRegistry().addStore(store, {initialized: false});
+			} else {
+				var storeInstance = new store;
+				this.getRegistry().addStore(storeInstance, {initialized: false});
+			}
+		});
+
 		var components = this.registerComponents();
 		Object.keys(components).forEach(function (name) {
 			var component = components[name];
@@ -33,11 +43,6 @@ class BaseModule extends BaseClass {
 					return component;
 				}, meta)
 			});
-		});
-
-		this.registerStores().forEach((store) => {
-			var storeInstance = new store;
-			this.getRegistry().addStore(storeInstance, {initialized: false});
 		});
 	}
 

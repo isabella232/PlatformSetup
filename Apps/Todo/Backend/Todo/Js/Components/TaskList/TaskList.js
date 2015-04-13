@@ -7,13 +7,13 @@ import GrowlText from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlText';
 import GrowlLink from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlLink';
 import GrowlComponent from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlComponent';
 
+import TableView from '/Apps/Todo/Todo/Js/Components/TasksTableView'
+var TasksTableView = TableView.createComponent();
+
 class TaskList extends BaseComponent {
 
 	getTemplate() {
-		var DomainPicker = MyDomainPicker.createComponent();
-		if (this.state.filter == 'Pavel') {
-			DomainPicker = this.getComponent('DomainPicker');
-		}
+		var fields = ['index', 'id', 'task', 'createdOn'];
 		return this.getReactTemplate();
 	}
 

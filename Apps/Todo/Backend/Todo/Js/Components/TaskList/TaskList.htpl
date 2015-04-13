@@ -11,38 +11,8 @@
         </form-group>
     </form-inline>
     <if cond="this.state.todos.length == 0">No items available yet...</if>
-    <table class={{'table-hover': this.state.filter !='' }}>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>ID</th>
-            <th>Task</th>
-            <th>Created On</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <loop items="this.state.todos" as="item" index="i">
-            <tr class={{danger: item.important, success: item.completed}}>
-                <td>{i+1}</td>
-                <td>
-                    <if cond="item.id">{item.id}</if>
-                </td>
-                <td>{item.task}</td>
-                <td>{item.createdOn}</td>
-                <td>
-                    <if cond="item.id">
-                        <a class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</a>
-                        &nbsp;
-                        <button class="btn btn-danger" onClick={() => {this.removeTask(item)}}>Delete</button>
-                        <else/>
-                        Saving...
-                    </if>
-                </td>
-            </tr>
-        </loop>
-        </tbody>
-    </table>
+
+    <TasksTableView fields={fields} items={this.state.todos} on-delete={this.removeTask} />
 
     <!--<modal-confirm ref="deleteConfirm" title="" message="Are you sure you want to delete this item?" on-confirm={this.removeTask.bind(this, item)}></modal-confirm>-->
 
