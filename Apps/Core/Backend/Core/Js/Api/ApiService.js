@@ -1,5 +1,5 @@
-import ApiResponse from '/Core/Api/ApiResponse';
-import Registry from '/Core/Registry';
+import ApiResponse from '/Core/Core/Api/ApiResponse';
+import Registry from '/Core/Core/Registry';
 
 function handleResponse(response) {
 	// Log Http responses to console if developerMode is enabled

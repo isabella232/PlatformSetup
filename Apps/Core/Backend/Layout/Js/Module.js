@@ -1,10 +1,10 @@
-import BaseModule from '/Core/Base/BaseModule';
-import Footer from '/Apps/Core/Layout/Js/Components/Footer';
-import Navigation from '/Apps/Core/Layout/Js/Components/Navigation';
-import DomainPicker from '/Apps/Core/Layout/Js/Components/DomainPicker';
-import Growler from '/Apps/Core/Layout/Js/Components/Growler';
-import Growl from '/Apps/Core/Layout/Js/Components/Growl';
-import AppStore from '/Apps/Core/Layout/Js/Stores/AppStore';
+import BaseModule from '/Core/Core/Base/BaseModule';
+import Footer from '/Core/Layout/Components/Footer';
+import Navigation from '/Core/Layout/Components/Navigation';
+import DomainPicker from '/Core/Layout/Components/DomainPicker';
+import Growler from '/Core/Layout/Components/Growler';
+import Growl from '/Core/Layout/Components/Growl';
+import AppStore from '/Core/Layout/Stores/AppStore';
 
 class Layout extends BaseModule {
 

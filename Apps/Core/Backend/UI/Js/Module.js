@@ -1,26 +1,26 @@
-import BaseModule from '/Core/Base/BaseModule';
+import BaseModule from '/Core/Core/Base/BaseModule';
 // Components
-import Label from '/Apps/Core/UI/Js/Components/Label';
-import Input from '/Apps/Core/UI/Js/Components/Input';
-import Link from '/Apps/Core/UI/Js/Components/Link';
-import Form from '/Apps/Core/UI/Js/Components/Form';
-import FormGroup from '/Apps/Core/UI/Js/Components/FormGroup';
-import FormInline from '/Apps/Core/UI/Js/Components/FormInline';
-import Checkbox from '/Apps/Core/UI/Js/Components/Checkbox';
-import Switch from '/Apps/Core/UI/Js/Components/Switch';
-import SwitchButton from '/Apps/Core/UI/Js/Components/SwitchButton';
-import GridRow from '/Apps/Core/UI/Js/Components/GridRow';
-import GridContainer from '/Apps/Core/UI/Js/Components/GridContainer';
-import Grid from '/Apps/Core/UI/Js/Components/Grid';
-import Grid12 from '/Apps/Core/UI/Js/Components/Grid12';
-import Grid6 from '/Apps/Core/UI/Js/Components/Grid6';
-import Grid4 from '/Apps/Core/UI/Js/Components/Grid4';
-import Modal from '/Apps/Core/UI/Js/Components/Modal';
-import ModalHeader from '/Apps/Core/UI/Js/Components/ModalHeader';
-import ModalBody from '/Apps/Core/UI/Js/Components/ModalBody';
-import ModalFooter from '/Apps/Core/UI/Js/Components/ModalFooter';
+import Label from '/Core/UI/Components/Label';
+import Input from '/Core/UI/Components/Input';
+import Link from '/Core/UI/Components/Link';
+import Form from '/Core/UI/Components/Form';
+import FormGroup from '/Core/UI/Components/FormGroup';
+import FormInline from '/Core/UI/Components/FormInline';
+import Checkbox from '/Core/UI/Components/Checkbox';
+import Switch from '/Core/UI/Components/Switch';
+import SwitchButton from '/Core/UI/Components/SwitchButton';
+import GridRow from '/Core/UI/Components/GridRow';
+import GridContainer from '/Core/UI/Components/GridContainer';
+import Grid from '/Core/UI/Components/Grid';
+import Grid12 from '/Core/UI/Components/Grid12';
+import Grid6 from '/Core/UI/Components/Grid6';
+import Grid4 from '/Core/UI/Components/Grid4';
+import Modal from '/Core/UI/Components/Modal';
+import ModalHeader from '/Core/UI/Components/ModalHeader';
+import ModalBody from '/Core/UI/Components/ModalBody';
+import ModalFooter from '/Core/UI/Components/ModalFooter';
 // Stores
-import GrowlsStore from '/Apps/Core/UI/Js/Stores/GrowlsStore'
+import GrowlsStore from '/Core/UI/Stores/GrowlsStore'
 
 class UI extends BaseModule {
 

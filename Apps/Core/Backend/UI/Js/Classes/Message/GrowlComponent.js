@@ -1,4 +1,4 @@
-import BaseClass from '/Core/Base/BaseClass';
+import BaseClass from '/Core/Core/Base/BaseClass';
 
 class GrowlComponent extends BaseClass {
 

@@ -1,5 +1,5 @@
-import EventManager from '/Core/EventManager'
-import Route from '/Core/Router/Route'
+import EventManager from '/Core/Core/EventManager'
+import Route from '/Core/Core/Router/Route'
 
 class Router {
 

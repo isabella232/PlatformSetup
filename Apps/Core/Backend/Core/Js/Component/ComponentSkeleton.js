@@ -1,7 +1,7 @@
-import StateStore from '/Core/Tools/StateStore';
-import LinkState from '/Core/Tools/LinkState';
-import EventManager from '/Core/EventManager';
-import ActionResult from '/Core/Action/ActionResult';
+import StateStore from '/Core/Core/Tools/StateStore';
+import LinkState from '/Core/Core/Tools/LinkState';
+import EventManager from '/Core/Core/EventManager';
+import ActionResult from '/Core/Core/Action/ActionResult';
 
 export default function ComponentSkeleton(self) {
 	/**

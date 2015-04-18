@@ -1,4 +1,4 @@
-import Registry from '/Core/Registry';
+import Registry from '/Core/Core/Registry';
 
 class BaseClass {
 

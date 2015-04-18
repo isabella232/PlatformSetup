@@ -1,9 +1,9 @@
-import EventManager from '/Core/EventManager';
-import Router from '/Core/Router/Router';
-import BaseClass from '/Core/Base/BaseClass';
-import Tools from '/Core/Tools/Tools';
-import ApiService from '/Core/Api/ApiService';
-import ApiResponse from '/Core/Api/ApiResponse';
+import EventManager from '/Core/Core/EventManager';
+import Router from '/Core/Core/Router/Router';
+import BaseClass from '/Core/Core/Base/BaseClass';
+import Tools from '/Core/Core/Tools/Tools';
+import ApiService from '/Core/Core/Api/ApiService';
+import ApiResponse from '/Core/Core/Api/ApiResponse';
 
 /**
  * Base class for all data stores

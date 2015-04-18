@@ -1,4 +1,4 @@
-import BaseStore from '/Core/Base/BaseStore';
+import BaseStore from '/Core/Core/Base/BaseStore';
 
 class TasksStore extends BaseStore {
 

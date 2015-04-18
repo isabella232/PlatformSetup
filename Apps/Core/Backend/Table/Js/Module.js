@@ -1,12 +1,12 @@
-import BaseModule from '/Core/Base/BaseModule'
+import BaseModule from '/Core/Core/Base/BaseModule'
 
-import TableCmp from '/Apps/Core/Table/Js/Components/Table';
-import Tbody from '/Apps/Core/Table/Js/Components/Tbody';
-import Thead from '/Apps/Core/Table/Js/Components/Thead';
-import Tfoot from '/Apps/Core/Table/Js/Components/Tfoot';
-import Tr from '/Apps/Core/Table/Js/Components/Tr';
-import Th from '/Apps/Core/Table/Js/Components/Th';
-import Td from '/Apps/Core/Table/Js/Components/Td';
+import TableCmp from '/Core/Table/Components/Table';
+import Tbody from '/Core/Table/Components/Tbody';
+import Thead from '/Core/Table/Components/Thead';
+import Tfoot from '/Core/Table/Components/Tfoot';
+import Tr from '/Core/Table/Components/Tr';
+import Th from '/Core/Table/Components/Th';
+import Td from '/Core/Table/Components/Td';
 
 class Table extends BaseModule {
 

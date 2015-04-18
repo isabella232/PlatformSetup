@@ -1,5 +1,5 @@
-import BaseComponent from '/Core/Base/BaseComponent';
-import AppStore from '/Apps/Core/Backend/Layout/Js/Stores/AppStore';
+import BaseComponent from '/Core/Core/Base/BaseComponent';
+import AppStore from '/Core/Layout/Stores/AppStore';
 
 class Footer extends BaseComponent {
 

@@ -1,4 +1,4 @@
-import BaseComponent from '/Core/Base/BaseComponent';
+import BaseComponent from '/Core/Core/Base/BaseComponent';
 
 class Grid2 extends BaseComponent {
 

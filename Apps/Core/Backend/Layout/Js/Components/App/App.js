@@ -1,5 +1,5 @@
-import BaseComponent from '/Core/Base/BaseComponent';
-import EventManager from '/Core/EventManager';
+import BaseComponent from '/Core/Core/Base/BaseComponent';
+import EventManager from '/Core/Core/EventManager';
 
 /**
  * App is the main container that will hold all other components.

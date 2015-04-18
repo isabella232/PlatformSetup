@@ -1,7 +1,7 @@
-import EventManager from '/Core/EventManager'
-import BaseClass from '/Core/Base/BaseClass'
-import BaseStore from '/Core/Base/BaseStore'
-import Route from '/Core/Router/Route'
+import EventManager from '/Core/Core/EventManager'
+import BaseClass from '/Core/Core/Base/BaseClass'
+import BaseStore from '/Core/Core/Base/BaseStore'
+import Route from '/Core/Core/Router/Route'
 
 class BaseModule extends BaseClass {
 

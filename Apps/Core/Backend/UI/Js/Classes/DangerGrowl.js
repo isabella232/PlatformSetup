@@ -1,4 +1,4 @@
-import InfoGrowl from '/Apps/Core/Backend/UI/Js/Classes/InfoGrowl';
+import InfoGrowl from '/Core/UI/Classes/InfoGrowl';
 
 class DangerGrowl extends InfoGrowl {
 

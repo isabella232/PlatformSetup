@@ -1,4 +1,4 @@
-import GrowlText from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlText';
+import GrowlText from '/Core/UI/Classes/Message/GrowlText';
 
 class InfoGrowl {
 

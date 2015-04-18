@@ -1,5 +1,5 @@
-import BaseComponent from '/Core/Base/BaseComponent';
-import ListComponent from '/Apps/Todo/Todo/Js/Components/TaskList';
+import BaseComponent from '/Core/Core/Base/BaseComponent';
+import ListComponent from '/Todo/Todo/Components/TaskList';
 
 var TaskList = ListComponent.createComponent();
 

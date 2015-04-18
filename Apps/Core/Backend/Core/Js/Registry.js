@@ -1,4 +1,4 @@
-import Http from '/Core/Http'
+import Http from '/Core/Core/Http'
 
 function initializeStore(store){
 	store.instance.init();

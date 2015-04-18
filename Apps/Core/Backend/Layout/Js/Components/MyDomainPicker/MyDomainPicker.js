@@ -1,4 +1,4 @@
-import DomainPicker from '/Apps/Core/Layout/Js/Components/DomainPicker';
+import DomainPicker from '/Core/Layout/Components/DomainPicker';
 
 class MyDomainPicker extends DomainPicker {
 

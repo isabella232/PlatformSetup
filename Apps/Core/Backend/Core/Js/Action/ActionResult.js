@@ -1,5 +1,5 @@
-import ActionError from '/Core/Action/ActionError';
-import ApiResponse from '/Core/Api/ApiResponse';
+import ActionError from '/Core/Core/Action/ActionError';
+import ApiResponse from '/Core/Core/Api/ApiResponse';
 
 class ActionResult {
 	constructor(results) {

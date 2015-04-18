@@ -1,11 +1,11 @@
-import EventManager from '/Core/EventManager';
-import Router from '/Core/Router/Router';
-import Http from '/Core/Http';
+import EventManager from '/Core/Core/EventManager';
+import Router from '/Core/Core/Router/Router';
+import Http from '/Core/Core/Http';
 
 /* Global classes */
-import Tools from '/Core/Tools/Tools';
-import BaseComponent from '/Core/Base/BaseComponent';
-import ComponentLoader from '/Core/ComponentLoader';
+import Tools from '/Core/Core/Tools/Tools';
+import BaseComponent from '/Core/Core/Base/BaseComponent';
+import ComponentLoader from '/Core/Core/Component/ComponentLoader';
 window.Tools = Tools;
 window.ComponentLoader = ComponentLoader;
 
@@ -19,7 +19,7 @@ window.Http = Http;
 
 import CoreApp from '/Apps/Core/Build/Development/Backend/App.js';
 import TodoApp from '/Apps/Todo/Build/Development/Backend/App.js';
-import MainComponent from '/Apps/Core/Layout/Js/Components/App';
+import MainComponent from '/Core/Layout/Components/App';
 var coreApp = new CoreApp();
 var todoApp = new TodoApp();
 
@@ -29,6 +29,6 @@ React.render(mainComponent, document.getElementById('app'));
 Router.start(window.location.pathname);
 
 $(document).on('click', 'a', function(e){
-    e.preventDefault();
-    Router.goTo(e.target.href);
+e.preventDefault();
+Router.goTo(e.target.href);
 });

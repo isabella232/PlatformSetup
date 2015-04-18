@@ -1,4 +1,4 @@
-import ComponentSkeleton from '/Core/Component/ComponentSkeleton';
+import ComponentSkeleton from '/Core/Core/Component/ComponentSkeleton';
 
 export default class ComponentFactory {
 

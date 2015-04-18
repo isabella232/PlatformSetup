@@ -1,7 +1,7 @@
-import BaseClass from '/Core/Base/BaseClass';
-import ComponentFactory from '/Core/Component/ComponentFactory';
-import Router from '/Core/Router/Router';
-import Registry from '/Core/Registry';
+import BaseClass from '/Core/Core/Base/BaseClass';
+import ComponentFactory from '/Core/Core/Component/ComponentFactory';
+import Router from '/Core/Core/Router/Router';
+import Registry from '/Core/Core/Registry';
 
 /**
  * BaseComponent class is the main class all Webiny components should inherit from.

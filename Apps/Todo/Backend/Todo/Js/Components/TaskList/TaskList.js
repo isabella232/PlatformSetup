@@ -1,13 +1,13 @@
-import BaseComponent from '/Core/Base/BaseComponent';
-import MyDomainPicker from '/Apps/Core/Layout/Js/Components/MyDomainPicker';
-import InfoGrowl from '/Apps/Core/Backend/UI/Js/Classes/InfoGrowl';
-import SuccessGrowl from '/Apps/Core/Backend/UI/Js/Classes/SuccessGrowl';
-import DangerGrowl from '/Apps/Core/Backend/UI/Js/Classes/DangerGrowl';
-import GrowlText from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlText';
-import GrowlLink from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlLink';
-import GrowlComponent from '/Apps/Core/Backend/UI/Js/Classes/Message/GrowlComponent';
+import BaseComponent from '/Core/Core/Base/BaseComponent';
+import MyDomainPicker from '/Core/Layout/Components/MyDomainPicker';
+import InfoGrowl from '/Core/UI/Classes/InfoGrowl';
+import SuccessGrowl from '/Core/UI/Classes/SuccessGrowl';
+import DangerGrowl from '/Core/UI/Classes/DangerGrowl';
+import GrowlText from '/Core/UI/Classes/Message/GrowlText';
+import GrowlLink from '/Core/UI/Classes/Message/GrowlLink';
+import GrowlComponent from '/Core/UI/Classes/Message/GrowlComponent';
 
-import TableView from '/Apps/Todo/Todo/Js/Components/TasksTableView'
+import TableView from '/Todo/Todo/Components/TasksTableView'
 var TasksTableView = TableView.createComponent();
 
 class TaskList extends BaseComponent {

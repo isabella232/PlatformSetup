@@ -1,6 +1,6 @@
-import EventManager from '/Core/EventManager';
-import BaseClass from '/Core/Base/BaseClass';
-import Router from '/Core/Router/Router';
+import EventManager from '/Core/Core/EventManager';
+import BaseClass from '/Core/Core/Base/BaseClass';
+import Router from '/Core/Core/Router/Router';
 
 class ComponentLoader extends BaseClass {
 

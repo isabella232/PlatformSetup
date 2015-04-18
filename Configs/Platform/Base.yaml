@@ -2,7 +2,6 @@ Platform:
     WebPath: http://platform.app:8000
     ApiPath: /api
     AbsPath: __DIR__/../..
-    AppsPath: __DIR__/../../Apps
     AppsPath: /Apps
     Backend:
         Prefix: admin
