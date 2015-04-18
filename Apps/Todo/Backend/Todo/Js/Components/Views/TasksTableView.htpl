@@ -31,22 +31,25 @@
     </tbody>
 </table>-->
 
-<list-view items={this.props.items} row-class={{danger: item.important, success: item.completed}}>
+<list-view multi-actions={this.props.multiActions} items={this.props.items} row-class={{danger: item.important, success: item.completed}}>
     <fields>
         <field name="index" label="#">{i+1}</field>
         <field name="id" label="ID">{item.id}</field>
         <field name="task" label="Task">{item.task}</field>
         <field name="createdOn" label="Created On">{item.createdOn}</field>
     </fields>
+    <row-details>
+        <RowDetailsForm item={item}/>
+    </row-details>
     <actions>
         <action name="edit" cond="item.id">
-            <button on-click={this.props.onEdit}>Edit</button>
+            <a class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</a>
         </action>
         <action name="delete" cond="item.id">
-            <button on-click={this.props.onDelete}>Delete</button>
+            <button class="btn btn-danger" on-click={() => {this.props.onDelete(item)}}>Delete</button>
         </action>
         <action name="select">
-            <button on-click={this.props.onSelect}>Select</button>
+            <button class="btn btn-success" on-click={() => {this.props.onSelect(item)}}>Select</button>
         </action>
     </actions>
 </list-view>

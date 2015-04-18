@@ -14,6 +14,7 @@ class TaskList extends BaseComponent {
 
 	getTemplate() {
 		var fields = ['index', 'id', 'task', 'createdOn'];
+		var actions = ['edit', 'delete'];
 		return this.getReactTemplate();
 	}
 
