@@ -1,11 +1,11 @@
 import BaseModule from '/Webiny/Core/Base/BaseModule'
 import ListComponent from '/Todo/Todo/Components/TaskList'
 import FormComponent from '/Todo/Todo/Components/TaskForm'
-import TasksStore from '/Todo/Todo/Stores/TasksStore'
+import TaskStore from '/Todo/Todo/Stores/TaskStore'
 import ChatBox from '/Todo/Todo/Components/ChatBox'
 
-TasksStore.setListView(ListComponent.createComponent());
-TasksStore.setFormView(FormComponent.createComponent());
+TaskStore.setListView(ListComponent.createComponent());
+TaskStore.setFormView(FormComponent.createComponent());
 
 class Todo extends BaseModule {
 
@@ -21,7 +21,7 @@ class Todo extends BaseModule {
 				Path: '/',
 				Content: {
 					MasterContent: {
-						Component: TasksStore.getListView(),
+						Component: TaskStore.getListView(),
 						Props: {
 							saveState: true
 						}
@@ -32,7 +32,7 @@ class Todo extends BaseModule {
 				Path: '/todo/item/:id',
 				Content: {
 					MasterContent: {
-						Component: TasksStore.getFormView()
+						Component: TaskStore.getFormView()
 					}
 				}
 			}
@@ -41,7 +41,7 @@ class Todo extends BaseModule {
 
 	registerStores() {
 		return [
-			TasksStore
+			TaskStore
 		];
 	}
 }

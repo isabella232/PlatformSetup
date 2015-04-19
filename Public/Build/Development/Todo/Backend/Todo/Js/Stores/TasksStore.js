@@ -1,44 +1,35 @@
-import BaseStore from '/Webiny/Core/Base/BaseStore';
+import EntityStore from '/Webiny/Core/Base/EntityStore';
 
-class TasksStore extends BaseStore {
+class TaskStore extends EntityStore {
 
 	getFqn() {
-		return 'Todo.Todo.TasksStore';
+		return 'Todo.Todo.TaskStore';
 	}
 
 	getService() {
-		return '/todo/backend/todo/item';
+		return '/Todo/Backend/Todo/Item';
 	}
 
 	init() {
 		this.data = [];
-		this.onAction('Todo.Todo.addTodoAction', this._onAddTask);
-		this.onAction('Todo.Todo.saveTaskAction', this._onSaveTask);
-		this.onAction('Todo.Todo.removeTodoAction', this._onRemoveTask);
-		this.onAction('Todo.Todo.restoreTodoAction', this._onRestoreTask);
+		super.init();
 	}
 
-	getInitialData(){
-		return this.crudList().then(response => {
-			return response.getData().data;
-		});
-	}
-
-	_onAddTask(task) {
+	/*_onCreateTask(task) {
 		return this.crudCreate(task, {postPush: true});
 	}
 
-	_onSaveTask(task) {
+	_onUpdateTask(task) {
 		return this.crudUpdate(task);
 	}
 
-	_onRemoveTask(item) {
+	_onDeleteTask(item) {
 		return this.crudDelete(item);
 	}
 
 	_onRestoreTask(item) {
 		return this.crudRestore(item.id);
-	}
+	}*/
 }
 
-export default new TasksStore;
+export default new TaskStore;

@@ -20,16 +20,16 @@ class TaskList extends BaseComponent {
 
 	componentDidMount() {
 		this.fullListOfTasks = [];
-		this.tasksStore = this.getStore('Todo.Todo.TasksStore');
+		this.TaskStore = this.getStore('Todo.Todo.TaskStore');
 
 		// Get initial data
-		this.tasksStore.getData().then((data) => {
+		this.TaskStore.getData().then((data) => {
 			this.fullListOfTasks = data;
 			this.setState({todos: data});
 		});
 
 		// Listen to store changes
-		this.onStore(this.tasksStore, (data) => this.setState({todos: data}));
+		this.onStore(this.TaskStore, (data) => this.setState({todos: data}));
 	}
 	
 	getInitialState() {
@@ -42,7 +42,7 @@ class TaskList extends BaseComponent {
 	addTask() {
 		var input = this.getNode('newTask');
 		var taskName = input.value;
-		this.trigger('Todo.Todo.addTodoAction', {task: taskName}).then(actionResult => {
+		this.trigger('Todo.Todo.TaskCreate', {task: taskName}).then(actionResult => {
 			if (!actionResult.hasErrors()) {
 				this.trigger('Core.UI.AddGrowl', new SuccessGrowl(taskName, 'New task created!'));
 			} else {
@@ -61,11 +61,11 @@ class TaskList extends BaseComponent {
 	 */
 	restoreTask(item, growl){
 		growl.close();
-		this.trigger('Todo.Todo.restoreTodoAction', item);
+		this.trigger('Todo.Todo.TaskRestore', item);
 	}
 
 	removeTask(item) {
-		this.trigger('Todo.Todo.removeTodoAction', item).then(actionResult => {
+		this.trigger('Todo.Todo.TaskDelete', item).then(actionResult => {
 			if (!actionResult.hasErrors()) {
 				var undo = new GrowlLink('Undo', this.restoreTask, item, 'btn btn-info');
 				var growl = new InfoGrowl(undo, 'Task deleted successfully!', true);

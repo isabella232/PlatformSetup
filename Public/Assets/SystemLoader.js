@@ -10,7 +10,7 @@ class SystemLoader extends TraceurLoader {
 
 	normalize(name, referrerName, referrerAddress) {
 		// If it's a request for /Assets - return it as is
-		if(name.indexOf('/Assets') == 0){
+		if (name.indexOf('/Assets') == 0) {
 			return super.normalize(name, referrerName, referrerAddress);
 		}
 
@@ -27,6 +27,12 @@ class SystemLoader extends TraceurLoader {
 		}
 
 		return super.normalize(name, referrerName, referrerAddress);
+	}
+
+	import(name) {
+		return super.import(name).catch(e => {
+			console.error(e.message);
+		});
 	}
 }
 
