@@ -1,11 +1,11 @@
-import EventManager from '/Core/Core/EventManager';
-import Router from '/Core/Core/Router/Router';
-import Http from '/Core/Core/Http';
+import EventManager from '/Webiny/Core/EventManager';
+import Router from '/Webiny/Core/Router/Router';
+import Http from '/Webiny/Core/Http';
 
 /* Global classes */
-import Tools from '/Core/Core/Tools/Tools';
-import BaseComponent from '/Core/Core/Base/BaseComponent';
-import ComponentLoader from '/Core/Core/Component/ComponentLoader';
+import Tools from '/Webiny/Core/Tools/Tools';
+import BaseComponent from '/Webiny/Core/Base/BaseComponent';
+import ComponentLoader from '/Webiny/Core/Component/ComponentLoader';
 window.Tools = Tools;
 window.ComponentLoader = ComponentLoader;
 
@@ -17,11 +17,11 @@ window.BaseComponent = BaseComponent;
 /* Expose these often used components so we don't need to import them all the time */
 window.Http = Http;
 
-import CoreApp from '/Core/App';
 import TodoApp from '/Todo/App';
-import MainComponent from '/Core/Layout/Components/App';
-var coreApp = new CoreApp();
+import WebinyApp from '/Webiny/App';
+import MainComponent from '/Webiny/Layout/Components/App';
 var todoApp = new TodoApp();
+var webinyApp = new WebinyApp();
 
 Router.setActiveRoute(window.location.pathname);
 var mainComponent = MainComponent.createElement();

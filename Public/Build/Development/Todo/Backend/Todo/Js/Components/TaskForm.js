@@ -1,4 +1,4 @@
-import BaseComponent from '/Core/Core/Base/BaseComponent';
+import BaseComponent from '/Webiny/Core/Base/BaseComponent';
 import ListComponent from '/Todo/Todo/Components/TaskList';
 
 var TaskList = ListComponent.createComponent();

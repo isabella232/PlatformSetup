@@ -7,7 +7,7 @@ Platform:
         Prefix: admin
     ErrorReporting: true
     Bootstrap:
-        App: Core
+        App: Webiny
         Module: Layout
         Component: App
 

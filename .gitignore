@@ -1,8 +1,7 @@
 #Platform
 Cache/*
 Public/Uploads/
-Apps/*/Build
-Apps/*/BuildTmp
+Public/Build
 vendor/
 
 # Composer

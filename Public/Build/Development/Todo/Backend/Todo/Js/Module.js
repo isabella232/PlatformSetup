@@ -1,4 +1,4 @@
-import BaseModule from '/Core/Core/Base/BaseModule'
+import BaseModule from '/Webiny/Core/Base/BaseModule'
 import ListComponent from '/Todo/Todo/Components/TaskList'
 import FormComponent from '/Todo/Todo/Components/TaskForm'
 import TasksStore from '/Todo/Todo/Stores/TasksStore'

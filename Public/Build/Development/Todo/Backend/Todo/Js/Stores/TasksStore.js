@@ -1,4 +1,4 @@
-import BaseStore from '/Core/Core/Base/BaseStore';
+import BaseStore from '/Webiny/Core/Base/BaseStore';
 
 class TasksStore extends BaseStore {
 
@@ -20,7 +20,7 @@ class TasksStore extends BaseStore {
 
 	getInitialData(){
 		return this.crudList().then(response => {
-			return response.getData();
+			return response.getData().data;
 		});
 	}
 

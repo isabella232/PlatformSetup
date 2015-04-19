@@ -1,0 +1,34 @@
+Events:
+    Platform.RenderOutput:
+       - {Handler: \Apps\Webiny\Backend\Layout\Php\Handlers\HtmlCleanup, Priority: 101}
+    Platform.HandleRequest:
+       - {Handler: \Apps\Webiny\Backend\Layout\Php\Handlers\RenderApp}
+
+
+Parsers:
+    Tags:
+        form-inline: FormInline
+        form-group: FormGroup
+        form: Form
+        label: Label
+        input: Input
+        checkbox: Checkbox
+        switch: Switch
+        switch-button: SwitchButton
+        a: Link
+        table: Table
+        tbody: Tbody
+        thead: Thead
+        tr: Tr
+        th: Th
+        td: Td
+        tfoot: Tfoot
+        grid-12: Grid12
+        modal: Modal
+        modal-header: ModalHeader
+        modal-body: ModalBody
+        modal-footer: ModalFooter
+
+    Skip:
+        - Checkbox
+        - SwitchButton
