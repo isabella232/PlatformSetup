@@ -22,7 +22,7 @@ class RenderApp
             /* @var $app App */
             foreach ($this->getPlatform()->getApps() as $app) {
                 $builder = new DevelopmentBuilder();
-                $builder->setAppsStorage($this->storage('Apps'))->buildApp($app);
+                $builder->setAppsStorage($this->storage('Apps'))->setBuildStorage($this->storage('Build'))->buildApp($app);
             }
         }
 

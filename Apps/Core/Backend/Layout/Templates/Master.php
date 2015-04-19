@@ -28,42 +28,18 @@
         var _backendPrefix = '<?php echo $data['App']->getConfig('Platform.Backend.Prefix');?>';
     </script>
     <script type="module">
-
-        // SystemLoader should be here to make sure it is loaded before importing any other modules
-
-        var TraceurLoader = traceur.runtime.TraceurLoader;
-        var webLoader = traceur.runtime.webLoader;
-
-        var traceurSystem = System;
-        class SystemLoader extends TraceurLoader {
-            constructor() {
-                super(webLoader, window.location.href);
-                this.regex = /\/([\w+]*)\/([\w+]*)\/([\w+\/]*)/;
-            }
-
-            normalize(name, referrerName, referrerAddress) {
-                if(name.indexOf('/Apps') > -1){
-                    return super.normalize(name, referrerName, referrerAddress);
-                }
-
-                if (this.regex.exec(name)){
-                    var newPath = name.replace(this.regex, '/Apps/$1/Build/Development/Backend/$2/Js/$3');
-                    return newPath;
-                }
-
-                return super.normalize(name, referrerName, referrerAddress);
-            }
-        }
-        System = new SystemLoader();
-
-
+        // Load Webiny SystemLoader and then bootstrap the application
+        System.import('/Assets/SystemLoader').then(SystemLoader => {
+            System = new SystemLoader.default();
+            System.import('/Assets/App');
+        }).catch(error => {
+            console.log(error);
+        });
     </script>
     <script src="/Assets/Lib/history.js/native.history.js"></script>
     <script src="/Assets/Lib/Md5.js" type="text/javascript"></script>
-    <!-- Bootstrap the entire platform -->
-    <script src="/Assets/App.js" type="module"></script>
 </head>
-<body class="">
+<body>
 <div id="app"></div>
 </body>
 </html>

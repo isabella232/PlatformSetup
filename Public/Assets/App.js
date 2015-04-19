@@ -17,8 +17,8 @@ window.BaseComponent = BaseComponent;
 /* Expose these often used components so we don't need to import them all the time */
 window.Http = Http;
 
-import CoreApp from '/Apps/Core/Build/Development/Backend/App.js';
-import TodoApp from '/Apps/Todo/Build/Development/Backend/App.js';
+import CoreApp from '/Core/App';
+import TodoApp from '/Todo/App';
 import MainComponent from '/Core/Layout/Components/App';
 var coreApp = new CoreApp();
 var todoApp = new TodoApp();

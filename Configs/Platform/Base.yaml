@@ -57,3 +57,13 @@ Storage:
                     Object: \Webiny\Component\Storage\Driver\Local\LocalStorageDriver
                     ObjectArguments:
                         - __DIR__/../../Apps
+        Build:
+            Class: \Webiny\Component\Storage\Storage
+            Arguments:
+                Driver:
+                    Object: \Webiny\Component\Storage\Driver\Local\LocalStorageDriver
+                    ObjectArguments:
+                        - __DIR__/../../Public/Build
+                        - ''
+                        - false
+                        - true

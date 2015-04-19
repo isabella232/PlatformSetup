@@ -4,6 +4,7 @@ use Webiny\Component\ServiceManager\ServiceManager;
 use Webiny\Component\StdLib\StdLibTrait;
 use Webiny\Component\StdLib\StdObject\UrlObject\UrlObject;
 use Webiny\Component\Storage\Storage;
+use Webiny\Component\Storage\StorageTrait;
 use Webiny\Platform\Bootstrap\Platform;
 use Webiny\Platform\Builders\Backend\DevelopmentBuilder;
 
@@ -14,7 +15,7 @@ require_once realpath(__DIR__ . '/../vendor/autoload.php');
 
 class Build
 {
-    use StdLibTrait;
+    use StdLibTrait, StorageTrait;
 
     function __construct($argv)
     {
@@ -60,13 +61,13 @@ class Build
             die();
         }
 
-        /* @var Storage $appsStorage */
-        $appsStorage = ServiceManager::getInstance()->getService('Storage.Apps');
+        $appsStorage = $this->storage('Apps');
+        $buildStorage = $this->storage('Build');
 
         if ($args['dev']) {
             $force = isset($args['force']);
             $builder = new DevelopmentBuilder();
-            $builder->setAppsStorage($appsStorage)->setForceBuild($force)->buildApp($app);
+            $builder->setAppsStorage($appsStorage)->setBuildStorage($buildStorage)->setForceBuild($force)->buildApp($app);
         } else {
             //$builder = new ProductionBuilder($this->_config);
             //$builder->setAppsStorage($this->_storage)->buildApp($app);
