@@ -5,7 +5,7 @@ var TaskList = ListComponent.createComponent();
 
 class TaskForm extends BaseComponent {
 
-	getTemplate(){
+	getTemplate() {
 		return this.getReactTemplate();
 	}
 
@@ -16,13 +16,14 @@ class TaskForm extends BaseComponent {
 		});
 	}
 
-	saveTodo(){
-		this.trigger('Todo.Todo.saveTaskAction', this.state).then(actionResult => {
-			if(!actionResult.hasErrors()){
+	saveTodo() {
+		var action = this.state.id != '' ? 'Todo.Todo.TaskUpdate' : 'Todo.Todo.TaskCreate';
+		this.trigger(action, this.state).then(actionResult => {
+			if (!actionResult.hasErrors()) {
 				Router.goTo('TodoItemList');
 			} else {
 				actionResult.getErrors().forEach(error => {
-					console.log(error.getCode()+': '+error.getMessage())
+					console.log(error.getCode() + ': ' + error.getMessage())
 				});
 			}
 		});

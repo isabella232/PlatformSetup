@@ -33,11 +33,9 @@ class EntityStore extends BaseStore {
 		actions.forEach(action => {
 			var actionName = fqn + action;
 			var callbackName = `on${entityName}${action}`;
-			if(typeof this[callbackName] == 'undefined'){
-				this[callbackName] = (data) => {
-					return this['crud'+action](data);
-				};
-			}
+			this.__proto__.__proto__[callbackName] = (data) => {
+				return this['crud'+action](data);
+			};
 			this.onAction(actionName, callbackName);
 		});
 	}
