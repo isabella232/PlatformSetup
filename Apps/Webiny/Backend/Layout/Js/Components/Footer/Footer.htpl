@@ -3,6 +3,9 @@
         <span>Developer mode</span>
         <switch-button bind={this.state.developerMode} bind-change={this.toggleDeveloperMode}/>
     </div>
+    <if cond={this.state.developerMode}>
+        <button modal-trigger={this.props.architectureModal} style={{marginTop: '7px'}} class="btn btn-info">Show Architecture</button>
+    </if>
     <ul class="links">
         <loop items={this.state.links}>
             <li>
@@ -11,11 +14,11 @@
         </loop>
     </ul>
     <ul class="links secondary">
-        <!--<loop items="this.state.linksSecondary">
+        <loop items="this.state.linksSecondary">
             <li>
                 <a href={item.url}>{item.name}</a>
             </li>
-        </loop>-->
+        </loop>
     </ul>
     <div class="dropdown sort feedback-wrap">
         <button class="btn btn-default dropdown-toggle feedback" type="button">

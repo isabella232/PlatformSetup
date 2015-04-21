@@ -1,6 +1,6 @@
 <div style={{display: display}}>
     <div class="modal-backdrop in"></div>
-    <div class="modal" id={this.props.ref} tabindex="-1" role="dialog" style={{display: display}}>
+    <div class={{modal: true, 'modal-wizard': this.props.wide}} id={this.props.ref} tabindex="-1" role="dialog" style={{display: display}}>
         <div class="modal-dialog">
             <div class="modal-content">
                 <if cond="this.props.title">

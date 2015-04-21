@@ -43,25 +43,26 @@ class BaseStore extends BaseClass {
 		var callbackFn = typeof callback == 'string' ? this[callback] : callback;
 		var callbackName = typeof callback == 'string' ? callback : 'callable';
 
-		DeveloperTools.registerStoreActionHandler(this.getFqn(), {
+		/*DeveloperTools.registerStoreActionHandler(this.getFqn(), {
 			action: action,
 			handler: callbackName,
 			listenerType: 'store',
 			listeningTo: 'action',
 			listenerName: this.getFqn()
+		});*/
+
+		DeveloperTools.addMap({
+			source: action,
+			target: this.getFqn(),
+			sourceType: "action",
+			targetType: "store"
 		});
 
 		EventManager.addListener(action, callbackFn.bind(this));
 	}
 
 	onStore(store, callback) {
-		// TODO: adjust as onAction
-		var meta = {
-			listenerType: 'store',
-			listeningTo: 'store',
-			listenerName: this.getFqn()
-		};
-		EventManager.addListener(store, callback, meta);
+		EventManager.addListener(store, callback);
 	}
 
 	getData(conditions = null) {

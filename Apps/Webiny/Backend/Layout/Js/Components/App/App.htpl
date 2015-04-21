@@ -5,5 +5,10 @@
     <div class="master-content container-fluid">
         <placeholder name="MasterContent"/>
     </div>
-    <Footer/>
+    <Footer architecture-modal={this.refs.architectureModal}/>
+    <modal wide={true} ref="architectureModal" title="System Architecture">
+        <modal-body>
+            <SystemArchitecture />
+        </modal-body>
+    </modal>
 </div>

@@ -2,6 +2,7 @@ import StateStore from '/Webiny/Core/Tools/StateStore';
 import LinkState from '/Webiny/Core/Tools/LinkState';
 import EventManager from '/Webiny/Core/EventManager';
 import ActionResult from '/Webiny/Core/Action/ActionResult';
+import DeveloperTools from '/Webiny/Core/Tools/DeveloperTools'
 
 export default function ComponentSkeleton(self) {
 	/**
@@ -150,6 +151,13 @@ export default function ComponentSkeleton(self) {
 				listeningTo: 'store',
 				listenerName: reactThis.getFqn()
 			};
+
+			DeveloperTools.addMap({
+				source: store,
+				target: reactThis.getFqn(),
+				sourceType: "store",
+				targetType: "component"
+			});
 
 			// Get store from registry to trigger its init() method if it has not yet been initialized
 			self.getRegistry().getStore(store);

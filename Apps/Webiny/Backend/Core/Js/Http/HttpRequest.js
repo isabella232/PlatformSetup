@@ -1,4 +1,6 @@
-class Request {
+import HttpResponse from '/Webiny/Core/Http/HttpResponse';
+
+class HttpRequest {
 
 	constructor() {
 		this.url = '';
@@ -59,6 +61,11 @@ class Request {
 		return this;
 	}
 
+	addHeader(name, value){
+		this.headers[name] = value;
+		return this;
+	}
+
 	getResponseType() {
 		return this.responseType;
 	}
@@ -85,10 +92,15 @@ class Request {
 		return config;
 	}
 
-	send(){
-		return axios(this.getRequestObject());
+	/**
+	 * Send request and get response as {HttpResponse} class instance
+	 * @returns {Promise}
+	 */
+	send() {
+		return axios(this.getRequestObject()).then(response => {
+			return new HttpResponse(response)
+		});
 	}
-
 }
 
-export default Request;
+export default HttpRequest;

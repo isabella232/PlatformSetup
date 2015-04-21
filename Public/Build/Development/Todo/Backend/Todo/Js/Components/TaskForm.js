@@ -10,19 +10,18 @@ class TaskForm extends BaseComponent {
 	}
 
 	getTemplate() {
-		return React.createElement(Grid12, null,     React.createElement(Form, {name: "form"},         React.createElement(FormGroup, null,             React.createElement(Label, null, "ID"),             React.createElement(Input, {grid: "4", valueLink: this.linkState("id"), placeholder: "ID", disabled: "disabled"}),             React.createElement(Label, null, "Created"),             React.createElement(Input, {grid: "4", valueLink: this.linkState("createdOn"), placeholder: "Created", disabled: "disabled"})        ),         React.createElement(FormGroup, null,             React.createElement(Label, null, "Task"),             React.createElement(Input, {name: "task", grid: "10", valueLink: this.linkState("task"), placeholder: "Task"})        ),         React.createElement(FormGroup, null,             React.createElement(Switch, {label: "Important", valueLink: this.linkState("important"), buttons: "Yes|No"})                    ),         React.createElement(FormGroup, null,             React.createElement(Checkbox, {label: "Settings dev", valueLink: this.linkState("settings.dev"), bindChange: this.onChangeDev})        ),         React.createElement(FormGroup, null,             React.createElement(Checkbox, {label: "Completed", valueLink: this.linkState("completed")})        ),         React.createElement(FormGroup, null,             React.createElement("div", {className: "col-sm-offset-2 col-sm-10"},                 React.createElement("button", {className: "btn btn-success", type: "submit", onClick: this.saveTodo}, "Save")            )        )    ));
+		return React.createElement(Grid12, null,     React.createElement(Form, {name: "form"},         React.createElement(FormGroup, null,             React.createElement(Label, null, "ID"),             React.createElement(Input, {grid: "4", valueLink: this.linkState("id"), placeholder: "ID", disabled: "disabled"}),             React.createElement(Label, null, "Created"),             React.createElement(Input, {grid: "4", valueLink: this.linkState("createdOn"), placeholder: "Created", disabled: "disabled"})        ),         React.createElement(FormGroup, null,             React.createElement(Label, null, "Task"),             React.createElement(Input, {name: "task", grid: "10", valueLink: this.linkState("task"), placeholder: "Task"})        ),         React.createElement(FormGroup, null,             React.createElement(Switch, {label: "Important", valueLink: this.linkState("important"), buttons: "Yes|No"})                    ),         React.createElement(FormGroup, null,             React.createElement(Checkbox, {label: "Settings dev", valueLink: this.linkState("settings.dev"), bindChange: this.onChangeDev})        ),         React.createElement(FormGroup, null,             React.createElement(Checkbox, {label: "Completed", valueLink: this.linkState("completed")})        ),         React.createElement(FormGroup, null,             React.createElement("div", {className: "col-sm-offset-2 col-sm-10"},                 React.createElement("button", {className: "btn btn-success", type: "submit", onClick: this.state.id != '' ? this.updateTodo : this.createTodo}, "Save")            )        )    ));
 	}
 
 	componentDidMount() {
 		this.TaskStore = this.getStore('Todo.Todo.TaskStore');
-		this.TaskStore.crudGet(this.getParam('id')).then(response => {
-			this.setState(response.getData());
+		this.TaskStore.crudGet(this.getParam('id')).then(apiResponse => {
+			this.setState(apiResponse.getData());
 		});
 	}
 
-	saveTodo() {
-		var action = this.state.id != '' ? 'Todo.Todo.TaskUpdate' : 'Todo.Todo.TaskCreate';
-		this.trigger(action, this.state).then(actionResult => {
+	createTodo() {
+		this.trigger('Todo.Todo.TaskCreate', this.state).then(actionResult => {
 			if (!actionResult.hasErrors()) {
 				Router.goTo('TodoItemList');
 			} else {
@@ -31,6 +30,11 @@ class TaskForm extends BaseComponent {
 				});
 			}
 		});
+	}
+
+	updateTodo(){
+		this.trigger('Todo.Todo.TaskUpdate', this.state);
+		Router.goTo('TodoItemList');
 	}
 }
 

@@ -53,70 +53,130 @@
     // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
     var links = [
         {
-            "source": "Core.UI.GrowlsStore",
-            "target": "Core.UI.AddGrowl",
-            "sourceType": "store",
-            "targetType": "action"
-        },
-        {
-            "source": "Core.UI.GrowlsStore",
-            "target": "Core.UI.RemoveGrowl",
-            "sourceType": "store",
-            "targetType": "action"
-        },
-        {
-            "source": "Core.UI.GrowlsStore",
-            "target": "Core.UI.RemoveGrowls",
-            "sourceType": "store",
-            "targetType": "action"
-        },
-        {
-            "source": "Core.Layout.Growler",
-            "target": "Core.UI.GrowlsStore",
+            "source": "Todo.Todo.TaskForm",
+            "target": "Todo.Todo.TaskCreate",
             "sourceType": "component",
-            "targetType": "store"
-        },
-        {
-            "source": "Todo.Todo.TasksStore",
-            "target": "Todo.Todo.addTodoAction",
-            "sourceType": "store",
             "targetType": "action"
         },
         {
-            "source": "Todo.Todo.TasksStore",
-            "target": "Todo.Todo.saveTaskAction",
-            "sourceType": "store",
-            "targetType": "action"
-        },
-        {
-            "source": "Todo.Todo.TasksStore",
-            "target": "Todo.Todo.removeTodoAction",
-            "sourceType": "store",
+            "source": "Todo.Todo.TaskForm",
+            "target": "Todo.Todo.TaskUpdate",
+            "sourceType": "component",
             "targetType": "action"
         },
         {
             "source": "Todo.Todo.TaskList",
-            "target": "Todo.Todo.TasksStore",
+            "target": "Todo.Todo.TaskCreate",
             "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Todo.Todo.TaskList",
+            "target": "Core.UI.AddGrowl",
+            "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Todo.Todo.TaskList",
+            "target": "Todo.Todo.TaskRestore",
+            "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Todo.Todo.TaskList",
+            "target": "Todo.Todo.TaskDelete",
+            "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Webiny.Layout.Footer",
+            "target": "App.ToggleDeveloperMode",
+            "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Webiny.Layout.Growler",
+            "target": "Core.UI.RemoveGrowl",
+            "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Webiny.Layout.Growler",
+            "target": "Core.UI.RemoveGrowls",
+            "sourceType": "component",
+            "targetType": "action"
+        },
+        {
+            "source": "Core.UI.AddGrowl",
+            "target": "Core.UI.GrowlsStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Core.UI.RemoveGrowl",
+            "target": "Core.UI.GrowlsStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Core.UI.RemoveGrowls",
+            "target": "Core.UI.GrowlsStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Core.UI.GrowlsStore",
+            "target": "Webiny.Layout.Growler",
+            "sourceType": "store",
+            "targetType": "component"
+        },
+        {
+            "source": "Todo.Todo.TaskCreate",
+            "target": "Todo.Todo.TaskStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Todo.Todo.TaskDelete",
+            "target": "Todo.Todo.TaskStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Todo.Todo.TaskUpdate",
+            "target": "Todo.Todo.TaskStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Todo.Todo.TaskRestore",
+            "target": "Todo.Todo.TaskStore",
+            "sourceType": "action",
+            "targetType": "store"
+        },
+        {
+            "source": "Todo.Todo.TaskStore",
+            "target": "Todo.Todo.TaskList",
+            "sourceType": "store",
+            "targetType": "component"
+        },
+        {
+            "source": "App.ToggleDeveloperMode",
+            "target": "Core.Layout.AppStore",
+            "sourceType": "action",
             "targetType": "store"
         },
         {
             "source": "Core.Layout.AppStore",
-            "target": "App.ToggleDeveloperMode",
+            "target": "Webiny.Layout.Footer",
             "sourceType": "store",
-            "targetType": "action"
+            "targetType": "component"
         },
         {
-            "source": "Core.Layout.Footer",
-            "target": "Core.Layout.AppStore",
-            "sourceType": "component",
-            "targetType": "store"
-        },
-        {
-            "source": "Core.Layout.App",
-            "target": "Core.Layout.AppStore",
-            "sourceType": "component",
-            "targetType": "store"
+            "source": "Core.Layout.AppStore",
+            "target": "Webiny.Layout.App",
+            "sourceType": "store",
+            "targetType": "component"
         }
     ];
 
@@ -150,12 +210,26 @@
             .on("tick", tick)
             .start();
 
+    var drag = force.drag()
+            .origin(function(d) { return d; })
+            .on("dragstart", function(){
+                d3.event.sourceEvent.stopPropagation();
+            });
+
+    var zoom = d3.behavior.zoom()
+            .scaleExtent([0.2, 10])
+            .on("zoom", zoomed);
+
+    var margin = {top: -5, right: -5, bottom: -5, left: -5};
     var svg = d3.select("body").append("svg")
             .attr("width", width)
-            .attr("height", height);
+            .attr("height", height)
+            .call(zoom);
+
+    var container = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.right + ")");
 
     // Per-type markers, as they don't inherit styles.
-    svg.append("defs").selectAll("marker")
+    container.append("defs").selectAll("marker")
             .data(["action", "component", "store"])
             .enter().append("marker")
             .attr("id", function (d) {
@@ -165,7 +239,7 @@
             .attr("refX", function (d) {
                 var arrows = {
                     action: 20,
-                    component: 5,
+                    component: 20,
                     store: 26
                 };
                 return arrows[d];
@@ -177,7 +251,7 @@
             .append("path")
             .attr("d", "M0,-5L10,0L0,5");
 
-    var path = svg.append("g").selectAll("path")
+    var path = container.append("g").selectAll("path")
             .data(force.links())
             .enter().append("path")
             .attr("class", function (d) {
@@ -192,7 +266,7 @@
         store: 17,
         component: 10
     };
-    var circle = svg.append("g").selectAll("circle")
+    var circle = container.append("g").selectAll("circle")
             .data(force.nodes())
             .enter().append("circle")
             .on('mouseover', function (obj) {
@@ -229,9 +303,11 @@
             .attr("class", function (d) {
                 return "circle " + d.type
             })
-            .call(force.drag);
+            .call(force.drag)
+            .call(drag);
 
-    var text = svg.append("g").selectAll("text")
+
+    var text = container.append("g").selectAll("text")
             .data(force.nodes())
             .enter().append("text")
             .attr("x", 8)
@@ -256,6 +332,9 @@
         return "translate(" + d.x + "," + d.y + ")";
     }
 
+    function zoomed() {
+        container.attr("transform", "translate(" + d3.event.translate + ") scale(" + d3.event.scale + ")");
+    }
 </script>
 </body>
 </html>

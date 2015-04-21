@@ -29,7 +29,7 @@
 
         <form-group>
             <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-success" type="submit" onClick={this.saveTodo}>Save</button>
+                <button class="btn btn-success" type="submit" onClick={this.state.id != '' ? this.updateTodo : this.createTodo}>Save</button>
             </div>
         </form-group>
     </form>

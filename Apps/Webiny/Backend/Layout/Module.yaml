@@ -30,13 +30,13 @@ Assets:
         - Css/webiny_sortable.css
         - Css/cms.css
         - Css/overwrites.css
+        - Css/d3-architecture.css
     Js:
         - Js/jquery.min.js
         - Js/jquery-ui.min.js
         - Js/bootstrap.min.js
-        #- Js/icheck.js
         - Js/selectize.js
-        #- Js/bootstrap-switch.js
         - Js/jquery.mousewheel.js
         - Js/perfect-scrollbar.js
         - Js/onload.js
+        - Js/d3.v3.min.js

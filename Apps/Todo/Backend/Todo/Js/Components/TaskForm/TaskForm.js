@@ -11,14 +11,13 @@ class TaskForm extends BaseComponent {
 
 	componentDidMount() {
 		this.TaskStore = this.getStore('Todo.Todo.TaskStore');
-		this.TaskStore.crudGet(this.getParam('id')).then(response => {
-			this.setState(response.getData());
+		this.TaskStore.crudGet(this.getParam('id')).then(apiResponse => {
+			this.setState(apiResponse.getData());
 		});
 	}
 
-	saveTodo() {
-		var action = this.state.id != '' ? 'Todo.Todo.TaskUpdate' : 'Todo.Todo.TaskCreate';
-		this.trigger(action, this.state).then(actionResult => {
+	createTodo() {
+		this.trigger('Todo.Todo.TaskCreate', this.state).then(actionResult => {
 			if (!actionResult.hasErrors()) {
 				Router.goTo('TodoItemList');
 			} else {
@@ -27,6 +26,11 @@ class TaskForm extends BaseComponent {
 				});
 			}
 		});
+	}
+
+	updateTodo(){
+		this.trigger('Todo.Todo.TaskUpdate', this.state);
+		Router.goTo('TodoItemList');
 	}
 }
 
