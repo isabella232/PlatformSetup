@@ -1,18 +1,16 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
+import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
 
-class Input extends BaseComponent {
+class Input extends BaseInputComponent {
 
 	getFqn() {
 		return 'Core.View.Input';
 	}
 
-	getInitialState(){
-		var css = 'col-sm-' + this.props.grid;
-
+	getInitialState() {
 		var state = {
-			css: {}
+			_valid: null
 		};
-		state.css[css] = true;
+		_.set(state, 'css.' + 'col-sm-' + this.props.grid, true);
 		return state;
 	}
 
@@ -23,20 +21,22 @@ class Input extends BaseComponent {
 	 * Ex: <Input ref="firstName"/>
 	 * Calling this.getNode('firstName') from parent component will return the actual <input> element inside the component
 	 *
-	 * If getDOMElement() is not implemented, the actual component DOM will be returned by default.
+	 * If getDOMElement() is not implemented, calling getNode() will return the actual component DOM will be returned by default.
 	 *
 	 * @returns {HTMLElement}
 	 */
 	getDOMElement() {
 		return React.findDOMNode(this).querySelector('input');
 	}
-}
 
-Input.defaultProps = {
-	disabled: false,
-	placeholder: '',
-	grid: 12,
-	name: null
-};
+	getDefaultProperties() {
+		return {
+			disabled: false,
+			placeholder: '',
+			grid: 12,
+			name: null
+		};
+	}
+}
 
 export default Input;

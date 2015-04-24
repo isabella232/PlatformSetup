@@ -10,7 +10,6 @@ Parsers:
         form-inline: FormInline
         form-group: FormGroup
         form: Form
-        label: Label
         input: Input
         checkbox: Checkbox
         switch: Switch
@@ -24,11 +23,15 @@ Parsers:
         td: Td
         tfoot: Tfoot
         grid-12: Grid12
+        grid-6: Grid6
+        grid-4: Grid4
+        grid-2: Grid2
         modal: Modal
         modal-header: ModalHeader
         modal-body: ModalBody
         modal-footer: ModalFooter
 
+    # Use native HTML tags instead of react components
     Skip:
         - Checkbox
         - SwitchButton

@@ -41,10 +41,6 @@ class Todo extends BaseModule {
 				//return response;
 			}
 		});
-
-		Http.addResponseInterceptor(httpResponse => {
-			console.log("Response interceptor", httpResponse);
-		});
 	}
 
 	registerComponents() {

@@ -1,6 +1,16 @@
 <div class={this.state.css}>
-    <input disabled={this.props.disabled} type="text"
-           class="form-control"
-           valueLink={this.props.valueLink}
-           placeholder={this.props.placeholder}/>
+    <div class={{'form-group': true, error: this.state._valid === false, success: this.state._valid=== true}}>
+        <label class="control-label">{this.props.label}</label>
+        <if cond="this.state._valid === false">
+            <span class="info-txt">({this.state._validationError})</span>
+        </if>
+        <input disabled={this.props.disabled} type="text" class="form-control" valueLink={this.props.valueLink}
+               placeholder={this.props.placeholder}/>
+        <if cond="this.state._valid === true">
+            <span class="icon icon-good"></span>
+        </if>
+        <if cond="this.state._valid === false">
+            <span class="icon icon-bad"></span>
+        </if>
+    </div>
 </div>

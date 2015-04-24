@@ -1,6 +1,5 @@
 import BaseModule from '/Webiny/Core/Base/BaseModule';
 // Components
-import Label from '/Webiny/UI/Components/Label';
 import Input from '/Webiny/UI/Components/Input';
 import Link from '/Webiny/UI/Components/Link';
 import Form from '/Webiny/UI/Components/Form';
@@ -26,7 +25,6 @@ class UI extends BaseModule {
 
 	registerComponents() {
 		return {
-			Label: Label,
 			Input: Input,
 			Link: Link,
 			Form: Form,

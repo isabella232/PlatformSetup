@@ -59,7 +59,7 @@ export default function ComponentSkeleton(self) {
 					this.state = state;
 				}
 			}
-			self.componentWillMount();
+			self.componentWillMount.bind(this)();
 		},
 
 		/**
@@ -103,7 +103,7 @@ export default function ComponentSkeleton(self) {
 
 			this.__listeners.forEach(unsubscribe => {unsubscribe()});
 			this.__listeners = [];
-			self.componentWillUnmount();
+			self.componentWillUnmount.bind(this)();
 		},
 
 		trigger: function (action, data) {

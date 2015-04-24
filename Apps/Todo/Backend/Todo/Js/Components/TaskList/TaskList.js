@@ -1,11 +1,11 @@
 import BaseComponent from '/Webiny/Core/Base/BaseComponent';
 import MyDomainPicker from '/Webiny/Layout/Components/MyDomainPicker';
-import InfoGrowl from '/Webiny/UI/Classes/InfoGrowl';
-import SuccessGrowl from '/Webiny/UI/Classes/SuccessGrowl';
-import DangerGrowl from '/Webiny/UI/Classes/DangerGrowl';
-import GrowlText from '/Webiny/UI/Classes/Message/GrowlText';
-import GrowlLink from '/Webiny/UI/Classes/Message/GrowlLink';
-import GrowlComponent from '/Webiny/UI/Classes/Message/GrowlComponent';
+import InfoGrowl from '/Webiny/UI/Classes/Growl/InfoGrowl';
+import SuccessGrowl from '/Webiny/UI/Classes/Growl/SuccessGrowl';
+import DangerGrowl from '/Webiny/UI/Classes/Growl/DangerGrowl';
+import GrowlText from '/Webiny/UI/Classes/Growl/Message/GrowlText';
+import GrowlLink from '/Webiny/UI/Classes/Growl/Message/GrowlLink';
+import GrowlComponent from '/Webiny/UI/Classes/Growl/Message/GrowlComponent';
 
 import TableView from '/Todo/Todo/Components/TasksTableView'
 var TasksTableView = TableView.createComponent();

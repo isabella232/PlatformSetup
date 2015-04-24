@@ -1,4 +1,4 @@
-import GrowlText from '/Webiny/UI/Classes/Message/GrowlText';
+import GrowlText from '/Webiny/UI/Classes/Growl/Message/GrowlText';
 
 class InfoGrowl {
 
