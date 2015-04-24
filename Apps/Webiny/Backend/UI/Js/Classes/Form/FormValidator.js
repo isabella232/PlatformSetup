@@ -13,9 +13,12 @@ class FormValidator {
 		return this.validators[name];
 	}
 
-	parseValidators(component) {
-		var validate = component.props.validate.split(',');
-		var validators = {};
+	parseValidateProperty(validators) {
+		if(!validators){
+			return {};
+		}
+		var validate = validators.split(',');
+		validators = {};
 		validate.forEach(v => {
 			var validator = v.split(':');
 			var vName = validator.shift();
@@ -24,36 +27,50 @@ class FormValidator {
 		return validators;
 	}
 
+	parseCustomValidationMessages(elements){
+		var customMessages = {};
+
+		if (!elements) {
+			return customMessages;
+		}
+
+		elements.forEach(item => {
+			if (item.type == 'validator' && item.props.children) {
+				customMessages[item.props.name] = item.props.children;
+			}
+		});
+		return customMessages;
+	}
+
 	validate(value, validators, messages) {
-		for (var v in validators) {
+		var _this = this;
+		var chain = Q({valid: true});
+		Object.keys(validators).forEach(v => {
 			var args = _.clone(validators[v]);
 			args.unshift(value);
-			var result = this.getValidator(v).apply(null, args);
-			if (!result.valid) {
-				return {
-					valid: false,
-					message: messages[v] || result.message
-				};
-			}
-		}
-		return {valid: true};
+			chain = chain.then(function(){
+				return _this.getValidator(v).apply(null, args);
+			});
+		});
+
+		return chain;
 	}
 }
 
 var formValidator = new FormValidator();
 
 formValidator.addValidator('required', (value) => {
-	return {
-		valid: !(!value || value == ''),
-		message: 'This field is required'
-	};
+	if(!(!value || value == '')){
+		return true;
+	}
+	throw Error('This field is required');
 });
 
 formValidator.addValidator('minLength', (value, length) => {
-	return {
-		valid: value && value.length && value.length >= length,
-		message: 'This field requires at least ' + length + ' characters'
-	};
+	if(value.length && value.length >= length){
+		return true;
+	}
+	throw Error('This field requires at least ' + length + ' characters');
 });
 
 export default formValidator;
