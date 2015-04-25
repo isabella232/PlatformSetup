@@ -63,9 +63,17 @@ class Form extends BaseComponent {
 	updateModel(component) {
 		var validators = this.inputs[component.props.name].validators;
 		var messages = this.inputs[component.props.name].messages;
-		return Q(FormValidator.validate(component.props.valueLink.value, validators, messages)).then((res) => {
+		// Validate input
+		return Q(FormValidator.validate(component.props.valueLink.value, validators, messages)).then(res => {
 			this.inputs[component.props.name].model = component.props.valueLink.value;
 			return res;
+		}).catch(validationError => {
+			// Set custom error message if defined
+			var validator = validationError.validator;
+			if(validator in messages){
+				validationError.setMessage(messages[validator]);
+			}
+			throw validationError;
 		});
 	}
 }

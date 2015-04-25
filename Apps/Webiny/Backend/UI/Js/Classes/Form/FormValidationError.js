@@ -1,16 +1,26 @@
-class FormValidationError {
+class FormValidationError extends Error {
 
-	constructor(errorMessage, value){
-		this.errorMessage = errorMessage;
-		this.value = value;
+	constructor(message, validator, value){
+		this.message = message;
+		this.validator = validator;
+		this.value = value
 	}
 
-	getErrorMessage(){
-		return this.errorMessage;
+	getMessage(){
+		return this.message;
+	}
+
+	getValidator(){
+		return this.validator;
 	}
 
 	getValue(){
 		return this.value;
+	}
+
+	setMessage(message){
+		this.message = message;
+		return this;
 	}
 }
 

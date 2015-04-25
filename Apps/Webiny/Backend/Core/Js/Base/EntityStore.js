@@ -46,6 +46,10 @@ class EntityStore extends BaseStore {
 		return null;
 	}
 
+	getApi(){
+		return this.api;
+	}
+
 	getInitialData(){
 		return this.crudList().then(response => {
 			return response.getData().data;

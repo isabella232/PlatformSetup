@@ -2,10 +2,12 @@
 namespace Apps\Todo\Common\Php\Entities;
 
 
+use Webiny\Component\Mongo\MongoTrait;
 use Webiny\Platform\Entity\EntityAbstract;
 
 class TodoTask extends EntityAbstract
 {
+    use MongoTrait;
 
     protected static $entityCollection = 'TodoTasks';
 
@@ -17,6 +19,8 @@ class TodoTask extends EntityAbstract
     {
         $this->attr('task')
              ->char()
+             ->attr('email')
+             ->char()
              ->attr('completed')
              ->boolean()
              ->setDefaultValue(false)
@@ -26,5 +30,9 @@ class TodoTask extends EntityAbstract
              ->attr('settings')
              ->arr()
              ->setDefaultValue([]);
+    }
+
+    public static function emailExists($email, $skipId){
+        return TodoTask::count(['email' => $email, 'id' => ['$ne' => $skipId]]);
     }
 }

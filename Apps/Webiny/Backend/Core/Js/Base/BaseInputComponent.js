@@ -29,8 +29,7 @@ class BaseInputComponent extends BaseComponent {
 		if (this.props._updateModel && this.props.valueLink.value != prevProps.valueLink.value) {
 			Q.when(this.props._updateModel(this)).then(() => {
 				this.setState({_valid: true});
-			}).catch((validationError) => {
-				console.log("CAUGHT ERROR: ", validationError)
+			}).catch(validationError => {
 				this.setState({
 					_valid: false,
 					_validationError: validationError.message

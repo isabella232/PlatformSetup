@@ -1,3 +1,5 @@
+import FormValidationError from '/Webiny/UI/Classes/Form/FormValidationError';
+
 class FormValidator {
 
 	constructor() {
@@ -42,7 +44,7 @@ class FormValidator {
 		return customMessages;
 	}
 
-	validate(value, validators, messages) {
+	validate(value, validators) {
 		var _this = this;
 		var chain = Q({valid: true});
 		Object.keys(validators).forEach(v => {
@@ -52,7 +54,6 @@ class FormValidator {
 				return _this.getValidator(v).apply(null, args);
 			});
 		});
-
 		return chain;
 	}
 }
@@ -63,14 +64,14 @@ formValidator.addValidator('required', (value) => {
 	if(!(!value || value == '')){
 		return true;
 	}
-	throw Error('This field is required');
+	throw new FormValidationError('This field is required', 'required');
 });
 
 formValidator.addValidator('minLength', (value, length) => {
 	if(value.length && value.length >= length){
 		return true;
 	}
-	throw Error('This field requires at least ' + length + ' characters');
+	throw new FormValidationError('This field requires at least ' + length + ' characters', 'minLength');
 });
 
 export default formValidator;

@@ -98,7 +98,9 @@ class HttpRequest {
 	 */
 	send() {
 		return axios(this.getRequestObject()).then(response => {
-			return new HttpResponse(response)
+			return new HttpResponse(response);
+		}).catch(response => {
+			return new HttpResponse(response);
 		});
 	}
 }

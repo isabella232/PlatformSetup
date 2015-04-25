@@ -1,5 +1,7 @@
 import BaseComponent from '/Webiny/Core/Base/BaseComponent';
 import ListComponent from '/Todo/Todo/Components/TaskList';
+import FormValidator from '/Webiny/UI/Classes/Form/FormValidator';
+import FormValidationError from '/Webiny/UI/Classes/Form/FormValidationError';
 
 var TaskList = ListComponent.createComponent();
 
@@ -13,6 +15,14 @@ class TaskForm extends BaseComponent {
 		this.TaskStore = this.getStore('Todo.Todo.TaskStore');
 		this.TaskStore.crudGet(this.getParam('id')).then(apiResponse => {
 			this.setState(apiResponse.getData());
+		});
+
+		FormValidator.addValidator('taskEmail', value => {
+			return this.TaskStore.getApi().get('/validate-email/' + this.getParam('id') + '/' + value).then(apiResponse => {
+				if (apiResponse.isError() || !apiResponse.getData()) {
+					throw new FormValidationError('Email is already taken');
+				}
+			});
 		});
 	}
 
@@ -28,7 +38,7 @@ class TaskForm extends BaseComponent {
 		});
 	}
 
-	updateTodo(){
+	updateTodo() {
 		this.trigger('Todo.Todo.TaskUpdate', this.state);
 		Router.goTo('TodoItemList');
 	}
