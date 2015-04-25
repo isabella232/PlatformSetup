@@ -6,7 +6,7 @@
             <span class="info-txt">({this.state._validationError})</span>
         </if>
         <!-- Input element -->
-        <input disabled={this.props.disabled} type="text" class="form-control" valueLink={this.props.valueLink}
+        <input onBlur={onBlur} disabled={this.props.disabled} type="text" class="form-control" valueLink={this.props.valueLink}
                placeholder={this.props.placeholder}/>
 
         <!-- Validation error text -->

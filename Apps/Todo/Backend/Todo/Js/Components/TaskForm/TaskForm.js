@@ -20,7 +20,7 @@ class TaskForm extends BaseComponent {
 		FormValidator.addValidator('taskEmail', value => {
 			return this.TaskStore.getApi().get('/validate-email/' + this.getParam('id') + '/' + value).then(apiResponse => {
 				if (apiResponse.isError() || !apiResponse.getData()) {
-					throw new FormValidationError('Email is already taken');
+					throw new FormValidationError('Email is already taken', 'taskEmail');
 				}
 			});
 		});

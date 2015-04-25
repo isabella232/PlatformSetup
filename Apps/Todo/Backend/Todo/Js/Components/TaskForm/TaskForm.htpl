@@ -8,8 +8,7 @@
                 <validator name="minLength">A jesi skrt majke ti...</validator>
             </input>
             <input label="Email" validate="required,taskEmail" name="email" grid="12" bind={this.state.email} placeholder="Email">
-                <validator name="required">Daj upisi nesto!</validator>
-                <validator name="taskEmail">email ti ne valja!!</validator>
+                <validator name="taskEmail">Email ti ne valja!!</validator>
             </input>
         </grid-6>
         <grid-6>

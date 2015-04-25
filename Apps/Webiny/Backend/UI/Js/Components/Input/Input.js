@@ -2,8 +2,9 @@ import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
 
 class Input extends BaseInputComponent {
 
-	getFqn() {
-		return 'Core.View.Input';
+	getTemplate(){
+		var onBlur = this.props.validate ? this.validate : null;
+		return this.getReactTemplate();
 	}
 
 	getInitialState() {

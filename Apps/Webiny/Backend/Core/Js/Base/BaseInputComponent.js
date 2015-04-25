@@ -21,7 +21,7 @@ class BaseInputComponent extends BaseComponent {
 		}
 	}
 
-	componentDidUpdate(prevProps, prevState) {
+	/*componentDidUpdate(prevProps, prevState) {
 		if (!prevState || !this.props.valueLink) {
 			return;
 		}
@@ -36,6 +36,17 @@ class BaseInputComponent extends BaseComponent {
 				});
 			});
 		}
+	}*/
+
+	validate(){
+		Q.when(this.props._updateModel(this)).then(() => {
+			this.setState({_valid: true});
+		}).catch(validationError => {
+			this.setState({
+				_valid: false,
+				_validationError: validationError.message
+			});
+		});
 	}
 
 	getValue() {

@@ -218,11 +218,22 @@ export default function ComponentSkeleton(self) {
 	 * they are available from `this` in React component
 	 */
 	var prototype = self.__proto__;
+
 	Object.keys(prototype).forEach(function (key) {
 		if (!classObject.hasOwnProperty(key)) {
 			classObject[key] = prototype[key];
 		}
 	});
+
+	// TODO: MAKE THIS RECURSIVE!!!
+	if(prototype.getClassName() != 'BaseComponent'){
+		prototype = prototype.__proto__;
+		Object.keys(prototype).forEach(function (key) {
+			if (!classObject.hasOwnProperty(key)) {
+				classObject[key] = prototype[key];
+			}
+		});
+	}
 
 	return React.createClass(classObject);
 };

@@ -36,11 +36,17 @@ class FormValidator {
 			return customMessages;
 		}
 
+		var isArray = elements instanceof Array;
+		if(!isArray){
+			elements = [elements];
+		}
+
 		elements.forEach(item => {
 			if (item.type == 'validator' && item.props.children) {
 				customMessages[item.props.name] = item.props.children;
 			}
 		});
+
 		return customMessages;
 	}
 
