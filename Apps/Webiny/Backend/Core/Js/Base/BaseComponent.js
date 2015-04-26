@@ -30,8 +30,8 @@ class BaseComponent extends BaseClass {
 	 * @param props
 	 * @returns {*}
 	 */
-	static createElement(props = {}) {
-		if (!props.hasOwnProperty('key')) {
+	static createElement(props = {}, createKey = true) {
+		if (!props.hasOwnProperty('key') && createKey) {
 			props.key = Tools.createUID();
 		}
 		var cmp = (new this).getComponent();

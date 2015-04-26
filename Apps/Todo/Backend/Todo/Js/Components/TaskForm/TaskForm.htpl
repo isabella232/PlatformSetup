@@ -1,8 +1,8 @@
 <grid-12>
     <form name="form">
         <grid-6>
-            <input label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled />
-            <input validate="required" label="Created" grid="6" bind={this.state.createdOn} placeholder="Created" disabled />
+            <input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled />
+            <input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn} placeholder="Created" disabled />
             <input label="Task" validate="required,minLength:5" name="task" grid="12" bind={this.state.task} placeholder="Task">
                 <validator name="required">Daj upisi nesto!</validator>
                 <validator name="minLength">A jesi skrt majke ti...</validator>
@@ -26,4 +26,5 @@
             </div>
         </form-group>-->
     </form>
+    <input label="Polje" name="polje" grid="12" bind={this.state.email}/>
 </grid-12>

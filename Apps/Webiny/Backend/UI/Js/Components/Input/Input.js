@@ -3,8 +3,18 @@ import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
 class Input extends BaseInputComponent {
 
 	getTemplate(){
+		var formType = this.props._form ? this.props._form.getFormType() : 'blank';
 		var onBlur = this.props.validate ? this.validate : null;
-		return this.getReactTemplate();
+
+		if(formType == 'vertical'){
+			return this.getReactTemplate('VerticalInput');
+		}
+
+		if(formType == 'horizontal'){
+			return this.getReactTemplate('HorizontalInput');
+		}
+
+		return '<input {...this.props} class="form-control"/>';
 	}
 
 	getInitialState() {

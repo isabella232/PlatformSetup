@@ -21,23 +21,6 @@ class BaseInputComponent extends BaseComponent {
 		}
 	}
 
-	/*componentDidUpdate(prevProps, prevState) {
-		if (!prevState || !this.props.valueLink) {
-			return;
-		}
-
-		if (this.props._updateModel && this.props.valueLink.value != prevProps.valueLink.value) {
-			Q.when(this.props._updateModel(this)).then(() => {
-				this.setState({_valid: true});
-			}).catch(validationError => {
-				this.setState({
-					_valid: false,
-					_validationError: validationError.message
-				});
-			});
-		}
-	}*/
-
 	validate(){
 		Q.when(this.props._updateModel(this)).then(() => {
 			this.setState({_valid: true});

@@ -20,10 +20,6 @@ export default function ComponentSkeleton(self) {
 		__listeners: self.__listeners,
 
 		/**
-		 * This property is used for storing dynamically calculated properties that will be used in template
-		 */
-		dynamic: {},
-		/**
 		 * @see http://facebook.github.io/react/docs/component-specs.html#getinitialstate
 		 */
 		getInitialState: self.getInitialState,

@@ -57,7 +57,12 @@ class FormValidator {
 			var args = _.clone(validators[v]);
 			args.unshift(value);
 			chain = chain.then(function(){
-				return _this.getValidator(v).apply(null, args);
+				return Q.when(_this.getValidator(v).apply(null, args)).then(valid => {
+					if(valid !== true){
+						throw new FormValidationError(valid, v);
+					}
+					return valid;
+				});
 			});
 		});
 		return chain;
@@ -70,14 +75,14 @@ formValidator.addValidator('required', (value) => {
 	if(!(!value || value == '')){
 		return true;
 	}
-	throw new FormValidationError('This field is required', 'required');
+	return 'This field is required';
 });
 
 formValidator.addValidator('minLength', (value, length) => {
 	if(value.length && value.length >= length){
 		return true;
 	}
-	throw new FormValidationError('This field requires at least ' + length + ' characters', 'minLength');
+	return 'This field requires at least ' + length + ' characters';
 });
 
 export default formValidator;

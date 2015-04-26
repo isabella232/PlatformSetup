@@ -1,0 +1,4 @@
+<div class={this.state.css}>
+    <label>Horizontal input</label>
+    <input {...this.props} class="form-control"/>
+</div>
