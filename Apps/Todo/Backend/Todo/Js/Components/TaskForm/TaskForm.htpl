@@ -10,7 +10,16 @@
             <input label="Email" validate="required,taskEmail" name="email" grid="12" bind={this.state.email} placeholder="Email">
                 <validator name="taskEmail">Email ti ne valja!!</validator>
             </input>
-            <switch label="Important" bind={this.state.important} buttons="Yes|No" />
+            <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No" />
+            <switch grid="6" label="Completed" bind={this.state.completed} />
+
+            <checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />
+
+            <checkbox-group label="Settings" bind={this.state.settings}>
+                <checkbox value="boring">Boring</checkbox>
+                <checkbox value="difficult">Difficult</checkbox>
+                <checkbox value="short">Short</checkbox>
+            </checkbox-group>
         </grid-6>
         <grid-6>
             <p style={{color: 'black'}}>
@@ -23,9 +32,6 @@
             Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
             </p>
         </grid-6>
-        <!--<switch label="Important" bind={this.state.important} buttons="Yes|No" />
-        <checkbox label="Settings dev" bind={this.state.settings.dev} bind-change={this.onChangeDev} />
-        <checkbox label="Completed" bind={this.state.completed} />-->
 
         <!--<form-group>
             <div class="col-sm-offset-2 col-sm-10">
