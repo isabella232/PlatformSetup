@@ -1,4 +1,9 @@
-<div class={this.state.css}>
-    <label>Horizontal input</label>
-    <input {...this.props} class="form-control"/>
+<div class={{'form-group': true, error: this.state._valid=== false, success: this.state._valid=== true}}>
+    <label class="control-label col-xs-4">{this.props.label}</label>
+
+    <div class="col-xs-8">
+        <input onBlur={this.props.validate ? this.validate : null} disabled={this.props.disabled} type="text" class="form-control"
+               valueLink={this.props.valueLink}
+               placeholder={this.props.placeholder}/>
+    </div>
 </div>

@@ -24,7 +24,7 @@ var todoApp = new TodoApp();
 var webinyApp = new WebinyApp();
 
 Router.setActiveRoute(window.location.pathname);
-var mainComponent = MainComponent.createElement();
+var mainComponent = React.createElement(MainComponent.createComponent());
 React.render(mainComponent, document.getElementById('app'));
 Router.start(window.location.pathname);
 

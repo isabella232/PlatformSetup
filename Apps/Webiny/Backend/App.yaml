@@ -8,6 +8,7 @@ Events:
 Parsers:
     Tags:
         form-inline: FormInline
+        form-horizontal: FormHorizontal
         form-group: FormGroup
         form: Form
         input: Input

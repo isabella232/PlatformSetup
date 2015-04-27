@@ -19,6 +19,8 @@ export default function ComponentSkeleton(self) {
 		 */
 		__listeners: self.__listeners,
 
+		createElement: self.createElement,
+
 		/**
 		 * @see http://facebook.github.io/react/docs/component-specs.html#getinitialstate
 		 */

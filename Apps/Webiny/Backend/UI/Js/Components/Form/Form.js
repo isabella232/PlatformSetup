@@ -1,6 +1,5 @@
 import BaseComponent from '/Webiny/Core/Base/BaseComponent';
 import FormValidator from '/Webiny/UI/Classes/Form/FormValidator';
-import FormInput from '/Webiny/UI/Components/FormInput';
 
 class Form extends BaseComponent {
 
@@ -8,8 +7,12 @@ class Form extends BaseComponent {
 		return 'vertical';
 	}
 
+	getFormClass(){
+		return '';
+	}
+
 	getTemplate() {
-		return '<form {...this.props} ref={this.props.name}>{this.registerInputs(this.props.children)}</form>';
+		return '<form className={this.getFormClass()} name={this.props.name} ref={this.props.name}>{this.registerInputs(this.props.children)}</form>';
 	}
 
 	componentWillMount() {

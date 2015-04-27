@@ -25,17 +25,14 @@ class BaseComponent extends BaseClass {
 	}
 
 	/**
-	 * Creates a React element ready for use in render() method
-	 *
+	 * Create react element from given component, props and inner content (children)
+	 * @param component
 	 * @param props
+	 * @param content
 	 * @returns {*}
 	 */
-	static createElement(props = {}, createKey = true) {
-		if (!props.hasOwnProperty('key') && createKey) {
-			props.key = Tools.createUID();
-		}
-		var cmp = (new this).getComponent();
-		return React.createElement(cmp, props);
+	createElement(component, props = null, content = null){
+		return React.createElement(component, props, content);
 	}
 
 	/**

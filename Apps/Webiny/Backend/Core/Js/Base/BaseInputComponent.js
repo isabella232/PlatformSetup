@@ -47,6 +47,21 @@ class BaseInputComponent extends BaseComponent {
 	isFormSubmitted() {
 		return this.state._formSubmitted;
 	}
+
+	/**
+	 * This method is called when getNode() method is called on an Input/Checkbox/etc component
+	 * to get the actual input element that component represents and not the component DOM representation.
+	 *
+	 * Ex: <Input ref="firstName"/>
+	 * Calling this.getNode('firstName') from parent component will return the actual <input> element inside the component
+	 *
+	 * If getDOMElement() is not implemented, calling getNode() will return the actual component DOM will be returned by default.
+	 *
+	 * @returns {HTMLElement}
+	 */
+	getDOMElement() {
+		return React.findDOMNode(this).querySelector('input');
+	}
 }
 
 export default BaseInputComponent;
