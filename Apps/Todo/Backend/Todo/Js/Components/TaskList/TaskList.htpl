@@ -1,24 +1,23 @@
 <div class="col-sm-12">
     <form-inline name="form">
-        <form-group>
-            <input grid="12" placeholder="New task" ref="newTask"/>
-        </form-group>
-        <form-group>
-            <button class="btn btn-primary col-sm-12" type="submit" onClick={this.addTask}>Add</button>
-        </form-group>
-        <form-group>
-            <input grid="12" bind={this.state.filter} placeholder="Filter..."/>
-        </form-group>
-    </form-inline>
-    <if cond="this.state.todos.length == 0">No items available yet...</if>
+        <input grid="12" placeholder="New task" ref="newTask"/>
 
-    <TasksTableView fields={fields} actions={actions} items={this.state.todos} on-delete={this.removeTask} />
+        <div class="form-group">
+            <button class="btn btn-primary col-sm-12" type="submit" onClick={this.addTask}>Add</button>
+        </div>
+
+        <input grid="12" bind={this.state.filter} placeholder="Filter..."/>
+    </form-inline>
+
+    <TasksTableView fields={fields} actions={actions} items={this.state.todos} on-delete={this.removeTask}/>
 
     <!--<modal-confirm ref="deleteConfirm" title="" message="Are you sure you want to delete this item?" on-confirm={this.removeTask.bind(this, item)}></modal-confirm>-->
 
-    <modal ref="deleteConfirmationModal" title="Delete confirmation" on-hide={this.taskModalHide} on-hidden={this.taskModalHidden}>
+    <modal ref="deleteConfirmationModal" title="Delete confirmation" on-hide={this.taskModalHide}
+           on-hidden={this.taskModalHidden}>
         <modal-body>
-            <TasksTableView fields={['task','createdOn']} actions={['select']} items={this.state.todos} on-select={this.selectTask} />
+            <TasksTableView fields={['task','createdOn']} actions={['select']} items={this.state.todos}
+                            on-select={this.selectTask}/>
         </modal-body>
 
         <modal-footer>

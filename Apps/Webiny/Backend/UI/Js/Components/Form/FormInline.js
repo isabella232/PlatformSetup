@@ -1,9 +1,13 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
+import Form from '/Webiny/UI/Components/Form';
 
-class FormInline extends BaseComponent {
+class FormInline extends Form {
 
-	getTemplate(){
-		return '<form name={this.props.name} ref={this.props.name} class="form-inline">{this.props.children}</form>';
+	getFormType(){
+		return 'inline';
+	}
+
+	getFormClass(){
+		return 'form-inline';
 	}
 }
 

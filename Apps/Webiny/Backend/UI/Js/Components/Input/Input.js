@@ -1,9 +1,11 @@
 import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
 import HorizontalInputCmp from '/Webiny/UI/Components/HorizontalInput';
 import VerticalInputCmp from '/Webiny/UI/Components/VerticalInput';
+import InlineInputCmp from '/Webiny/UI/Components/InlineInput';
 
 var VerticalInput = VerticalInputCmp.createComponent();
 var HorizontalInput = HorizontalInputCmp.createComponent();
+var InlineInput = InlineInputCmp.createComponent();
 
 class Input extends BaseInputComponent {
 
@@ -16,6 +18,10 @@ class Input extends BaseInputComponent {
 
 		if(formType == 'horizontal'){
 			return this.createElement(HorizontalInput, this.props);
+		}
+
+		if(formType == 'inline'){
+			return this.createElement(InlineInput, this.props);
 		}
 
 		// Native input field

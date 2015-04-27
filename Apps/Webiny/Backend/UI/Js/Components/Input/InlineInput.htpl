@@ -1,0 +1,8 @@
+<div class={{'form-group': true, error: this.state._valid=== false, success: this.state._valid=== true}}>
+    <label class="control-label col-xs-4">{this.props.label}</label>
+
+    <input onBlur={this.props.validate ? this.validate : null} disabled={this.props.disabled} type="text"
+           class="form-control"
+           valueLink={this.props.valueLink}
+           placeholder={this.props.placeholder}/>
+</div>
