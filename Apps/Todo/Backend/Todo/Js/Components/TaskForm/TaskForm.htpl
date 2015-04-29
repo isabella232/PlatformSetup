@@ -13,9 +13,9 @@
             <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No" />
             <switch grid="6" label="Completed" bind={this.state.completed} />
 
-            <checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />
+            <!--<checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />-->
 
-            <checkbox-group label="Settings" bind={this.state.settings}>
+            <checkbox-group ref="checkBox" label="Settings" bind={this.state.settings.dev} bind-change={this.checkChange}>
                 <checkbox value="boring">Boring</checkbox>
                 <checkbox value="difficult">Difficult</checkbox>
                 <checkbox value="short">Short</checkbox>

@@ -36,6 +36,10 @@ class BaseInputComponent extends BaseComponent {
 		return this.props.valueLink.value;
 	}
 
+	getFormType(defaultType = 'native'){
+		return this.props._form ? this.props._form.getFormType() : defaultType;
+	}
+
 	hasValue() {
 		return this.props.valueLink.value !== '';
 	}
@@ -55,13 +59,14 @@ class BaseInputComponent extends BaseComponent {
 	 * Ex: <Input ref="firstName"/>
 	 * Calling this.getNode('firstName') from parent component will return the actual <input> element inside the component
 	 *
-	 * If getDOMElement() is not implemented, calling getNode() will return the actual component DOM will be returned by default.
+	 * If getDOMElement() is not implemented, calling getNode() will return the actual component DOM
 	 *
 	 * @returns {HTMLElement}
 	 */
-	getDOMElement() {
+	/*getDOMElement() {
+		console.log("BASE INPUT GET ELEMENT")
 		return React.findDOMNode(this).querySelector('input');
-	}
+	}*/
 }
 
 export default BaseInputComponent;

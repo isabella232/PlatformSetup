@@ -10,7 +10,7 @@ var InlineInput = InlineInputCmp.createComponent();
 class Input extends BaseInputComponent {
 
 	getTemplate(){
-		var formType = this.props._form ? this.props._form.getFormType() : 'blank';
+		var formType = this.getFormType();
 
 		if(formType == 'vertical'){
 			return this.createElement(VerticalInput, this.props);

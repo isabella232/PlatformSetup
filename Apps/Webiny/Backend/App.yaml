@@ -13,6 +13,7 @@ Parsers:
         form: Form
         input: Input
         checkbox: Checkbox
+        checkbox-group: CheckboxGroup
         switch: Switch
         switch-button: SwitchButton
         a: Link
@@ -35,4 +36,5 @@ Parsers:
     # Use native HTML tags instead of react components
     Skip:
         - Checkbox
+        - VerticalCheckboxGroup
         - SwitchButton

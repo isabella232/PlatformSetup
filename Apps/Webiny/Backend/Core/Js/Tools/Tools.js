@@ -11,9 +11,7 @@ class Tools {
 	}
 
 	createPromise(data) {
-		return Q.when(data).then((data) => {
-			return data;
-		});
+		return Q.when(data);
 	}
 
 

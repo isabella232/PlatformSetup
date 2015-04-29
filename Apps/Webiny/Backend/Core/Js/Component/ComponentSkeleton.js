@@ -170,11 +170,14 @@ export default function ComponentSkeleton(self) {
 		 * @param string key
 		 * @returns {DOMElement}
 		 */
-		getNode(key) {
-			if (typeof this.refs[key]['getDOMElement'] != 'undefined') {
-				return this.refs[key].getDOMElement();
+		getNode(key = false) {
+			if (key !== false){
+				if(typeof this.refs[key]['getDOMElement'] != 'undefined') {
+					return this.refs[key].getDOMElement();
+				}
+				return React.findDOMNode(this.refs[key]);
 			}
-			return this.refs[key].getDOMNode();
+			return React.findDOMNode(this);
 		},
 
 		getStore(name) {
@@ -216,7 +219,7 @@ export default function ComponentSkeleton(self) {
 	 * they are available from `this` in React component
 	 */
 	var prototype = self.__proto__;
-
+	
 	Object.keys(prototype).forEach(function (key) {
 		if (!classObject.hasOwnProperty(key)) {
 			classObject[key] = prototype[key];

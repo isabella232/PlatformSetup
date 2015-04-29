@@ -7,6 +7,7 @@ import FormGroup from '/Webiny/UI/Components/FormGroup';
 import FormInline from '/Webiny/UI/Components/FormInline';
 import FormHorizontal from '/Webiny/UI/Components/FormHorizontal';
 import Checkbox from '/Webiny/UI/Components/Checkbox';
+import CheckboxGroup from '/Webiny/UI/Components/CheckboxGroup';
 import Switch from '/Webiny/UI/Components/Switch';
 import SwitchButton from '/Webiny/UI/Components/SwitchButton';
 import GridRow from '/Webiny/UI/Components/GridRow';
@@ -33,6 +34,7 @@ class UI extends BaseModule {
 			FormInline: FormInline,
 			FormHorizontal: FormHorizontal,
 			Checkbox: Checkbox,
+			CheckboxGroup: CheckboxGroup,
 			Switch: Switch,
 			SwitchButton: SwitchButton,
 			GridRow: GridRow,
