@@ -21,7 +21,7 @@ class Form extends BaseComponent {
 
 	componentDidMount() {
 		// Disable form submission
-		var form = this.getNode(this.props.name);
+		var form = this.getDOM(this.props.name);
 		$(form).submit(function (e) {
 			e.preventDefault();
 		});
@@ -48,7 +48,6 @@ class Form extends BaseComponent {
 					_detachFromForm: this.detachFromForm,
 					_updateModel: this.updateModel,
 					_isFormDisabled: this.isFormDisabled,
-					_validate: this.validate,
 					_form: this
 				}, child.props && child.props.children);
 			}
@@ -81,6 +80,7 @@ class Form extends BaseComponent {
 			// Set custom error message if defined
 			var validator = validationError.validator;
 			if(validator in messages){
+				console.log(messages[validator])
 				validationError.setMessage(messages[validator]);
 			}
 			throw validationError;

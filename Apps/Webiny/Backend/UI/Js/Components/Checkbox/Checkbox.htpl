@@ -1,10 +1,7 @@
-<div class="col-sm-offset-2 col-sm-10">
+<div class={this.state.css}>
     <div class={{icheckbox_minimal: true, disabled: this.props.disabled, checked: checked}}>
-        <input id={this.state.ref} type="checkbox"
-               ref={this.state.ref}
-               onChange={this.onChange}
-               checked={checked} class="radio" />
+        <input id={id} type="checkbox" onChange={this.onChange} checked={checked} class="radio"/>
     </div>
-    <label for={this.state.ref} class="cb-label">{this.props.label}</label>
+    <label for={id} class="cb-label">{this.props.label}</label>
 </div>
 

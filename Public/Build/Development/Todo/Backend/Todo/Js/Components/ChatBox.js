@@ -18,7 +18,7 @@ class ChatBox extends BaseComponent {
 	}
 
 	postMessage() {
-		var messageInput = this.getNode('message');
+		var messageInput = this.getDOM('message');
 		var messages = this.state.messages;
 		messages.push({
 			message: messageInput.value,

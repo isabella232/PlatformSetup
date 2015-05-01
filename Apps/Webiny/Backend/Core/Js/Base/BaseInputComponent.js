@@ -3,10 +3,21 @@ import BaseComponent from '/Webiny/Core/Base/BaseComponent';
 class BaseInputComponent extends BaseComponent {
 
 	getInitialState() {
-		return {
+		var state = {
 			_isValid: true,
-			_formSubmitted: false
+			_formSubmitted: false,
+			_valid: null
 		};
+
+		_.set(state, 'css.' + 'col-sm-' + this.props.grid, true);
+
+		return state;
+	}
+
+	getDefaultProperties() {
+		return {
+			grid: 12
+		}
 	}
 
 	componentWillMount() {
@@ -53,20 +64,19 @@ class BaseInputComponent extends BaseComponent {
 	}
 
 	/**
-	 * This method is called when getNode() method is called on an Input/Checkbox/etc component
+	 * This method is called when getDOM() method is called on an Input/Checkbox/etc component
 	 * to get the actual input element that component represents and not the component DOM representation.
 	 *
 	 * Ex: <Input ref="firstName"/>
-	 * Calling this.getNode('firstName') from parent component will return the actual <input> element inside the component
+	 * Calling this.getDOM('firstName') from parent component will return the actual <input> element inside the component
 	 *
-	 * If getDOMElement() is not implemented, calling getNode() will return the actual component DOM
+	 * If getDOMElement() is not implemented, calling getDOM() will return the actual component DOM
 	 *
 	 * @returns {HTMLElement}
 	 */
-	/*getDOMElement() {
-		console.log("BASE INPUT GET ELEMENT")
+	getDOM() {
 		return React.findDOMNode(this).querySelector('input');
-	}*/
+	}
 }
 
 export default BaseInputComponent;

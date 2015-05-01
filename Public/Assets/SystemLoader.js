@@ -32,6 +32,7 @@ class SystemLoader extends TraceurLoader {
 	import(name) {
 		return super.import(name).catch(e => {
 			console.error(name, e.message);
+			console.log(e);
 		});
 	}
 }

@@ -3,9 +3,6 @@ class LinkState {
 	constructor(component, key) {
 		this.component = component;
 		this.key = key;
-		this.validValues = [
-			1, "1", "true", "TRUE", "on", "yes"
-		];
 	}
 
 	create() {
@@ -21,14 +18,15 @@ class LinkState {
 			return null;
 		}
 		key.split('.').forEach(key => {
-			if (value.hasOwnProperty(key)) {
+			if (value && value.hasOwnProperty(key)) {
 				value = value[key];
 			}
 		});
 
-		if (this.validValues.indexOf(value) > -1) {
-			value = true;
+		if(this.component.normalizeValue){
+			value = this.component.normalizeValue(value);
 		}
+
 		return value;
 	}
 
@@ -50,13 +48,13 @@ class LinkState {
 			component.setState(partialState);
 
 			// Execute callback if defined
-			var keyFnName = _this.key.split('.').map((key) => {
-				return key.charAt(0).toUpperCase() + key.slice(1);
+			var keyFnName = _this.key.split('.').map(key => {
+				return _.capitalize(_.camelCase(key));
 			}).join('');
 
 			if (callback) {
 				callback(value, oldValue);
-			} else if (component.hasOwnProperty('onChange' + keyFnName)) {
+			} else if (component['onChange' + keyFnName]) {
 				component['onChange' + keyFnName].call(component, value, oldValue);
 			}
 		};

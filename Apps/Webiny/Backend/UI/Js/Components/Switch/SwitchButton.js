@@ -2,10 +2,9 @@ import BaseComponent from '/Webiny/Core/Base/BaseComponent';
 
 class SwitchButton extends BaseComponent {
 
-	getInitialState(){
-		return {
-			ref: Tools.createUID()
-		};
+	componentWillMount(){
+		super.componentWillMount();
+		this.id = Tools.createUID();
 	}
 
 	getTemplate() {
@@ -28,11 +27,13 @@ class SwitchButton extends BaseComponent {
 			'bootstrap-switch-on': checked
 		};
 
+		var id = this.id;
+
 		return this.getReactTemplate();
 	}
 
 	switch(){
-		var el = this.getNode(this.state.ref);
+		var el = this.getDOM().querySelector('input');
 		var checked = !$(el).is(':checked');
 		this.props.valueLink.requestChange(checked, this.props.bindChange || null);
 	}

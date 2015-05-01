@@ -42,10 +42,6 @@ class TaskForm extends BaseComponent {
 		this.trigger('Todo.Todo.TaskUpdate', this.state);
 		Router.goTo('TodoItemList');
 	}
-
-	checkChange(newVal, oldVal){
-		console.log("Task Form Change", this.getNode('checkBox'));
-	}
 }
 
 export default TaskForm;

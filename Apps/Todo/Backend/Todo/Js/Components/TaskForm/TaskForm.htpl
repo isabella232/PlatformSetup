@@ -1,42 +1,47 @@
 <grid-12>
     <form name="form">
         <grid-6>
-            <input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled />
-            <input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn} placeholder="Created" disabled />
-            <input label="Task" validate="required,minLength:5" name="task" grid="12" bind={this.state.task} placeholder="Task">
-                <validator name="required">Daj upisi nesto!</validator>
-                <validator name="minLength">A jesi skrt majke ti...</validator>
+
+            <input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled/>
+            <input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn}
+                   placeholder="Created" disabled/>
+
+            <input label="Task" validate="required,minLength:5" name="task" grid="12" bind={this.state.task}
+                   placeholder="Task">
+            <validator name="required">Daj upisi nesto!</validator>
+            <validator name="minLength">A jesi skrt majke ti...</validator>
             </input>
-            <input label="Email" validate="required,taskEmail" name="email" grid="12" bind={this.state.email} placeholder="Email">
-                <validator name="taskEmail">Email ti ne valja!!</validator>
+
+            <input label="Email" validate="required,taskEmail" name="email" grid="12" bind={this.state.email}
+                   placeholder="Email">
+            <validator name="taskEmail">Email ti ne valja!!</validator>
             </input>
+
             <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No" />
             <switch grid="6" label="Completed" bind={this.state.completed} />
 
-            <!--<checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />-->
+                <!--<checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />-->
 
-            <checkbox-group ref="checkBox" label="Settings" bind={this.state.settings.dev} bind-change={this.checkChange}>
-                <checkbox value="boring">Boring</checkbox>
-                <checkbox value="difficult">Difficult</checkbox>
-                <checkbox value="short">Short</checkbox>
-            </checkbox-group>
+                <checkbox-group ref="checkBox" label="Settings" bind={this.state.settings}>
+                    <checkbox value="boring">Boring</checkbox>
+                    <checkbox value="difficult" grid="4">Difficult</checkbox>
+                    <checkbox value="short">Short</checkbox>
+                </checkbox-group>
+
+                <checkbox-group ref="config" label="Config" bind={this.state.config} bind-change={this.configChanged}>
+                    <checkbox value="auto-bind" grid="6">Auto-bind</checkbox>
+                    <checkbox value="register-classes" grid="6">Register classes</checkbox>
+                </checkbox-group>
+
         </grid-6>
         <grid-6>
-            <p style={{color: 'black'}}>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-            some form, by injected humour, or randomised words which don't look even slightly believable. If you are
-            going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
-            middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-            making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined
-            with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated
-            Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-            </p>
-        </grid-6>
 
-        <!--<form-group>
-            <div class="col-sm-offset-2 col-sm-10">
-                <button class="btn btn-success" type="submit" onClick={this.state.id != '' ? this.updateTodo : this.createTodo}>Save</button>
-            </div>
-        </form-group>-->
+        </grid-6>
     </form>
+
+    <!--<form-group>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-success" type="submit" onClick={this.state.id != '' ? this.updateTodo : this.createTodo}>Save</button>
+        </div>
+    </form-group>-->
 </grid-12>

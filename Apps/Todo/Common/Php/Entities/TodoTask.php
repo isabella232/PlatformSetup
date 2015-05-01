@@ -29,7 +29,10 @@ class TodoTask extends EntityAbstract
              ->setDefaultValue(false)
              ->attr('settings')
              ->arr()
-             ->setDefaultValue([]);
+             ->setDefaultValue([])
+            ->attr('config')
+            ->arr()
+            ->setDefaultValue([]);
     }
 
     public static function emailExists($email, $skipId){

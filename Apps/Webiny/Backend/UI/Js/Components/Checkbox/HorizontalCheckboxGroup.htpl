@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label class="control-label col-xs-4">{this.props.label}</label>
+
+
+    <div class="col-xs-8">
+        <div class="row">
+            <loop items={this.checkboxes}>
+                <Checkbox grid={item.grid} label={item.label} valueLink={this.linkState(item.bind)}/>
+            </loop>
+        </div>
+    </div>
+</div>

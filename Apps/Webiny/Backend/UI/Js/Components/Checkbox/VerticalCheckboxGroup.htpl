@@ -1,10 +1,11 @@
-<div class="col-sm-offset-2 col-sm-10">
-    <div class={{icheckbox_minimal: true, disabled: this.props.disabled, checked: checked}}>
-        <input id={this.inputRef} type="checkbox"
-               ref={this.inputRef}
-               onChange={this.onChange}
-               checked={checked} class="radio" />
-    </div>
-    <label for={this.inputRef} class="cb-label">{this.props.label}</label>
-</div>
+<div class={this.state.css}>
+    <div class="form-group">
+        <label class="control-label">{this.props.label}</label>
 
+        <div class="row">
+            <loop items={this.checkboxes}>
+                <Checkbox grid={item.grid} label={item.label} valueLink={this.linkState(item.bind)} />
+            </loop>
+        </div>
+    </div>
+</div>

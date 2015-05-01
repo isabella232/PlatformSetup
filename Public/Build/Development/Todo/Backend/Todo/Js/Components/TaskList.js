@@ -44,7 +44,7 @@ class TaskList extends BaseComponent {
 	}
 
 	addTask() {
-		var input = this.getNode('newTask');
+		var input = this.getDOM('newTask');
 		var taskName = input.value;
 		this.trigger('Todo.Todo.TaskCreate', {task: taskName}).then(actionResult => {
 			if (!actionResult.hasErrors()) {

@@ -165,15 +165,10 @@ export default function ComponentSkeleton(self) {
 			return reactThis;
 		},
 
-		/**
-		 * Get DOM Node by React reference
-		 * @param string key
-		 * @returns {DOMElement}
-		 */
-		getNode(key = false) {
+		getDOM(key = false) {
 			if (key !== false){
-				if(typeof this.refs[key]['getDOMElement'] != 'undefined') {
-					return this.refs[key].getDOMElement();
+				if(this.refs[key].getDOM) {
+					return this.refs[key].getDOM();
 				}
 				return React.findDOMNode(this.refs[key]);
 			}
@@ -209,25 +204,17 @@ export default function ComponentSkeleton(self) {
 	 * Create `render` method
 	 */
 	classObject.render = function () {
-		//console.log("RENDERING " + self.getClassName(), self.__instanceId);
 		return this.getTemplate();
 	};
 
 	/**
 	 * Almost done...
 	 * Take all methods that are not part of React wrapper and assign them to React classObject so that
-	 * they are available from `this` in React component
+	 * they are available from `this` in React component. This is done for the entire inheritance tree
 	 */
-	var prototype = self.__proto__;
-	
-	Object.keys(prototype).forEach(function (key) {
-		if (!classObject.hasOwnProperty(key)) {
-			classObject[key] = prototype[key];
-		}
-	});
+	var prototype = self;
 
-	// TODO: MAKE THIS RECURSIVE!!!
-	if(prototype.getClassName() != 'BaseComponent'){
+	while(prototype.getClassName() != 'BaseComponent'){
 		prototype = prototype.__proto__;
 		Object.keys(prototype).forEach(function (key) {
 			if (!classObject.hasOwnProperty(key)) {

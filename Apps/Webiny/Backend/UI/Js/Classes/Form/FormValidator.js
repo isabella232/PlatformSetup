@@ -46,6 +46,8 @@ class FormValidator {
 				customMessages[item.props.name] = item.props.children;
 			}
 		});
+		
+		console.log(customMessages)
 
 		return customMessages;
 	}

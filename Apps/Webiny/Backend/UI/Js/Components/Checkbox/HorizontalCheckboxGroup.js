@@ -1,6 +1,6 @@
 import BaseCheckboxGroup from '/Webiny/UI/Classes/CheckboxGroup/BaseCheckboxGroup';
 
-class VerticalCheckboxGroup extends BaseCheckboxGroup {
+class HorizontalCheckboxGroup extends BaseCheckboxGroup {
 
 	getTemplate() {
 		var Checkbox = this.getCheckboxComponent();
@@ -8,4 +8,4 @@ class VerticalCheckboxGroup extends BaseCheckboxGroup {
 	}
 }
 
-export default VerticalCheckboxGroup;
+export default HorizontalCheckboxGroup;
