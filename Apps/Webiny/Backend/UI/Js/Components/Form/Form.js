@@ -80,7 +80,6 @@ class Form extends BaseComponent {
 			// Set custom error message if defined
 			var validator = validationError.validator;
 			if(validator in messages){
-				console.log(messages[validator])
 				validationError.setMessage(messages[validator]);
 			}
 			throw validationError;

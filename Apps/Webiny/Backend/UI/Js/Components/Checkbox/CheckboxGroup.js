@@ -1,11 +1,11 @@
-import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
+import BaseFormComponent from '/Webiny/Core/Base/BaseFormComponent';
 import VerticalCheckboxGroupCmp from '/Webiny/UI/Components/VerticalCheckboxGroup';
 import HorizontalCheckboxGroupCmp from '/Webiny/UI/Components/HorizontalCheckboxGroup';
 
 var VerticalCheckboxGroup = VerticalCheckboxGroupCmp.createComponent();
 var HorizontalCheckboxGroup = HorizontalCheckboxGroupCmp.createComponent();
 
-class CheckboxGroup extends BaseInputComponent {
+class CheckboxGroup extends BaseFormComponent {
 
 	componentWillMount(){
 		super.componentWillMount();
@@ -34,7 +34,8 @@ class CheckboxGroup extends BaseInputComponent {
 	}
 
 	getDOM() {
-		return this.getDOM(this.checkboxRef);
+		console.log(this.checkboxRef)
+		return super.getDOM(this.checkboxRef);
 	}
 }
 

@@ -22,7 +22,7 @@ class Checkbox extends BaseInputComponent {
 	}
 
 	onChange() {
-		var el = this.getDOM().querySelector('input');
+		var el = this.getDOM();
 		var checked = $(el).is(':checked');
 		this.props.valueLink.requestChange(checked, this.props.bindChange || null);
 	}

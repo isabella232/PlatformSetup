@@ -1,4 +1,4 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
+import BaseFormComponent from '/Webiny/Core/Base/BaseFormComponent';
 import HorizontalInputCmp from '/Webiny/UI/Components/HorizontalInput';
 import VerticalInputCmp from '/Webiny/UI/Components/VerticalInput';
 import InlineInputCmp from '/Webiny/UI/Components/InlineInput';
@@ -7,25 +7,33 @@ var VerticalInput = VerticalInputCmp.createComponent();
 var HorizontalInput = HorizontalInputCmp.createComponent();
 var InlineInput = InlineInputCmp.createComponent();
 
-class Input extends BaseComponent {
+class Input extends BaseFormComponent {
 
+	componentWillMount(){
+		super.componentWillMount();
+		this.inputRef = Tools.createUID();
+	}
+	
 	getTemplate(){
 		var formType = this.getFormType();
 
+		var props = _.clone(this.props);
+		props['ref'] = this.inputRef;
+
 		if(formType == 'vertical'){
-			return this.createElement(VerticalInput, this.props, this.props.children);
+			return this.createElement(VerticalInput, props, this.props.children);
 		}
 
 		if(formType == 'horizontal'){
-			return this.createElement(HorizontalInput, this.props, this.props.children);
+			return this.createElement(HorizontalInput, props, this.props.children);
 		}
 
 		if(formType == 'inline'){
-			return this.createElement(InlineInput, this.props, this.props.children);
+			return this.createElement(InlineInput, props, this.props.children);
 		}
 
 		// Native input field
-		return React.createElement('input', Object.assign({}, this.props, {className: 'form-control'}));
+		return React.createElement('input', Object.assign({}, props, {className: 'form-control'}));
 	}
 
 	getDefaultProperties() {
@@ -37,8 +45,8 @@ class Input extends BaseComponent {
 		};
 	}
 
-	getFormType(defaultType = 'native'){
-		return this.props._form ? this.props._form.getFormType() : defaultType;
+	getDOM() {
+		return super.getDOM(this.inputRef);
 	}
 }
 
