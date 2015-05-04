@@ -47,8 +47,6 @@ class FormValidator {
 			}
 		});
 		
-		console.log(customMessages)
-
 		return customMessages;
 	}
 

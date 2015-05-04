@@ -1,42 +1,41 @@
 <grid-12>
     <form name="form">
-        <grid-6>
 
-            <input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled/>
-            <input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn}
-                   placeholder="Created" disabled/>
+        <input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled/>
+        <input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn}
+               placeholder="Created" disabled/>
 
-            <input label="Task" validate="required,minLength:5" name="task" grid="12" bind={this.state.task}
-                   placeholder="Task">
-            <validator name="required">Daj upisi nesto!</validator>
-            <validator name="minLength">A jesi skrt majke ti...</validator>
-            </input>
+        <input label="Task" validate="required,minLength:5" name="task" grid="4" bind={this.state.task}
+               placeholder="Task">
+        <validator name="required">Daj upisi nesto!</validator>
+        <validator name="minLength">A jesi skrt majke ti...</validator>
+        </input>
 
-            <input label="Email" validate="required,taskEmail" name="email" grid="12" bind={this.state.email}
-                   placeholder="Email">
-            <validator name="taskEmail">Email ti ne valja!!</validator>
-            </input>
+        <input label="Email" validate="required,taskEmail" name="email" grid="4" bind={this.state.email}
+               placeholder="Email">
+        <validator name="taskEmail">Email ti ne valja!!</validator>
+        </input>
 
-            <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No" />
-            <switch grid="6" label="Completed" bind={this.state.completed} />
+        <many2one></many2one>
 
-                <!--<checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />-->
+        <div class="clearfix"></div>
 
-                <checkbox-group ref="checkBox" label="Settings" bind={this.state.settings}>
-                    <checkbox value="boring">Boring</checkbox>
-                    <checkbox value="difficult" grid="4">Difficult</checkbox>
-                    <checkbox value="short">Short</checkbox>
-                </checkbox-group>
+        <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No"/>
+        <switch grid="6" label="Completed" bind={this.state.completed}/>
 
-                <checkbox-group ref="config" label="Config" bind={this.state.config} bind-change={this.configChanged}>
-                    <checkbox value="auto-bind" grid="6">Auto-bind</checkbox>
-                    <checkbox value="register-classes" grid="6">Register classes</checkbox>
-                </checkbox-group>
+        <!--<checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />-->
 
-        </grid-6>
-        <grid-6>
+        <checkbox-group ref="checkBox" label="Settings" bind={this.state.settings}>
+            <checkbox value="boring">Boring</checkbox>
+            <checkbox value="difficult" grid="4">Difficult</checkbox>
+            <checkbox value="short">Short</checkbox>
+        </checkbox-group>
 
-        </grid-6>
+        <checkbox-group ref="config" label="Config" bind={this.state.config} bind-change={this.configChanged}>
+            <checkbox value="auto-bind" grid="6">Auto-bind</checkbox>
+            <checkbox value="register-classes" grid="6">Register classes</checkbox>
+        </checkbox-group>
+
     </form>
 
     <!--<form-group>

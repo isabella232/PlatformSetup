@@ -57,6 +57,21 @@ class BaseComponent extends BaseClass {
 		return this.getClassName();
 	}
 
+	/**
+	 * Get DOM element of current component or of any child element/component referenced by ref
+	 * @param ref Reference name (string) or null for current component
+	 * @returns {*}
+	 */
+	getDOM(ref = null) {
+		if (ref !== null){
+			if(this.refs[ref].getDOM) {
+				return this.refs[ref].getDOM();
+			}
+			return React.findDOMNode(this.refs[ref]);
+		}
+		return React.findDOMNode(this);
+	}
+
 	getInitialState() {
 		return {};
 	}

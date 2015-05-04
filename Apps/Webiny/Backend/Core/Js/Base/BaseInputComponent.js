@@ -48,6 +48,9 @@ class BaseInputComponent extends BaseComponent {
 	}
 
 	getFormType(defaultType = 'native'){
+		if(this.props.context){
+			return this.props.context;
+		}
 		return this.props._form ? this.props._form.getFormType() : defaultType;
 	}
 
@@ -75,7 +78,7 @@ class BaseInputComponent extends BaseComponent {
 	 * @returns {HTMLElement}
 	 */
 	getDOM() {
-		return React.findDOMNode(this).querySelector('input');
+		return super.getDOM().querySelector('input');
 	}
 }
 

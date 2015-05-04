@@ -1,15 +1,23 @@
-import BaseFormComponent from '/Webiny/Core/Base/BaseComponent';
+import BaseFormComponent from '/Webiny/Core/Base/BaseFormComponent';
 import VerticalMany2OneCmp from '/Webiny/UI/Components/VerticalMany2One';
 
-var VerticalMany2One = VerticalMany2One.createComponent();
+var VerticalMany2One = VerticalMany2OneCmp.createComponent();
 
 class Many2One extends BaseFormComponent {
+
+	componentWillMount(){
+		super.componentWillMount();
+		this.inputRef = Tools.createUID();
+	}
 
 	getTemplate(){
 		var formType = this.getFormType();
 
+		var props = _.clone(this.props);
+		props['ref'] = this.inputRef;
+
 		if(formType == 'vertical'){
-			return this.createElement(VerticalMany2One, this.props, this.props.children);
+			return this.createElement(VerticalMany2One, props, this.props.children);
 		}
 
 		return null;
@@ -22,6 +30,10 @@ class Many2One extends BaseFormComponent {
 			grid: 12,
 			name: null
 		};
+	}
+
+	getDOM() {
+		return super.getDOM(this.inputRef);
 	}
 }
 

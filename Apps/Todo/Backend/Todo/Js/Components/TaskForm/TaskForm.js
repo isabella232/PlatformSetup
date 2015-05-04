@@ -25,7 +25,7 @@ class TaskForm extends BaseComponent {
 			});
 		});
 	}
-
+	
 	createTodo() {
 		this.trigger('Todo.Todo.TaskCreate', this.state).then(actionResult => {
 			if (!actionResult.hasErrors()) {

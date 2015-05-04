@@ -165,16 +165,6 @@ export default function ComponentSkeleton(self) {
 			return reactThis;
 		},
 
-		getDOM(key = false) {
-			if (key !== false){
-				if(this.refs[key].getDOM) {
-					return this.refs[key].getDOM();
-				}
-				return React.findDOMNode(this.refs[key]);
-			}
-			return React.findDOMNode(this);
-		},
-
 		getStore(name) {
 			return self.getRegistry().getStore(name);
 		},
@@ -197,7 +187,9 @@ export default function ComponentSkeleton(self) {
 		linkState(key) {
 			var ls = new LinkState(this, key);
 			return ls.create();
-		}
+		},
+
+		getDOM: self.getDOM
 	};
 
 	/**
@@ -217,7 +209,7 @@ export default function ComponentSkeleton(self) {
 	while(prototype.getClassName() != 'BaseComponent'){
 		prototype = prototype.__proto__;
 		Object.keys(prototype).forEach(function (key) {
-			if (!classObject.hasOwnProperty(key)) {
+			if (!classObject[key]) {
 				classObject[key] = prototype[key];
 			}
 		});
