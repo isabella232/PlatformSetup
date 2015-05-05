@@ -1,6 +1,7 @@
 class FormValidationError extends Error {
 
 	constructor(message, validator, value){
+		super();
 		this.message = message;
 		this.validator = validator;
 		this.value = value

@@ -10,6 +10,7 @@ import Registry from '/Webiny/Core/Registry';
 class BaseComponent extends BaseClass {
 
 	constructor() {
+		super();
 		this.__listeners = [];
 		this.__instanceId = Tools.createUID();
 	}

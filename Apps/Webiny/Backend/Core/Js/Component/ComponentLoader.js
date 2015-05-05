@@ -5,6 +5,7 @@ import Router from '/Webiny/Core/Router/Router';
 class ComponentLoader extends BaseClass {
 
 	constructor() {
+		super();
 		this.listeners = [];
 	}
 

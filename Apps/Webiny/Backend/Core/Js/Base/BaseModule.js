@@ -6,6 +6,8 @@ import Route from '/Webiny/Core/Router/Route'
 class BaseModule extends BaseClass {
 
 	constructor() {
+		super();
+
 		this.registerStores().forEach((store) => {
 			if(store instanceof BaseStore){
 				this.getRegistry().addStore(store, {initialized: false});

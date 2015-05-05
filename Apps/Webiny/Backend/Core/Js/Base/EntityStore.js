@@ -8,6 +8,8 @@ import EntityApiService from '/Webiny/Core/Api/EntityApiService';
 class EntityStore extends BaseStore {
 
 	constructor() {
+		super();
+
 		this.data = {};
 
 		this.listViewComponent = null;

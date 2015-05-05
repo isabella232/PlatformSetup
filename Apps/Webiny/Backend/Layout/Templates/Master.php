@@ -5,6 +5,7 @@
 
     <title>Webiny Platform</title>
     <script src="/Assets/Google/traceur.js" type="text/javascript"></script>
+    <!--<script src="/Assets/es6-module-loader.js" type="text/javascript"></script>-->
     <script src="/Assets/Google/bootstrap.js" type="text/javascript"></script>
     <script src="/Assets/React/react.js"></script>
     <script src="/Assets/React/react-with-addons.js"></script>

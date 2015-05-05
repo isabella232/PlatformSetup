@@ -3,6 +3,7 @@ import BaseClass from '/Webiny/Core/Base/BaseClass';
 class GrowlComponent extends BaseClass {
 
 	constructor(component, props = null, content = null) {
+		super();
 		this.component = component;
 		this.props = props;
 		this.content = content;
