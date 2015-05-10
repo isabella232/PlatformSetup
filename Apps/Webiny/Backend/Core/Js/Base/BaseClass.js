@@ -1,4 +1,4 @@
-import Registry from '/Webiny/Core/Registry';
+import Registry from 'Webiny/Core/Registry';
 
 class BaseClass {
 

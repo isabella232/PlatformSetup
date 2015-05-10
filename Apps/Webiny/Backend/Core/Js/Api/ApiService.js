@@ -1,5 +1,5 @@
-import ApiResponse from '/Webiny/Core/Api/ApiResponse';
-import Registry from '/Webiny/Core/Registry';
+import ApiResponse from 'Webiny/Core/Api/ApiResponse';
+import Registry from 'Webiny/Core/Registry';
 
 function handleResponse(response) {
 	// Log Http responses to console if developerMode is enabled

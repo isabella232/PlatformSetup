@@ -1,4 +1,4 @@
-import BaseClass from '/Webiny/Core/Base/BaseClass';
+import BaseClass from 'Webiny/Core/Base/BaseClass';
 
 class GrowlComponent extends BaseClass {
 

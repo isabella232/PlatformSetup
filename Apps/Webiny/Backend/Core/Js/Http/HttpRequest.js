@@ -1,4 +1,4 @@
-import HttpResponse from '/Webiny/Core/Http/HttpResponse';
+import HttpResponse from 'Webiny/Core/Http/HttpResponse';
 
 class HttpRequest {
 

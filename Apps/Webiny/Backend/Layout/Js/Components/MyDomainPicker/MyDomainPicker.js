@@ -1,4 +1,4 @@
-import DomainPicker from '/Webiny/Layout/Components/DomainPicker';
+import DomainPicker from 'Webiny/Layout/Components/DomainPicker';
 
 class MyDomainPicker extends DomainPicker {
 

@@ -1,4 +1,5 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
+import BaseComponent from 'Webiny/Core/Base/BaseComponent';
+import Tools from 'Webiny/Core/Tools/Tools';
 
 class SwitchButton extends BaseComponent {
 

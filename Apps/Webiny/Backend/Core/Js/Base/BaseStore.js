@@ -1,10 +1,10 @@
-import EventManager from '/Webiny/Core/EventManager';
-import Router from '/Webiny/Core/Router/Router';
-import BaseClass from '/Webiny/Core/Base/BaseClass';
-import Tools from '/Webiny/Core/Tools/Tools';
-import ApiService from '/Webiny/Core/Api/ApiService';
-import ApiResponse from '/Webiny/Core/Api/ApiResponse';
-import DeveloperTools from '/Webiny/Core/Tools/DeveloperTools';
+import EventManager from 'Webiny/Core/EventManager';
+import Router from 'Webiny/Core/Router/Router';
+import BaseClass from 'Webiny/Core/Base/BaseClass';
+import Tools from 'Webiny/Core/Tools/Tools';
+import ApiService from 'Webiny/Core/Api/ApiService';
+import ApiResponse from 'Webiny/Core/Api/ApiResponse';
+import DeveloperTools from 'Webiny/Core/Tools/DeveloperTools';
 
 /**
  * Base class for all data stores

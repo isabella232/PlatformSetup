@@ -1,5 +1,6 @@
-import BaseFormComponent from '/Webiny/Core/Base/BaseFormComponent';
-import VerticalMany2OneCmp from '/Webiny/UI/Components/VerticalMany2One';
+import BaseFormComponent from 'Webiny/Core/Base/BaseFormComponent';
+import VerticalMany2OneCmp from 'Webiny/UI/Components/VerticalMany2One';
+import Tools from 'Webiny/Core/Tools/Tools';
 
 var VerticalMany2One = VerticalMany2OneCmp.createComponent();
 

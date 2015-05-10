@@ -1,6 +1,6 @@
-import EventManager from '/Webiny/Core/EventManager';
-import BaseClass from '/Webiny/Core/Base/BaseClass';
-import Router from '/Webiny/Core/Router/Router';
+import EventManager from 'Webiny/Core/EventManager';
+import BaseClass from 'Webiny/Core/Base/BaseClass';
+import Router from 'Webiny/Core/Router/Router';
 
 class ComponentLoader extends BaseClass {
 

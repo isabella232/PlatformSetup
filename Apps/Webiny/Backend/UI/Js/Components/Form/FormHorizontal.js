@@ -1,4 +1,4 @@
-import Form from '/Webiny/UI/Components/Form';
+import Form from 'Webiny/UI/Components/Form';
 
 class FormHorizontal extends Form {
 

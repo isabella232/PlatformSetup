@@ -1,4 +1,4 @@
-import BaseCheckboxGroup from '/Webiny/UI/Classes/CheckboxGroup/BaseCheckboxGroup';
+import BaseCheckboxGroup from 'Webiny/UI/Classes/CheckboxGroup/BaseCheckboxGroup';
 
 class HorizontalCheckboxGroup extends BaseCheckboxGroup {
 

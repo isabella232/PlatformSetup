@@ -1,5 +1,6 @@
-import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
-import CheckboxComponent from '/Webiny/UI/Components/Checkbox';
+import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
+import CheckboxComponent from 'Webiny/UI/Components/Checkbox';
+import Tools from 'Webiny/Core/Tools/Tools';
 
 var CheckboxCmp = CheckboxComponent.createComponent();
 

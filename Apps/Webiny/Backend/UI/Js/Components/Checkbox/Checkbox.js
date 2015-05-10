@@ -1,4 +1,5 @@
-import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
+import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
+import Tools from 'Webiny/Core/Tools/Tools';
 
 class Checkbox extends BaseInputComponent {
 

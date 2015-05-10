@@ -1,4 +1,4 @@
-import EntityStore from '/Webiny/Core/Base/EntityStore';
+import EntityStore from 'Webiny/Core/Base/EntityStore';
 
 class TaskStore extends EntityStore {
 

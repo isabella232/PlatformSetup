@@ -1,4 +1,4 @@
-import InfoGrowl from '/Webiny/UI/Classes/Growl/InfoGrowl';
+import InfoGrowl from 'Webiny/UI/Classes/Growl/InfoGrowl';
 
 class WarningGrowl extends InfoGrowl {
 

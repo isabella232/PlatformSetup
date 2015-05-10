@@ -1,5 +1,5 @@
-import HttpRequest from '/Webiny/Core/Http/HttpRequest'
-import HttpResponse from '/Webiny/Core/Http/HttpResponse'
+import HttpRequest from 'Webiny/Core/Http/HttpRequest'
+import HttpResponse from 'Webiny/Core/Http/HttpResponse'
 
 class Http {
 
@@ -77,5 +77,8 @@ class Http {
 		return this;
 	}
 }
+
+Http.Request = HttpRequest;
+Http.Response = HttpResponse;
 
 export default new Http;

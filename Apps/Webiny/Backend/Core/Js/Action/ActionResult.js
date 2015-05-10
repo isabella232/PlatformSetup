@@ -1,5 +1,5 @@
-import ActionError from '/Webiny/Core/Action/ActionError';
-import ApiResponse from '/Webiny/Core/Api/ApiResponse';
+import ActionError from 'Webiny/Core/Action/ActionError';
+import ApiResponse from 'Webiny/Core/Api/ApiResponse';
 
 class ActionResult {
 	constructor(results) {

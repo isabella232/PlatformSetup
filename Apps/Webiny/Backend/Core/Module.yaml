@@ -1,3 +1,13 @@
 Module:
     Active: true
     Name: Core
+
+Assets:
+    Js:
+        - Js/Lib/axios/dist/axios.min.js
+        - Js/Lib/history.js/native.history.js
+        - Js/Lib/q/q.js
+        - Js/Lib/lodash.min.js
+        - Js/Lib/Md5.js
+        - Js/React/react.js
+        - Js/React/react-with-addons.js

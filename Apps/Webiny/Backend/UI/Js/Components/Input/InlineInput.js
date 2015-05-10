@@ -1,4 +1,4 @@
-import BaseInputComponent from '/Webiny/Core/Base/BaseInputComponent';
+import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
 
 class InlineInput extends BaseInputComponent {
 	

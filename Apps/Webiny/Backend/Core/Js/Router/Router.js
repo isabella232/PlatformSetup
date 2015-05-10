@@ -1,5 +1,5 @@
-import EventManager from '/Webiny/Core/EventManager'
-import Route from '/Webiny/Core/Router/Route'
+import EventManager from 'Webiny/Core/EventManager'
+import Route from 'Webiny/Core/Router/Route'
 
 class Router {
 

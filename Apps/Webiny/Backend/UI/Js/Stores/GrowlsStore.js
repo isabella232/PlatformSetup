@@ -1,4 +1,4 @@
-import BaseStore from '/Webiny/Core/Base/BaseStore';
+import BaseStore from 'Webiny/Core/Base/BaseStore';
 
 class GrowlsStore extends BaseStore {
 

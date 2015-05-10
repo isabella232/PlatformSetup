@@ -1,6 +1,6 @@
-import BaseStore from '/Webiny/Core/Base/BaseStore';
-import DeveloperTools from '/Webiny/Core/Tools/DeveloperTools';
-import EntityApiService from '/Webiny/Core/Api/EntityApiService';
+import BaseStore from 'Webiny/Core/Base/BaseStore';
+import DeveloperTools from 'Webiny/Core/Tools/DeveloperTools';
+import EntityApiService from 'Webiny/Core/Api/EntityApiService';
 
 /**
  * Base class for all entity data stores

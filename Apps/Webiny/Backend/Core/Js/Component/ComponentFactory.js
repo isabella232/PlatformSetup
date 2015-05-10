@@ -1,4 +1,4 @@
-import ComponentSkeleton from '/Webiny/Core/Component/ComponentSkeleton';
+import ComponentSkeleton from 'Webiny/Core/Component/ComponentSkeleton';
 
 export default class ComponentFactory {
 

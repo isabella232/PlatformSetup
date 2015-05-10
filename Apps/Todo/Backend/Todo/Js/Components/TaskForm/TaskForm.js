@@ -1,6 +1,6 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
-import ListComponent from '/Todo/Todo/Components/TaskList';
-import FormValidator from '/Webiny/UI/Classes/Form/FormValidator';
+import BaseComponent from 'Webiny/Core/Base/BaseComponent';
+import ListComponent from 'Todo/Todo/Components/TaskList';
+import FormValidator from 'Webiny/UI/Classes/Form/FormValidator';
 
 var TaskList = ListComponent.createComponent();
 

@@ -1,4 +1,4 @@
-import Http from '/Webiny/Core/Http'
+import Http from 'Webiny/Core/Http'
 
 function initializeStore(store){
 	store.instance.init();

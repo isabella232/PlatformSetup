@@ -1,4 +1,4 @@
-import FormValidationError from '/Webiny/UI/Classes/Form/FormValidationError';
+import FormValidationError from 'Webiny/UI/Classes/Form/FormValidationError';
 
 class FormValidator {
 

@@ -1,3 +1,5 @@
+import Tools from 'Webiny/Core/Tools/Tools';
+
 class GrowlLink {
 
 	constructor(text, action, params = [], classes = null) {

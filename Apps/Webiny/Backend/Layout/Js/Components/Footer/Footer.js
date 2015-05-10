@@ -1,5 +1,5 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
-import AppStore from '/Webiny/Layout/Stores/AppStore';
+import BaseComponent from 'Webiny/Core/Base/BaseComponent';
+import AppStore from 'Webiny/Layout/Stores/AppStore';
 
 class Footer extends BaseComponent {
 

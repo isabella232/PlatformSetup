@@ -1,5 +1,5 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
-import DeveloperTools from '/Webiny/Core/Tools/DeveloperTools';
+import BaseComponent from 'Webiny/Core/Base/BaseComponent';
+import DeveloperTools from 'Webiny/Core/Tools/DeveloperTools';
 
 class SystemArchitecture extends BaseComponent {
 

@@ -1,34 +1,10 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
-import FormValidator from '/Webiny/UI/Classes/Form/FormValidator';
+import BaseComponent from 'Webiny/Core/Base/BaseComponent';
+import FormValidator from 'Webiny/UI/Classes/Form/FormValidator';
 
 class Form extends BaseComponent {
 
 	getFormType(){
 		return 'vertical';
-	}
-
-	getFormClass(){
-		return '';
-	}
-
-	getTemplate() {
-		return '<form className={this.getFormClass()} name={this.props.name} ref={this.props.name}>{this.registerInputs(this.props.children)}</form>';
-	}
-
-	componentWillMount() {
-		this.inputs = {};
-	}
-
-	componentDidMount() {
-		// Disable form submission
-		var form = this.getDOM(this.props.name);
-		$(form).submit(function (e) {
-			e.preventDefault();
-		});
-	}
-
-	isFormDisabled() {
-		return this.props.disabled;
 	}
 
 	registerInputs(children) {
@@ -54,6 +30,31 @@ class Form extends BaseComponent {
 			return React.cloneElement(child, {_form: this}, this.registerInputs(child.props && child.props.children));
 
 		}, this);
+	}
+
+	getFormClass(){
+		return '';
+	}
+
+	getTemplate() {
+		var css = this.getFormClass();
+		return '<form className={css} name={this.props.name} ref={this.props.name}>{this.registerInputs(this.props.children)}</form>';
+	}
+
+	componentWillMount() {
+		this.inputs = {};
+	}
+
+	componentDidMount() {
+		// Disable form submission
+		var form = this.getDOM(this.props.name);
+		$(form).submit(function (e) {
+			e.preventDefault();
+		});
+	}
+
+	isFormDisabled() {
+		return this.props.disabled;
 	}
 
 	attachToForm(component) {

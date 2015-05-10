@@ -1,5 +1,5 @@
-import BaseComponent from '/Webiny/Core/Base/BaseComponent';
-import EventManager from '/Webiny/Core/EventManager';
+import BaseComponent from 'Webiny/Core/Base/BaseComponent';
+import EventManager from 'Webiny/Core/EventManager';
 
 /**
  * App is the main container that will hold all other components.

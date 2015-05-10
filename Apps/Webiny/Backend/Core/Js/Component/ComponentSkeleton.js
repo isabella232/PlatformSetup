@@ -1,8 +1,8 @@
-import StateStore from '/Webiny/Core/Tools/StateStore';
-import LinkState from '/Webiny/Core/Tools/LinkState';
-import EventManager from '/Webiny/Core/EventManager';
-import ActionResult from '/Webiny/Core/Action/ActionResult';
-import DeveloperTools from '/Webiny/Core/Tools/DeveloperTools'
+import StateStore from 'Webiny/Core/Tools/StateStore';
+import LinkState from 'Webiny/Core/Tools/LinkState';
+import EventManager from 'Webiny/Core/EventManager';
+import ActionResult from 'Webiny/Core/Action/ActionResult';
+import DeveloperTools from 'Webiny/Core/Tools/DeveloperTools'
 
 export default function ComponentSkeleton(self) {
 	/**
@@ -208,7 +208,7 @@ export default function ComponentSkeleton(self) {
 
 	while(prototype.getClassName() != 'BaseComponent'){
 		prototype = prototype.__proto__;
-		Object.keys(prototype).forEach(function (key) {
+		Object.getOwnPropertyNames(prototype).forEach(function (key) {
 			if (!classObject[key]) {
 				classObject[key] = prototype[key];
 			}

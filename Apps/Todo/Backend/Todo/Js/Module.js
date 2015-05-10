@@ -1,10 +1,10 @@
-import BaseModule from '/Webiny/Core/Base/BaseModule'
-import ListComponent from '/Todo/Todo/Components/TaskList'
-import FormComponent from '/Todo/Todo/Components/TaskForm'
-import TaskStore from '/Todo/Todo/Stores/TaskStore'
-import ChatBox from '/Todo/Todo/Components/ChatBox'
-import Http from '/Webiny/Core/Http'
-import HttpResponse from '/Webiny/Core/Http/HttpResponse'
+import BaseModule from 'Webiny/Core/Base/BaseModule'
+import ListComponent from 'Todo/Todo/Components/TaskList'
+import FormComponent from 'Todo/Todo/Components/TaskForm'
+import TaskStore from 'Todo/Todo/Stores/TaskStore'
+import ChatBox from 'Todo/Todo/Components/ChatBox'
+import Http from 'Webiny/Core/Http'
+import HttpResponse from 'Webiny/Core/Http/HttpResponse'
 
 TaskStore.setListView(ListComponent.createComponent());
 TaskStore.setFormView(FormComponent.createComponent());
