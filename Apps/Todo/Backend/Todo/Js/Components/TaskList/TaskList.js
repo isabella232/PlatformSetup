@@ -1,4 +1,3 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
 import MyDomainPicker from 'Webiny/Layout/Components/MyDomainPicker';
 import InfoGrowl from 'Webiny/UI/Classes/Growl/InfoGrowl';
 import SuccessGrowl from 'Webiny/UI/Classes/Growl/SuccessGrowl';
@@ -10,7 +9,7 @@ import GrowlComponent from 'Webiny/UI/Classes/Growl/Message/GrowlComponent';
 import TableView from 'Todo/Todo/Components/TasksTableView'
 var TasksTableView = TableView.createComponent();
 
-class TaskList extends BaseComponent {
+class TaskList extends Webiny.Base.Component {
 
 	getTemplate() {
 		var fields = ['index', 'id', 'task', 'createdOn'];
@@ -31,7 +30,7 @@ class TaskList extends BaseComponent {
 		// Listen to store changes
 		this.onStore(this.TaskStore, (data) => this.setState({todos: data}));
 	}
-	
+
 	getInitialState() {
 		return {
 			todos: [],

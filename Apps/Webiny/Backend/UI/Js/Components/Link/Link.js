@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Link extends BaseComponent {
+class Link extends Webiny.Base.Component {
 
 	getTemplate(){
 		var link = this.props.href;
@@ -18,7 +16,7 @@ class Link extends BaseComponent {
 
 		// Build URL
 		if(route){
-			link = Router.getRoutePath(route);
+			link = Webiny.Router.getRoutePath(route);
 		}
 		if(this.props.params){
 			Object.keys(this.props.params).forEach((param) => {

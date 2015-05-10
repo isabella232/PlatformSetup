@@ -1,6 +1,4 @@
-import EntityStore from 'Webiny/Core/Base/EntityStore';
-
-class TaskStore extends EntityStore {
+class TaskStore extends Webiny.Base.EntityStore {
 
 	getFqn() {
 		return 'Todo.Todo.TaskStore';

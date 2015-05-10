@@ -1,6 +1,0 @@
-<div class={this.state.css}>
-    <div class={{'form-group': true}}>
-        <label class="control-label">{this.props.label}</label>
-        <select ref={ref} class="selectize selectized" placeholder={this.props.placeholder}></select>
-    </div>
-</div>

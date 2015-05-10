@@ -102,4 +102,11 @@ class Router {
 	}
 }
 
-export default new Router;
+var router = new Router;
+
+$(document).on('click', 'a', function(e){
+	e.preventDefault();
+	router.goTo(e.target.href);
+});
+
+export default router;

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=devi ce-width,initial-scale=1,maximum-scale=1,user-scalable=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=1">
 
     <title>Webiny Platform</title>
-    <script src="/Assets/traceur-runtime.js" type="text/javascript"></script>
+    <!--<script src="/Assets/traceur-runtime.js" type="text/javascript"></script>-->
+    <script src="/Assets/traceur.js" type="text/javascript"></script>
     <script src="/Assets/system.js" type="text/javascript"></script>
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700" rel="stylesheet"
           type="text/css">
@@ -22,12 +23,17 @@
         var _backendPrefix = '<?php echo $data['App']->getConfig('Platform.Backend.Prefix');?>';
     </script>
 
-    <script src="/Build/Development/Backend/outfile.js"></script>
+    <!--<script src="/Build/Development/Backend/outfile.js"></script>-->
 </head>
 <body>
 <div id="app"></div>
 <script>
-    System.import('App');
+    System.baseURL = '/Build/Development/Backend';
+    System.import('Webiny/Webiny').then(function(module){
+        window.Webiny = module.default;
+        System.import('App');
+    });
+
 </script>
 </body>
 </html>

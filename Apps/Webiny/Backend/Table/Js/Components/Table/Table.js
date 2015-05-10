@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Table extends BaseComponent {
+class Table extends Webiny.Base.Component {
 
 	getTemplate() {
 		var css = {

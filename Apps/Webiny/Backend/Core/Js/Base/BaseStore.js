@@ -2,8 +2,8 @@ import EventManager from 'Webiny/Core/EventManager';
 import Router from 'Webiny/Core/Router/Router';
 import BaseClass from 'Webiny/Core/Base/BaseClass';
 import Tools from 'Webiny/Core/Tools/Tools';
-import ApiService from 'Webiny/Core/Api/ApiService';
-import ApiResponse from 'Webiny/Core/Api/ApiResponse';
+import ApiService from 'Webiny/Core/Api/Service';
+import ApiResponse from 'Webiny/Core/Api/Response';
 import DeveloperTools from 'Webiny/Core/Tools/DeveloperTools';
 
 /**

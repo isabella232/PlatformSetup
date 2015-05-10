@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Tbody extends BaseComponent {
+class Tbody extends Webiny.Base.Component {
 
 	getTemplate() {
 		return '<tbody className={this.props.className}>{this.props.children}</tbody>';

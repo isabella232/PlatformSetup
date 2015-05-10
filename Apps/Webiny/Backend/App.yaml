@@ -15,7 +15,6 @@ Parsers:
         checkbox-group: CheckboxGroup
         switch: Switch
         switch-button: SwitchButton
-        many2one: Many2One
         a: Link
         table: Table
         tbody: Tbody

@@ -1,6 +1,7 @@
 import EventManager from 'Webiny/Core/EventManager'
 import BaseClass from 'Webiny/Core/Base/BaseClass'
 import BaseStore from 'Webiny/Core/Base/BaseStore'
+import Router from 'Webiny/Core/Router/Router'
 import Route from 'Webiny/Core/Router/Route'
 
 class BaseModule extends BaseClass {

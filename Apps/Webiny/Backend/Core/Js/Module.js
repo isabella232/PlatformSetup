@@ -1,6 +1,4 @@
-import BaseModule from 'Webiny/Core/Base/BaseModule'
-
-class Core extends BaseModule {
+class Core extends Webiny.Base.Module {
 
 }
 

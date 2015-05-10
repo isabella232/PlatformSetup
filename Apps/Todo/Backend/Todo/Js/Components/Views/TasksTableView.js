@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class TasksTableView extends BaseComponent {
+class TasksTableView extends Webiny.Base.Component {
 
 	getTemplate() {
 		return this.getReactTemplate();

@@ -1,4 +1,4 @@
-import ApiService from 'Webiny/Core/Api/ApiService';
+import ApiService from 'Webiny/Core/Api/Service';
 
 class EntityApiService extends ApiService {
 

@@ -174,7 +174,7 @@ export default function ComponentSkeleton(self) {
 		},
 
 		getParam(name) {
-			return Router.getParam(name);
+			return Webiny.Router.getParam(name);
 		},
 
 		/**

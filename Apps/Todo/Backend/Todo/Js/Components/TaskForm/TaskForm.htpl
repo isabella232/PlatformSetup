@@ -16,8 +16,6 @@
         <validator name="taskEmail">Email ti ne valja!!</validator>
         </input>
 
-        <many2one></many2one>
-
         <div class="clearfix"></div>
 
         <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No"/>
