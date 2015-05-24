@@ -4,5 +4,5 @@
         <label class="bootstrap-switch-label" onClick={this.switch}>&nbsp;</label>
         <span class="bootstrap-switch-handle-off bootstrap-switch-default">{buttons.off}</span>
     </div>
-    <input id={id} readonly checked={checked} type="checkbox"/>
+    <input id={id} readonly checked={checked} type="checkbox" context="native"/>
 </div>

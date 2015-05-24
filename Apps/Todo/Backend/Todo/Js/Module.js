@@ -2,12 +2,8 @@ import BaseModule from 'Webiny/Core/Base/BaseModule'
 import ListComponent from 'Todo/Todo/Components/TaskList'
 import FormComponent from 'Todo/Todo/Components/TaskForm'
 import TaskStore from 'Todo/Todo/Stores/TaskStore'
-import ChatBox from 'Todo/Todo/Components/ChatBox'
 import Http from 'Webiny/Core/Http'
 import HttpResponse from 'Webiny/Core/Http/HttpResponse'
-
-TaskStore.setListView(ListComponent.createComponent());
-TaskStore.setFormView(FormComponent.createComponent());
 
 class Todo extends BaseModule {
 
@@ -45,7 +41,8 @@ class Todo extends BaseModule {
 
 	registerComponents() {
 		return {
-			ChatBox: ChatBox
+			TaskList: ListComponent,
+			TaskForm: FormComponent
 		};
 	}
 
@@ -55,10 +52,7 @@ class Todo extends BaseModule {
 				Path: '/',
 				Content: {
 					MasterContent: {
-						Component: TaskStore.getListView(),
-						Props: {
-							saveState: true
-						}
+						Component: ListComponent.createComponent()
 					}
 				}
 			},
@@ -66,7 +60,7 @@ class Todo extends BaseModule {
 				Path: '/todo/item/:id',
 				Content: {
 					MasterContent: {
-						Component: TaskStore.getFormView()
+						Component: FormComponent.createComponent()
 					}
 				}
 			}

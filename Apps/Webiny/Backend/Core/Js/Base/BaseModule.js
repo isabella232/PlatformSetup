@@ -9,6 +9,8 @@ class BaseModule extends BaseClass {
 	constructor() {
 		super();
 
+		this.components = {};
+
 		this.registerStores().forEach((store) => {
 			if(store instanceof BaseStore){
 				this.getRegistry().addStore(store, {initialized: false});
@@ -19,12 +21,12 @@ class BaseModule extends BaseClass {
 		});
 
 		var components = this.registerComponents();
-		Object.keys(components).forEach(function (name) {
+		Object.keys(components).forEach(name => {
 			var component = components[name];
 			if (window.hasOwnProperty(name)) {
 				throw Error('Component with name `' + name + '` is already registered!');
 			}
-			window[name] = component.createComponent();
+			this.components[name] = component.createComponent();
 		});
 
 		var routes = this.registerRoutes();
@@ -49,15 +51,6 @@ class BaseModule extends BaseClass {
 		});
 	}
 
-	/**
-	 * Get React component from the provided Webiny component class
-	 * @param component
-	 * @returns {*}
-	 */
-	getComponent(component) {
-		return (new component).getComponent();
-	}
-
 	registerComponents() {
 		return {};
 	}
@@ -68,6 +61,10 @@ class BaseModule extends BaseClass {
 
 	registerStores() {
 		return [];
+	}
+
+	getComponents(){
+		return this.components;
 	}
 }
 

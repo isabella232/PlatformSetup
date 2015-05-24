@@ -10,12 +10,12 @@ class Layout extends Webiny.Base.Module {
 
 	registerComponents() {
 		return {
-			Navigation: Navigation,
-			Footer: Footer,
-			DomainPicker: DomainPicker,
-			Growler: Growler,
-			Growl: Growl,
-			SystemArchitecture: SystemArchitecture
+			Navigation,
+			Footer,
+			DomainPicker,
+			Growler,
+			Growl,
+			SystemArchitecture
 		};
 	}
 

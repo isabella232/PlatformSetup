@@ -13,7 +13,7 @@
             <div class="package">
                 <p>Package:<a href="#">Starter</a><a href="#" class="upgrade">Upgrade</a></p>
             </div>
-            <DomainPicker add-new-site="Add new website"/>
+            <Webiny.Apps.Webiny.Layout.Components.DomainPicker add-new-site="Add new website"/>
             <div class="dropdown profile-holder">
                 <a href="#" class="profile" id="dropdownMenu4" data-toggle="dropdown">
                     <span class="icon-user icon"></span>

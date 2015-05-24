@@ -1,7 +1,7 @@
 <div id="growl" class="top-right growl">
     <div class="growl-notification"></div>
     <loop items={this.state.growls} as="growl">
-        <Growl growl={growl} on-remove={this.removeGrowl} ref={growl.id} />
+        <Webiny.Apps.Webiny.Layout.Components.Growl growl={growl} on-remove={this.removeGrowl} ref={growl.id} />
     </loop>
     <if cond="Object.keys(this.state.growls).length > 1">
         <div class="growl-closer highlight ui-corner-all default" onClick={this.removeAll}>[ close all ]</div>

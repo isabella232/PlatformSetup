@@ -1,14 +1,14 @@
 <!-- Main App Layout -->
 <div class="master minimized">
-    <Navigation/>
-    <Growler/>
+    <Webiny.Apps.Webiny.Layout.Components.Navigation/>
+    <Webiny.Apps.Webiny.Layout.Components.Growler/>
     <div class="master-content container-fluid">
         <placeholder name="MasterContent"/>
     </div>
-    <Footer architecture-modal={this.refs.architectureModal}/>
+    <Webiny.Apps.Webiny.Layout.Components.Footer architecture-modal={this.refs.architectureModal}/>
     <modal wide={true} ref="architectureModal" title="System Architecture">
         <modal-body>
-            <SystemArchitecture />
+            <Webiny.Apps.Webiny.Layout.Components.SystemArchitecture />
         </modal-body>
     </modal>
 </div>

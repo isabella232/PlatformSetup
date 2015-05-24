@@ -18,6 +18,8 @@ class RenderApp
 
     public function handle(Event $event)
     {
+        error_reporting(E_ALL);
+        ini_set("display_errors", 1);
         if ($this->getPlatform()->getEnvironment()->isDevelopment()) {
             /* @var $app App */
             foreach ($this->getPlatform()->getApps() as $app) {
@@ -28,7 +30,7 @@ class RenderApp
 
         $bootstrapGenerator = new BackendBootstrap();
         $assets = $bootstrapGenerator->generateBootstrapFile();
-
+        
         $data['assets'] = $assets;
         $html = $this->templateEngine()->fetch($this->getModule()->getTemplate('Master.php'), $data);
 

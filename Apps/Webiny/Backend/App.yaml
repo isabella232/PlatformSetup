@@ -7,32 +7,30 @@ Events:
 
 Parsers:
     Tags:
-        form-inline: FormInline
-        form-horizontal: FormHorizontal
-        form-group: FormGroup
-        form: Form
-        input: Input
-        checkbox-group: CheckboxGroup
-        switch: Switch
-        switch-button: SwitchButton
-        a: Link
-        table: Table
-        tbody: Tbody
-        thead: Thead
-        tr: Tr
-        th: Th
-        td: Td
-        tfoot: Tfoot
-        grid-12: Grid12
-        grid-6: Grid6
-        grid-4: Grid4
-        grid-2: Grid2
-        modal: Modal
-        modal-header: ModalHeader
-        modal-body: ModalBody
-        modal-footer: ModalFooter
+        # UI module
+        form-inline: Webiny.Apps.Webiny.UI.Components.FormInline
+        form-horizontal: Webiny.Apps.Webiny.UI.Components.FormHorizontal
+        form-group: Webiny.Apps.Webiny.UI.Components.FormGroup
+        form: [Webiny.Apps.Webiny.UI.Components.Form, [form]]
+        input: [Webiny.Apps.Webiny.UI.Components.Input, [input]]
+        checkbox-group: Webiny.Apps.Webiny.UI.Components.CheckboxGroup
+        switch: Webiny.Apps.Webiny.UI.Components.Switch
+        switch-button: Webiny.Apps.Webiny.UI.Components.SwitchButton
+        a: [Webiny.Apps.Webiny.UI.Components.Link, [a]]
+        grid-12: Webiny.Apps.Webiny.UI.Components.Grid12
+        grid-6: Webiny.Apps.Webiny.UI.Components.Grid6
+        grid-4: Webiny.Apps.Webiny.UI.Components.Grid4
+        grid-2: Webiny.Apps.Webiny.UI.Components.Grid2
+        modal: Webiny.Apps.Webiny.UI.Components.Modal
+        modal-header: Webiny.Apps.Webiny.UI.Components.ModalHeader
+        modal-body: Webiny.Apps.Webiny.UI.Components.ModalBody
+        modal-footer: Webiny.Apps.Webiny.UI.Components.ModalFooter
 
-    # Use native HTML tags instead of react components
-    Skip:
-        - SwitchButton
-        - Checkbox
+        # Table module
+        table: [Webiny.Apps.Webiny.Table.Components.Table, [table]]
+        tbody: [Webiny.Apps.Webiny.Table.Components.Tbody, [tbody]]
+        thead: [Webiny.Apps.Webiny.Table.Components.Thead, [thead]]
+        tr: [Webiny.Apps.Webiny.Table.Components.Tr, [tr]]
+        th: [Webiny.Apps.Webiny.Table.Components.Th, [th]]
+        td: [Webiny.Apps.Webiny.Table.Components.Td, [td]]
+        tfoot: [Webiny.Apps.Webiny.Table.Components.Tfoot, [tfoot]]

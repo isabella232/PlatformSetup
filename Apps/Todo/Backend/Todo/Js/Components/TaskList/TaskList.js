@@ -46,7 +46,6 @@ class TaskList extends Webiny.Base.Component {
 				this.trigger('Webiny.UI.AddGrowl', new SuccessGrowl(taskName, 'New task created!'));
 			} else {
 				var growl = new DangerGrowl('Something went wrong', 'Failed to create a task', true);
-				//growl.addMessage(new GrowlComponent(ChatBox));
 				this.trigger('Webiny.UI.AddGrowl', growl);
 			}
 		});

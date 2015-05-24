@@ -20,10 +20,10 @@ class GrowlLink {
 			className: Webiny.Tools.classSet(this.classes),
 			href: '#',
 			onClick: () => {
-				this.action.apply(null, this.params)
+				this.action(...this.params)
 			}
 		};
-		return React.createElement(Link, attributes, this.text);
+		return React.createElement('a', attributes, this.text);
 	}
 }
 
