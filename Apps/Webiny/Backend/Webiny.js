@@ -9,7 +9,7 @@ import EventManager from 'Webiny/Core/EventManager';
 import ComponentLoader from 'Webiny/Core/Component/ComponentLoader';
 
 class Webiny {
-	// Make it an empty class just to be flexible enough for future updates
+
 }
 
 var webiny = Object.assign(new Webiny(), {

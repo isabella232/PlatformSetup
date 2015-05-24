@@ -1,18 +1,16 @@
-import BaseFormComponent from 'Webiny/Core/Base/BaseFormComponent';
 import HorizontalInputCmp from 'Webiny/UI/Components/HorizontalInput';
 import VerticalInputCmp from 'Webiny/UI/Components/VerticalInput';
 import InlineInputCmp from 'Webiny/UI/Components/InlineInput';
-import Tools from 'Webiny/Core/Tools/Tools';
 
 var VerticalInput = VerticalInputCmp.createComponent();
 var HorizontalInput = HorizontalInputCmp.createComponent();
 var InlineInput = InlineInputCmp.createComponent();
 
-class Input extends BaseFormComponent {
+class Input extends Webiny.Base.FormComponent {
 
 	componentWillMount(){
 		super.componentWillMount();
-		this.inputRef = Tools.createUID();
+		this.inputRef = Webiny.Tools.createUID();
 	}
 	
 	getTemplate(){

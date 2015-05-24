@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Growl extends BaseComponent {
+class Growl extends Webiny.Base.Component {
 
 	componentDidMount() {
 		if (!this.props.growl.sticky) {

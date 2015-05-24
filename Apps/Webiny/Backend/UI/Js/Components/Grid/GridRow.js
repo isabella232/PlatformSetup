@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class GridRow extends BaseComponent {
+class GridRow extends Webiny.Base.Component {
 
 	getTemplate(){
 		return '<div class="row">{this.props.children}</div>';

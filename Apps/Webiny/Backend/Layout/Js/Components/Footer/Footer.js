@@ -1,11 +1,10 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
 import AppStore from 'Webiny/Layout/Stores/AppStore';
 
-class Footer extends BaseComponent {
+class Footer extends Webiny.Base.Component {
 
 	componentDidMount() {
 		// Get App store
-		this.appStore = this.getStore('Core.Layout.AppStore');
+		this.appStore = this.getStore('Webiny.Layout.AppStore');
 
 		// Store change listener
 		this.onStore(this.appStore, (data) => {

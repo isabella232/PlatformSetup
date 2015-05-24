@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Modal extends BaseComponent {
+class Modal extends Webiny.Base.Component {
 
 	hide() {
 		this.props.onHide();

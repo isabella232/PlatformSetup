@@ -12,7 +12,7 @@ class App extends Webiny.Base.Component {
 			});
 		});
 
-		this.appStore = this.getStore('Core.Layout.AppStore');
+		this.appStore = this.getStore('Webiny.Layout.AppStore');
 
 		// Get initial data
 		this.appStore.getData().then(data => {

@@ -1,16 +1,14 @@
-import BaseFormComponent from 'Webiny/Core/Base/BaseFormComponent';
 import VerticalCheckboxGroupCmp from 'Webiny/UI/Components/VerticalCheckboxGroup';
 import HorizontalCheckboxGroupCmp from 'Webiny/UI/Components/HorizontalCheckboxGroup';
-import Tools from 'Webiny/Core/Tools/Tools';
 
 var VerticalCheckboxGroup = VerticalCheckboxGroupCmp.createComponent();
 var HorizontalCheckboxGroup = HorizontalCheckboxGroupCmp.createComponent();
 
-class CheckboxGroup extends BaseFormComponent {
+class CheckboxGroup extends Webiny.Base.FormComponent {
 
 	componentWillMount(){
 		super.componentWillMount();
-		this.checkboxRef = Tools.createUID();
+		this.checkboxRef = Webiny.Tools.createUID();
 	}
 
 	/**

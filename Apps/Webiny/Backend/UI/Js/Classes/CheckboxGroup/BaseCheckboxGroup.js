@@ -1,10 +1,8 @@
-import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
 import CheckboxComponent from 'Webiny/UI/Components/Checkbox';
-import Tools from 'Webiny/Core/Tools/Tools';
 
 var CheckboxCmp = CheckboxComponent.createComponent();
 
-class BaseCheckboxGroup extends BaseInputComponent {
+class BaseCheckboxGroup extends Webiny.Base.InputComponent {
 
 	getDefaultProperties() {
 		return {
@@ -58,7 +56,7 @@ class BaseCheckboxGroup extends BaseInputComponent {
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.valueLink.value) {
 			var data = {};
-			Tools.keys(nextProps.valueLink.value).forEach(key => {
+			Webiny.Tools.keys(nextProps.valueLink.value).forEach(key => {
 				data[nextProps.valueLink.value[key]] = true;
 			});
 

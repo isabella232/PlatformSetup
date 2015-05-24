@@ -1,16 +1,14 @@
-import BaseStore from 'Webiny/Core/Base/BaseStore';
-
-class GrowlsStore extends BaseStore {
+class GrowlsStore extends Webiny.Base.Store {
 
 	getFqn() {
-		return 'Core.UI.GrowlsStore';
+		return 'Webiny.UI.GrowlsStore';
 	}
 
 	init() {
 		this.data = {};
-		this.onAction('Core.UI.AddGrowl', this._onAddGrowl);
-		this.onAction('Core.UI.RemoveGrowl', this._onRemoveGrowl);
-		this.onAction('Core.UI.RemoveGrowls', this._onRemoveGrowls);
+		this.onAction('Webiny.UI.AddGrowl', this._onAddGrowl);
+		this.onAction('Webiny.UI.RemoveGrowl', this._onRemoveGrowl);
+		this.onAction('Webiny.UI.RemoveGrowls', this._onRemoveGrowls);
 	}
 
 	_onAddGrowl(growl) {

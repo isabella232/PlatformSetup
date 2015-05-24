@@ -1,5 +1,3 @@
-import Tools from 'Webiny/Core/Tools/Tools';
-
 class GrowlLink {
 
 	constructor(text, action, params = [], classes = null) {
@@ -19,7 +17,7 @@ class GrowlLink {
 
 		// Build link attributes
 		var attributes = {
-			className: Tools.classSet(this.classes),
+			className: Webiny.Tools.classSet(this.classes),
 			href: '#',
 			onClick: () => {
 				this.action.apply(null, this.params)

@@ -52,7 +52,7 @@ class BaseComponent extends BaseClass {
 
 	/**
 	 * Get fully qualified component name
-	 * Ex: 'Core.UI.Form'
+	 * Ex: 'Webiny.UI.Form'
 	 * @returns {*}
 	 */
 	getFqn() {

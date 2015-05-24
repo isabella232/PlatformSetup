@@ -1,7 +1,6 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
 import FormValidator from 'Webiny/UI/Classes/Form/FormValidator';
 
-class Form extends BaseComponent {
+class Form extends Webiny.Base.Component {
 
 	getFormType(){
 		return 'vertical';

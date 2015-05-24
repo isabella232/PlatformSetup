@@ -1,8 +1,3 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class ModalHeader extends BaseComponent {
-
-
-}
+class ModalHeader extends Webiny.Base.Component {}
 
 export default ModalHeader;

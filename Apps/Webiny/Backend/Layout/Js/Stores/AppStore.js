@@ -1,9 +1,7 @@
-import BaseStore from 'Webiny/Core/Base/BaseStore';
-
-class AppStore extends BaseStore {
+class AppStore extends Webiny.Base.Store {
 
 	getFqn() {
-		return 'Core.Layout.AppStore';
+		return 'Webiny.Layout.AppStore';
 	}
 
 	getInitialData(){

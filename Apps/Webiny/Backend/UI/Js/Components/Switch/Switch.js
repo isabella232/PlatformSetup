@@ -1,4 +1,3 @@
-import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
 import HorizontalSwitchCmp from 'Webiny/UI/Components/HorizontalSwitch';
 import VerticalSwitchCmp from 'Webiny/UI/Components/VerticalSwitch';
 import SwitchButtonCmp from 'Webiny/UI/Components/SwitchButton';
@@ -7,7 +6,7 @@ var VerticalSwitch = VerticalSwitchCmp.createComponent();
 var HorizontalSwitch = HorizontalSwitchCmp.createComponent();
 var SwitchButton = SwitchButtonCmp.createComponent();
 
-class Switch extends BaseInputComponent {
+class Switch extends Webiny.Base.InputComponent {
 
 	getTemplate(){
 		var formType = this.props._form ? this.props._form.getFormType() : 'blank';

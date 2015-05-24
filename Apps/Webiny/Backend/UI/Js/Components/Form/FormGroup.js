@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class FormGroup extends BaseComponent {
+class FormGroup extends Webiny.Base.Component {
 
 	getTemplate(){
 		return '<div class="form-group">{this.props.children}</div>';

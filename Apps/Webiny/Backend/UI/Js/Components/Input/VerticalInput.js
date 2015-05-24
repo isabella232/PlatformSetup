@@ -1,6 +1,4 @@
-import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
-
-class VerticalInput extends BaseInputComponent {
+class VerticalInput extends Webiny.Base.InputComponent {
 
 }
 

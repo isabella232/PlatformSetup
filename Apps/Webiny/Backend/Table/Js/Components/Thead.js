@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Thead extends BaseComponent {
+class Thead extends Webiny.Base.Component {
 
 	getTemplate(){
 		return '<thead className={this.props.className}>{this.props.children}</thead>';

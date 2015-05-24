@@ -1,9 +1,7 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Growler extends BaseComponent {
+class Growler extends Webiny.Base.Component {
 
 	componentDidMount() {
-		this.store = this.getStore('Core.UI.GrowlsStore');
+		this.store = this.getStore('Webiny.UI.GrowlsStore');
 
 		// Listen to store changes
 		this.onStore(this.store, (data) => {
@@ -14,12 +12,12 @@ class Growler extends BaseComponent {
 	removeGrowl(id){
 		$(this.getDOM(id)).fadeOut(400);
 		setTimeout(() => {
-			this.trigger('Core.UI.RemoveGrowl', id);
+			this.trigger('Webiny.UI.RemoveGrowl', id);
 		}, 400);
 	}
 
 	removeAll(){
-		this.trigger('Core.UI.RemoveGrowls');
+		this.trigger('Webiny.UI.RemoveGrowls');
 	}
 
 	getInitialState() {

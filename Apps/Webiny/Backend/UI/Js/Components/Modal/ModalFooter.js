@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class ModalFooter extends BaseComponent {
+class ModalFooter extends Webiny.Base.Component {
 
 	getTemplate() {
 		return '<div class="modal-footer">{this.props.children}</div>';

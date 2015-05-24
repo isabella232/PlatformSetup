@@ -1,11 +1,8 @@
-import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
-import Tools from 'Webiny/Core/Tools/Tools';
-
-class Checkbox extends BaseInputComponent {
+class Checkbox extends Webiny.Base.InputComponent {
 
 	componentWillMount() {
 		super.componentWillMount();
-		this.id = Tools.createUID();
+		this.id = Webiny.Tools.createUID();
 	}
 
 	getDefaultProperties() {

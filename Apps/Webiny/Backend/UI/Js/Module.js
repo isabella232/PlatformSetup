@@ -1,5 +1,3 @@
-import BaseModule from 'Webiny/Core/Base/BaseModule';
-// Components
 import Input from 'Webiny/UI/Components/Input';
 import Link from 'Webiny/UI/Components/Link';
 import Form from 'Webiny/UI/Components/Form';
@@ -22,29 +20,29 @@ import ModalFooter from 'Webiny/UI/Components/ModalFooter';
 // Stores
 import GrowlsStore from 'Webiny/UI/Stores/GrowlsStore'
 
-class UI extends BaseModule {
+class UI extends Webiny.Base.Module {
 
 	registerComponents() {
 		return {
-			Input: Input,
-			Link: Link,
-			Form: Form,
-			FormGroup: FormGroup,
-			FormInline: FormInline,
-			FormHorizontal: FormHorizontal,
-			CheckboxGroup: CheckboxGroup,
-			Switch: Switch,
-			SwitchButton: SwitchButton,
-			GridRow: GridRow,
-			GridContainer: GridContainer,
-			Grid: Grid,
-			Grid12: Grid12,
-			Grid6: Grid6,
-			Grid4: Grid4,
-			Modal: Modal,
-			ModalBody: ModalBody,
-			ModalHeader: ModalHeader,
-			ModalFooter: ModalFooter
+			Input,
+			Link,
+			Form,
+			FormGroup,
+			FormInline,
+			FormHorizontal,
+			CheckboxGroup,
+			Switch,
+			SwitchButton,
+			GridRow,
+			GridContainer,
+			Grid,
+			Grid12,
+			Grid6,
+			Grid4,
+			Modal,
+			ModalBody,
+			ModalHeader,
+			ModalFooter
 		};
 	}
 

@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Grid2 extends BaseComponent {
+class Grid2 extends Webiny.Base.Component {
 
 	getTemplate(){
 		return '<Grid sm="2" xs="12">{this.props.children}</Grid>';

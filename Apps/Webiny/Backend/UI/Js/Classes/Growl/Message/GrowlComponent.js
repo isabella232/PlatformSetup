@@ -1,6 +1,4 @@
-import BaseClass from 'Webiny/Core/Base/BaseClass';
-
-class GrowlComponent extends BaseClass {
+class GrowlComponent extends Webiny.Base.Class {
 
 	constructor(component, props = null, content = null) {
 		super();

@@ -1,11 +1,8 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-import Tools from 'Webiny/Core/Tools/Tools';
-
-class SwitchButton extends BaseComponent {
+class SwitchButton extends Webiny.Base.Component {
 
 	componentWillMount(){
 		super.componentWillMount();
-		this.id = Tools.createUID();
+		this.id = Webiny.Tools.createUID();
 	}
 
 	getTemplate() {

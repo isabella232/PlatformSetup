@@ -1,7 +1,6 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
 import DeveloperTools from 'Webiny/Core/Tools/DeveloperTools';
 
-class SystemArchitecture extends BaseComponent {
+class SystemArchitecture extends Webiny.Base.Component {
 
 	getInitialState() {
 		return {

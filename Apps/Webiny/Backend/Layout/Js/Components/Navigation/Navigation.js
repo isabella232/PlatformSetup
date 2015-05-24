@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class Navigation extends BaseComponent {
+class Navigation extends Webiny.Base.Component {
 
 }
 

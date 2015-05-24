@@ -1,6 +1,4 @@
-import BaseComponent from 'Webiny/Core/Base/BaseComponent';
-
-class DomainPicker extends BaseComponent {
+class DomainPicker extends Webiny.Base.Component {
 
 	getInitialState() {
 		return {

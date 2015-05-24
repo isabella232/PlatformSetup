@@ -43,11 +43,11 @@ class TaskList extends Webiny.Base.Component {
 		var taskName = input.value;
 		this.trigger('Todo.Todo.TaskCreate', {task: taskName}).then(actionResult => {
 			if (!actionResult.hasErrors()) {
-				this.trigger('Core.UI.AddGrowl', new SuccessGrowl(taskName, 'New task created!'));
+				this.trigger('Webiny.UI.AddGrowl', new SuccessGrowl(taskName, 'New task created!'));
 			} else {
 				var growl = new DangerGrowl('Something went wrong', 'Failed to create a task', true);
 				//growl.addMessage(new GrowlComponent(ChatBox));
-				this.trigger('Core.UI.AddGrowl', growl);
+				this.trigger('Webiny.UI.AddGrowl', growl);
 			}
 		});
 		input.value = '';
@@ -68,9 +68,9 @@ class TaskList extends Webiny.Base.Component {
 			if (!actionResult.hasErrors()) {
 				var undo = new GrowlLink('Undo', this.restoreTask, item, 'btn btn-info');
 				var growl = new InfoGrowl(undo, 'Task deleted successfully!', true);
-				this.trigger('Core.UI.AddGrowl', growl);
+				this.trigger('Webiny.UI.AddGrowl', growl);
 			} else {
-				this.trigger('Core.UI.AddGrowl', new WarningGrowl('Could not delete task!'));
+				this.trigger('Webiny.UI.AddGrowl', new WarningGrowl('Could not delete task!'));
 			}
 		});
 	}

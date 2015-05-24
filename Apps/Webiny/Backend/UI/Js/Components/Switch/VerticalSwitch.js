@@ -1,6 +1,4 @@
-import BaseInputComponent from 'Webiny/Core/Base/BaseInputComponent';
-
-class VerticalSwitch extends BaseInputComponent {
+class VerticalSwitch extends Webiny.Base.InputComponent {
 
 	getInitialState() {
 		var defaultGrid = {

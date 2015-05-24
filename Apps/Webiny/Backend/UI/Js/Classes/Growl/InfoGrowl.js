@@ -1,11 +1,10 @@
 import GrowlText from 'Webiny/UI/Classes/Growl/Message/GrowlText';
-import Tools from 'Webiny/Core/Tools/Tools';
 
 class InfoGrowl {
 
 	constructor(message, title = false, sticky = false, ttl = 3000) {
 		this.messages = [];
-		this.id = Tools.createUID();
+		this.id = Webiny.Tools.createUID();
 		this.title = title;
 		this.sticky = sticky;
 		this.ttl = ttl;

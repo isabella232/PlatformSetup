@@ -4,7 +4,7 @@ import Http from 'Webiny/Core/Http';
 
 function handleResponse(response) {
 	// Log Http responses to console if developerMode is enabled
-	return Registry.getStore('Core.Layout.AppStore').getData().then(data => {
+	return Registry.getStore('Webiny.Layout.AppStore').getData().then(data => {
 		if (data.developerMode) {
 			console.log(response)
 		}
