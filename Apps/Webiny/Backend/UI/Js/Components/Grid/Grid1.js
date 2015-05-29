@@ -1,7 +1,7 @@
 class Grid1 extends Webiny.Base.Component {
 
 	getTemplate(){
-		return '<Grid sm="1" xs="12">{this.props.children}</Grid>';
+		return '<w-grid sm="1" xs="12">{this.props.children}</w-grid>';
 	}
 }
 

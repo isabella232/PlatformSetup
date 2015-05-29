@@ -3,9 +3,9 @@
         <label class="control-label">{this.props.label}</label>
 
         <div class="row">
-            <loop items={this.checkboxes}>
+            <w-loop items={this.checkboxes}>
                 <Checkbox grid={item.grid} label={item.label} valueLink={this.linkState(item.bind)} />
-            </loop>
+            </w-loop>
         </div>
     </div>
 </div>

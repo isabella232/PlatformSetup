@@ -1,4 +1,4 @@
-<div class="domain-picker" my-custom-tag="Yeah!">
+<div class="domain-picker">
     <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                 data-toggle="dropdown">
@@ -7,12 +7,12 @@
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
             <li role="presentation" class="spec"><a role="menuitem" href="#"> + {this.props.addNewSite}</a></li>
-            <loop items={this.state.domains} as="item">
+            <w-loop items={this.state.domains} as="item">
                 <li role="presentation"><a role="menuitem" href="#">{item.name}</a></li>
-            </loop>
+            </w-loop>
         </ul>
     </div>
-    <a href="#" class="open">
+    <w-link href="#" class="open">
         <span class="icon-external-link icon"></span>
-    </a>
+    </w-link>
 </div>

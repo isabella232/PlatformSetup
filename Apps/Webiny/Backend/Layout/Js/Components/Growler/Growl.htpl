@@ -1,11 +1,11 @@
 <div ref={growl.id} class={classes} style={{display:'block'}}>
     <div class="growl-close" onClick={this.close}>x</div>
-    <if cond="growl.title">
+    <w-if cond="growl.title">
         <div class="growl-header">{growl.title}</div>
-    </if>
-    <loop items={growl.messages}>
+    </w-if>
+    <w-loop items={growl.messages}>
         <div class="growl-message">
             {item.render(this)}
         </div>
-    </loop>
+    </w-loop>
 </div>

@@ -8,29 +8,32 @@ Events:
 Parsers:
     Tags:
         # UI module
-        form-inline: Webiny.Apps.Webiny.UI.Components.FormInline
-        form-horizontal: Webiny.Apps.Webiny.UI.Components.FormHorizontal
-        form-group: Webiny.Apps.Webiny.UI.Components.FormGroup
-        form: [Webiny.Apps.Webiny.UI.Components.Form, [form]]
-        input: [Webiny.Apps.Webiny.UI.Components.Input, [input]]
-        checkbox-group: Webiny.Apps.Webiny.UI.Components.CheckboxGroup
-        switch: Webiny.Apps.Webiny.UI.Components.Switch
-        switch-button: Webiny.Apps.Webiny.UI.Components.SwitchButton
-        a: [Webiny.Apps.Webiny.UI.Components.Link, [a]]
-        grid-12: Webiny.Apps.Webiny.UI.Components.Grid12
-        grid-6: Webiny.Apps.Webiny.UI.Components.Grid6
-        grid-4: Webiny.Apps.Webiny.UI.Components.Grid4
-        grid-2: Webiny.Apps.Webiny.UI.Components.Grid2
-        modal: Webiny.Apps.Webiny.UI.Components.Modal
-        modal-header: Webiny.Apps.Webiny.UI.Components.ModalHeader
-        modal-body: Webiny.Apps.Webiny.UI.Components.ModalBody
-        modal-footer: Webiny.Apps.Webiny.UI.Components.ModalFooter
+        w-form-inline: Webiny.Apps.Webiny.UI.Components.FormInline
+        w-form-horizontal: Webiny.Apps.Webiny.UI.Components.FormHorizontal
+        w-form-group: Webiny.Apps.Webiny.UI.Components.FormGroup
+        w-form: Webiny.Apps.Webiny.UI.Components.Form
+        w-input: Webiny.Apps.Webiny.UI.Components.Input
+        w-checkbox-group: Webiny.Apps.Webiny.UI.Components.CheckboxGroup
+        w-switch: Webiny.Apps.Webiny.UI.Components.Switch
+        w-switch-button: Webiny.Apps.Webiny.UI.Components.SwitchButton
+        w-link: Webiny.Apps.Webiny.UI.Components.Link
+        w-a: Webiny.Apps.Webiny.UI.Components.Link
+        w-grid-12: Webiny.Apps.Webiny.UI.Components.Grid12
+        w-grid-6: Webiny.Apps.Webiny.UI.Components.Grid6
+        w-grid-4: Webiny.Apps.Webiny.UI.Components.Grid4
+        w-grid-2: Webiny.Apps.Webiny.UI.Components.Grid2
+        w-grid: Webiny.Apps.Webiny.UI.Components.Grid
+        w-modal: Webiny.Apps.Webiny.UI.Components.Modal
+        w-modal-header: Webiny.Apps.Webiny.UI.Components.ModalHeader
+        w-modal-body: Webiny.Apps.Webiny.UI.Components.ModalBody
+        w-modal-footer: Webiny.Apps.Webiny.UI.Components.ModalFooter
+        w-growl: Webiny.Apps.Webiny.Layout.Components.Growl
 
         # Table module
-        table: [Webiny.Apps.Webiny.Table.Components.Table, [table]]
-        tbody: [Webiny.Apps.Webiny.Table.Components.Tbody, [tbody]]
-        thead: [Webiny.Apps.Webiny.Table.Components.Thead, [thead]]
-        tr: [Webiny.Apps.Webiny.Table.Components.Tr, [tr]]
-        th: [Webiny.Apps.Webiny.Table.Components.Th, [th]]
-        td: [Webiny.Apps.Webiny.Table.Components.Td, [td]]
-        tfoot: [Webiny.Apps.Webiny.Table.Components.Tfoot, [tfoot]]
+        w-table: Webiny.Apps.Webiny.Table.Components.Table
+        w-tbody: Webiny.Apps.Webiny.Table.Components.Tbody
+        w-thead: Webiny.Apps.Webiny.Table.Components.Thead
+        w-tr: Webiny.Apps.Webiny.Table.Components.Tr
+        w-th: Webiny.Apps.Webiny.Table.Components.Th
+        w-td: Webiny.Apps.Webiny.Table.Components.Td
+        w-tfoot: Webiny.Apps.Webiny.Table.Components.Tfoot

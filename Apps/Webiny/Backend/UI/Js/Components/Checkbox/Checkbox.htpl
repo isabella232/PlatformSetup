@@ -1,6 +1,6 @@
 <div class={this.state.css}>
     <div class={{icheckbox_minimal: true, disabled: this.props.disabled, checked: checked}}>
-        <input id={id} type="checkbox" onChange={this.onChange} checked={checked} class="radio" context="native"/>
+        <input id={id} type="checkbox" onChange={this.onChange} checked={checked} class="radio"/>
     </div>
     <label for={id} class="cb-label">{this.props.label}</label>
 </div>

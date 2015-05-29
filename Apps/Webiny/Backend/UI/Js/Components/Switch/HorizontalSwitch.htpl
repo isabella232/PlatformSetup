@@ -1,6 +1,6 @@
 <div class="form-group">
     <label class="control-label col-xs-4">{this.props.label}</label>
     <div class="col-xs-8">
-        <switch-button buttons={this.props.buttons || null} valueLink={this.props.valueLink}/>
+        <w-switch-button buttons={this.props.buttons || null} valueLink={this.props.valueLink}/>
     </div>
 </div>

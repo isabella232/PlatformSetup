@@ -1,24 +1,24 @@
 <footer>
     <div class="developer-mode">
         <span>Developer mode</span>
-        <switch-button bind={this.state.developerMode} bind-change={this.toggleDeveloperMode}/>
+        <w-switch-button bind={this.state.developerMode} bind-change={this.toggleDeveloperMode} />
     </div>
-    <if cond={this.state.developerMode}>
+    <w-if cond={this.state.developerMode}>
         <button modal-trigger={this.props.architectureModal} style={{marginTop: '7px'}} class="btn btn-info">Show Architecture</button>
-    </if>
+    </w-if>
     <ul class="links">
-        <loop items={this.state.links}>
+        <w-loop items={this.state.links}>
             <li>
-                <a href={item.url}>{item.name}</a>
+                <w-link href={item.url}>{item.name}</w-link>
             </li>
-        </loop>
+        </w-loop>
     </ul>
     <ul class="links secondary">
-        <loop items="this.state.linksSecondary">
+        <w-loop items="this.state.linksSecondary">
             <li>
                 <a href={item.url}>{item.name}</a>
             </li>
-        </loop>
+        </w-loop>
     </ul>
     <div class="dropdown sort feedback-wrap">
         <button class="btn btn-default dropdown-toggle feedback" type="button">

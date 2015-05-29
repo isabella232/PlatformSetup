@@ -4,9 +4,9 @@
 
     <div class="col-xs-8">
         <div class="row">
-            <loop items={this.checkboxes}>
+            <w-loop items={this.checkboxes}>
                 <Checkbox grid={item.grid} label={item.label} valueLink={this.linkState(item.bind)}/>
-            </loop>
+            </w-loop>
         </div>
     </div>
 </div>

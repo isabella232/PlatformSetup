@@ -42,7 +42,7 @@ class FormValidator {
 		}
 
 		elements.forEach(item => {
-			if (item.type == 'validator' && item.props.children) {
+			if (item.type == 'w-validator' && item.props.children) {
 				customMessages[item.props.name] = item.props.children;
 			}
 		});

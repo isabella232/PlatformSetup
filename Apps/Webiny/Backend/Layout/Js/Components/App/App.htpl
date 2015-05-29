@@ -3,12 +3,12 @@
     <Webiny.Apps.Webiny.Layout.Components.Navigation/>
     <Webiny.Apps.Webiny.Layout.Components.Growler/>
     <div class="master-content container-fluid">
-        <placeholder name="MasterContent"/>
+        <w-placeholder name="MasterContent"/>
     </div>
     <Webiny.Apps.Webiny.Layout.Components.Footer architecture-modal={this.refs.architectureModal}/>
-    <modal wide={true} ref="architectureModal" title="System Architecture">
-        <modal-body>
+    <w-modal wide={true} ref="architectureModal" title="System Architecture">
+        <w-modal-body>
             <Webiny.Apps.Webiny.Layout.Components.SystemArchitecture />
-        </modal-body>
-    </modal>
+        </w-modal-body>
+    </w-modal>
 </div>

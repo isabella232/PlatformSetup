@@ -2,6 +2,6 @@
     <div class="form-group">
         <label class="control-label">{this.props.label}</label>
         <div class="clear"></div>
-        <switch-button buttons={this.props.buttons || null} valueLink={this.props.valueLink}/>
+        <w-switch-button buttons={this.props.buttons || null} valueLink={this.props.valueLink} />
     </div>
 </div>

@@ -10,7 +10,7 @@
     </row-details>
     <actions>
         <action name="edit" cond="item.id">
-            <a class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</a>
+            <w-link class="btn btn-primary" route="TodoItemEdit" params={item}>Edit</w-link>
         </action>
         <action name="delete" cond="item.id">
             <button class="btn btn-danger" on-click={() => {this.props.onDelete(item)}}>Delete</button>

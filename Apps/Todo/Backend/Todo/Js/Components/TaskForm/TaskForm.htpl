@@ -1,44 +1,42 @@
-<grid-12>
-    <form name="form">
+<w-grid-12>
+    <w-form name="form">
 
-        <input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled/>
-        <input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn}
-               placeholder="Created" disabled/>
+        <w-input name="id" label="ID" grid="6" bind={this.state.id} placeholder="ID" disabled/>
+        <w-input name="createdOn" validate="required" label="Created" grid="6" bind={this.state.createdOn}
+                 placeholder="Created" disabled/>
 
-        <input label="Task" validate="required,minLength:5" name="task" grid="4" bind={this.state.task}
-               placeholder="Task">
-        <validator name="required">Daj upisi nesto!</validator>
-        <validator name="minLength">A jesi skrt majke ti...</validator>
-        </input>
+        <w-input label="Task" validate="required,minLength:5" name="task" grid="4" bind={this.state.task}
+                 placeholder="Task">
+            <w-validator name="required">Daj upisi nesto!</w-validator>
+            <w-validator name="minLength">A jesi skrt majke ti...</w-validator>
+        </w-input>
 
-        <input label="Email" validate="required,taskEmail" name="email" grid="4" bind={this.state.email}
-               placeholder="Email">
-        <validator name="taskEmail">Email ti ne valja!!</validator>
-        </input>
+        <w-input label="Email" validate="required,taskEmail" name="email" grid="4" bind={this.state.email}
+                 placeholder="Email">
+            <w-validator name="taskEmail">Email ti ne valja!!</w-validator>
+        </w-input>
 
         <div class="clearfix"></div>
 
-        <switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No"/>
-        <switch grid="6" label="Completed" bind={this.state.completed}/>
+        <w-switch grid="6" label="Important" bind={this.state.important} buttons="Yes|No"/>
+        <w-switch grid="6" label="Completed" bind={this.state.completed}/>
 
-        <!--<checkbox label="Settings" bind={this.state.settings.dev} bind-change={this.onChangeDev} />-->
+            <w-checkbox-group ref="checkBox" label="Settings" bind={this.state.settings}>
+                <w-checkbox value="boring">Boring</w-checkbox>
+                <w-checkbox value="difficult" grid="4">Difficult</w-checkbox>
+                <w-checkbox value="short">Short</w-checkbox>
+            </w-checkbox-group>
 
-        <checkbox-group ref="checkBox" label="Settings" bind={this.state.settings}>
-            <checkbox value="boring">Boring</checkbox>
-            <checkbox value="difficult" grid="4">Difficult</checkbox>
-            <checkbox value="short">Short</checkbox>
-        </checkbox-group>
+            <w-checkbox-group ref="config" label="Config" bind={this.state.config} bind-change={this.configChanged}>
+                <w-checkbox value="auto-bind" grid="6">Auto-bind</w-checkbox>
+                <w-checkbox value="register-classes" grid="6">Register classes</w-checkbox>
+            </w-checkbox-group>
 
-        <checkbox-group ref="config" label="Config" bind={this.state.config} bind-change={this.configChanged}>
-            <checkbox value="auto-bind" grid="6">Auto-bind</checkbox>
-            <checkbox value="register-classes" grid="6">Register classes</checkbox>
-        </checkbox-group>
-
-    </form>
+    </w-form>
 
     <!--<form-group>
         <div class="col-sm-offset-2 col-sm-10">
             <button class="btn btn-success" type="submit" onClick={this.state.id != '' ? this.updateTodo : this.createTodo}>Save</button>
         </div>
     </form-group>-->
-</grid-12>
+</w-grid-12>

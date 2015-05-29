@@ -17,7 +17,7 @@ class CheckboxGroup extends Webiny.Base.FormComponent {
 	 */
 	getTemplate(){
 		var formType = this.getFormType();
-
+		
 		var props = _.clone(this.props);
 		props['ref'] = this.checkboxRef;
 
@@ -33,7 +33,6 @@ class CheckboxGroup extends Webiny.Base.FormComponent {
 	}
 
 	getDOM() {
-		console.log(this.checkboxRef)
 		return super.getDOM(this.checkboxRef);
 	}
 }

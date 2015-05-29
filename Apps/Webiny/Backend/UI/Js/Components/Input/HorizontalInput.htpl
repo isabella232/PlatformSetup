@@ -4,7 +4,6 @@
     <div class="col-xs-8">
         <input onBlur={this.props.validate ? this.validate : null} disabled={this.props.disabled} type="text" class="form-control"
                valueLink={this.props.valueLink}
-               placeholder={this.props.placeholder}
-               context="native"/>
+               placeholder={this.props.placeholder} />
     </div>
 </div>

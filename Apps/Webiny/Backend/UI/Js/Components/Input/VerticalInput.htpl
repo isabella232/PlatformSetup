@@ -2,21 +2,20 @@
     <div class={{'form-group': true, error: this.state._valid=== false, success: this.state._valid=== true}}>
         <label class="control-label">{this.props.label}</label>
         <!-- Validation error text -->
-        <if cond="this.state._valid === false">
+        <w-if cond="this.state._valid === false">
             <span class="info-txt">({this.state._validationError})</span>
-        </if>
+        </w-if>
         <!-- Input element -->
         <input onBlur={this.props.validate ? this.validate : null} disabled={this.props.disabled} type="text" class="form-control"
                valueLink={this.props.valueLink}
-               placeholder={this.props.placeholder}
-                context="native" />
+               placeholder={this.props.placeholder} />
 
         <!-- Validation error text -->
-        <if cond="this.state._valid === true">
+        <w-if cond="this.state._valid === true">
             <span class="icon icon-good"></span>
-        </if>
-        <if cond="this.state._valid === false">
+        </w-if>
+        <w-if cond="this.state._valid === false">
             <span class="icon icon-bad"></span>
-        </if>
+        </w-if>
     </div>
 </div>
