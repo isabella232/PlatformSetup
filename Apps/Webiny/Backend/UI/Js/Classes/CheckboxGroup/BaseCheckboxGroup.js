@@ -1,6 +1,6 @@
 import CheckboxComponent from 'Webiny/UI/Components/Checkbox';
 
-var CheckboxCmp = CheckboxComponent.createComponent();
+var CheckboxCmp = Webiny.createComponent(CheckboxComponent);
 
 class BaseCheckboxGroup extends Webiny.Base.InputComponent {
 

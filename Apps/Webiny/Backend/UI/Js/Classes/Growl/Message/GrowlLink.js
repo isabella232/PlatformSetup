@@ -23,7 +23,7 @@ class GrowlLink {
 				this.action(...this.params)
 			}
 		};
-		return React.createElement('a', attributes, this.text);
+		return Webiny.createElement('a', attributes, this.text);
 	}
 }
 

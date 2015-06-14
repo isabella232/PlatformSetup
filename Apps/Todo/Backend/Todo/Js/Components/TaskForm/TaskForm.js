@@ -2,7 +2,7 @@ import BaseComponent from 'Webiny/Core/Base/BaseComponent';
 import ListComponent from 'Todo/Todo/Components/TaskList';
 import FormValidator from 'Webiny/UI/Classes/Form/FormValidator';
 
-var TaskList = ListComponent.createComponent();
+var TaskList = Webiny.createComponent(ListComponent);
 
 class TaskForm extends BaseComponent {
 

@@ -24,7 +24,7 @@ class Link extends Webiny.Base.Component {
 			});
 		}
 
-		return React.createElement('a', {href: link, className: classes, onClick: this.props.onClick}, this.props.children);
+		return Webiny.createElement('a', {href: link, className: classes, onClick: this.props.onClick}, this.props.children);
 	}
 }
 

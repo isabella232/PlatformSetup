@@ -52,7 +52,7 @@ class Todo extends BaseModule {
 				Path: '/',
 				Content: {
 					MasterContent: {
-						Component: ListComponent.createComponent()
+						Component: Webiny.createComponent(ListComponent)
 					}
 				}
 			},
@@ -60,7 +60,7 @@ class Todo extends BaseModule {
 				Path: '/todo/item/:id',
 				Content: {
 					MasterContent: {
-						Component: FormComponent.createComponent()
+						Component: Webiny.createComponent(FormComponent)
 					}
 				}
 			}

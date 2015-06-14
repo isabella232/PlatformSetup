@@ -1,8 +1,8 @@
 import VerticalCheckboxGroupCmp from 'Webiny/UI/Components/VerticalCheckboxGroup';
 import HorizontalCheckboxGroupCmp from 'Webiny/UI/Components/HorizontalCheckboxGroup';
 
-var VerticalCheckboxGroup = VerticalCheckboxGroupCmp.createComponent();
-var HorizontalCheckboxGroup = HorizontalCheckboxGroupCmp.createComponent();
+var VerticalCheckboxGroup = Webiny.createComponent(VerticalCheckboxGroupCmp);
+var HorizontalCheckboxGroup = Webiny.createComponent(HorizontalCheckboxGroupCmp);
 
 class CheckboxGroup extends Webiny.Base.FormComponent {
 
@@ -22,11 +22,11 @@ class CheckboxGroup extends Webiny.Base.FormComponent {
 		props['ref'] = this.checkboxRef;
 
 		if(formType == 'vertical'){
-			return this.createElement(VerticalCheckboxGroup, props, this.props.children);
+			return Webiny.createElement(VerticalCheckboxGroup, props, this.props.children);
 		}
 
 		if(formType == 'horizontal'){
-			return this.createElement(HorizontalCheckboxGroup, props, this.props.children);
+			return Webiny.createElement(HorizontalCheckboxGroup, props, this.props.children);
 		}
 		
 		return null;

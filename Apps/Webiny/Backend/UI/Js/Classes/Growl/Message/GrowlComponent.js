@@ -17,7 +17,7 @@ class GrowlComponent extends Webiny.Base.Class {
 				return null;
 			}
 		}
-		return this.createElement(component, this.props, this.content);
+		return Webiny.createElement(component, this.props, this.content);
 	}
 }
 

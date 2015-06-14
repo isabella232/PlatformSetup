@@ -29,9 +29,8 @@ class RenderApp
         }
 
         $bootstrapGenerator = new BackendBootstrap();
-        $assets = $bootstrapGenerator->generateBootstrapFile();
+        $data = $bootstrapGenerator->generateBootstrapFile();
         
-        $data['assets'] = $assets;
         $html = $this->templateEngine()->fetch($this->getModule()->getTemplate('Master.php'), $data);
 
         return $html;

@@ -73,8 +73,6 @@ class BaseInputComponent extends BaseComponent {
 	 * Ex: <Input ref="firstName"/>
 	 * Calling this.getDOM('firstName') from parent component will return the actual <input> element inside the component
 	 *
-	 * If getDOMElement() is not implemented, calling getDOM() will return the actual component DOM
-	 *
 	 * @returns {HTMLElement}
 	 */
 	getDOM() {

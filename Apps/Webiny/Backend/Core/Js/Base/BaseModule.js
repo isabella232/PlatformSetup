@@ -26,7 +26,7 @@ class BaseModule extends BaseClass {
 			if (window.hasOwnProperty(name)) {
 				throw Error('Component with name `' + name + '` is already registered!');
 			}
-			this.components[name] = component.createComponent();
+			this.components[name] = Webiny.createComponent(component);
 		});
 
 		var routes = this.registerRoutes();

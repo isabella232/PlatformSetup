@@ -42,7 +42,7 @@ class ComponentLoader extends BaseClass {
 					if (newInstance) {
 						// Need to add 'key' to each component in the array so React does not complain about it
 						props['key'] = index;
-						elements.push(React.createElement(item.Component, props));
+						elements.push(Webiny.createElement(item.Component, props));
 					} else {
 						elements.push(item.Component);
 					}

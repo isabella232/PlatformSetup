@@ -7,7 +7,7 @@ import GrowlLink from 'Webiny/UI/Classes/Growl/Message/GrowlLink';
 import GrowlComponent from 'Webiny/UI/Classes/Growl/Message/GrowlComponent';
 
 import TableView from 'Todo/Todo/Components/TasksTableView'
-var TasksTableView = TableView.createComponent();
+var TasksTableView = Webiny.createComponent(TableView);
 
 class TaskList extends Webiny.Base.Component {
 
@@ -34,7 +34,8 @@ class TaskList extends Webiny.Base.Component {
 	getInitialState() {
 		return {
 			todos: [],
-			filter: ''
+			filter: '',
+			newTask: ''
 		};
 	}
 

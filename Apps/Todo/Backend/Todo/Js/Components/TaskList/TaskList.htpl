@@ -1,6 +1,6 @@
 <div class="col-sm-12">
     <w-form-inline name="form">
-        <w-input grid="12" placeholder="New task" ref="newTask"/>
+        <w-input grid="12" bind={this.state.newTask} placeholder="New task" ref="newTask"/>
 
         <div class="form-group">
             <button class="btn btn-primary col-sm-12" type="submit" onClick={this.addTask}>Add</button>
@@ -12,7 +12,7 @@
     <TasksTableView fields={fields} actions={actions} items={this.state.todos} on-delete={this.removeTask}/>
 
     <w-modal ref="deleteConfirmationModal" title="Delete confirmation" on-hide={this.taskModalHide}
-           on-hidden={this.taskModalHidden}>
+             on-hidden={this.taskModalHidden}>
         <w-modal-body>
             <TasksTableView fields={['task','createdOn']} actions={['select']} items={this.state.todos}
                             on-select={this.selectTask}/>

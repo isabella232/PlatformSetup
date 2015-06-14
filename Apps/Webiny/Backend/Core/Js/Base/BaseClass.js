@@ -9,10 +9,6 @@ class BaseClass {
 	getRegistry(){
 		return Registry;
 	}
-
-	createElement(name, params = null, content = null){
-		return React.createElement(name, params, content);
-	}
 }
 
 export default BaseClass;
