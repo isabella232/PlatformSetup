@@ -26,6 +26,7 @@ class Build
         $arguments = new Arguments(compact('strict'));
         $arguments->addOption(array('domain', 'd'), 'Domain to load');
         $arguments->addOption(array('app', 'a'), 'App to build');
+        $arguments->addOption(array('component', 'c'), 'Component to build');
         $arguments->addFlag(array('dev'), 'Development build');
         $arguments->addFlag(array('force'), 'Force build of all components');
         $arguments->addFlag(array('help', 'h'), 'Show this help screen');
@@ -54,7 +55,7 @@ class Build
         $currentUrl = new UrlObject($domain);
         $platform->setRootDir(__DIR__ . '/..')->setRequest($currentUrl)->setArea(Platform::BACKEND)->prepare();
         $platform->loadApps();
-        
+
         $app = $platform->getApps($args['app']);
         if (!$app) {
             \cli\err("App with name `" . $args['app'] . "` was not found!\n");
@@ -67,7 +68,13 @@ class Build
         if ($args['dev']) {
             $force = isset($args['force']);
             $builder = new DevelopmentBuilder();
-            $builder->setAppsStorage($appsStorage)->setBuildStorage($buildStorage)->setForceBuild($force)->buildApp($app);
+            $builder->setAppsStorage($appsStorage)->setBuildStorage($buildStorage)->setForceBuild($force);
+            if($args['component']) {
+                list($moduleName, $componentName) = explode('/', $args['component']);
+                $builder->buildComponent($app, $moduleName, $componentName);
+            } else {
+                $builder->buildApp($app);
+            }
         } else {
             //$builder = new ProductionBuilder($this->_config);
             //$builder->setAppsStorage($this->_storage)->buildApp($app);
